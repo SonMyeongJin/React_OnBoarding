@@ -1,6 +1,8 @@
+'use client';
+
 import type { FC } from 'react';
 
-export const status: FC = () => {
+export const Status: FC = () => {
   const hp = 100;
   const attack = 50;
   const defense = 30;
@@ -8,6 +10,7 @@ export const status: FC = () => {
 
   return (
     <div>
+      <h2>Status</h2>
       HP: {hp}
       <br />
       Attack: {attack}
