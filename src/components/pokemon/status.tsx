@@ -1,9 +1,11 @@
 'use client';
 
+import { buttonStyle } from '@molecules/bananaButton/index.css';
 import type { FC } from 'react';
+import { useState } from 'react';
 
 export const Status: FC = () => {
-  const hp = 100;
+  const [hp, setHp] = useState(100);
   const attack = 50;
   const defense = 30;
   const speed = 20;
@@ -18,6 +20,13 @@ export const Status: FC = () => {
       Defense: {defense}
       <br />
       Speed: {speed}
+      <button
+        className={buttonStyle}
+        onClick={() => setHp((hp: number) => hp - 10)}
+        type="button"
+      >
+        Reduce HP
+      </button>
     </div>
   );
 };
