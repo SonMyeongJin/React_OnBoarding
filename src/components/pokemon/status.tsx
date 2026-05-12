@@ -2,13 +2,25 @@
 
 import { buttonStyle } from '@molecules/bananaButton/index.css';
 import type { FC } from 'react';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 export const Status: FC = () => {
   const [hp, setHp] = useState(100);
   const attack = 50;
   const defense = 30;
   const speed = 20;
+
+  const isHpZero = useMemo(() => hp <= 0, [hp]);
+  if (isHpZero) {
+    alert('HPが0になりました！');
+  }
+
+  // 이거 왜안돼?
+  // const hpZeroAl₩ert = useMemo( () => {
+  //     if(hp <= 0) {
+  //        return  alert('HPが0になりました！');
+  //     }
+  // }, [hp]);
 
   return (
     <div>

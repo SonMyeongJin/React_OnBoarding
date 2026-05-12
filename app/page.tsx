@@ -13,7 +13,8 @@ const IndexPage: FC = memo(() => {
         <BananaButton />
       </header>
       <Status />
-      <Skill />
+      <Skill name="Pikachu" />
+      <Skill name="Hitokage" />
       <Profile />
     </div>
   );
