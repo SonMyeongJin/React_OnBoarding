@@ -1,10 +1,9 @@
 'use client';
 
 import { buttonStyle } from '@molecules/bananaButton/index.css';
-import type { FC } from 'react';
 import { useMemo, useState } from 'react';
 
-export const Status: FC = () => {
+function Status() {
   const [hp, setHp] = useState(100);
   const attack = 50;
   const defense = 30;
@@ -41,4 +40,6 @@ export const Status: FC = () => {
       </button>
     </div>
   );
-};
+}
+
+export default Status;

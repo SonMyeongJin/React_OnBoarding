@@ -1,12 +1,10 @@
 'use client';
 
-import type { FC } from 'react';
-
-type SkillProps = {
+type ImageProps = {
   name: string;
 };
 
-export const Skill: FC<SkillProps> = ({ name }) => {
+function Skill({ name }: ImageProps) {
   const pikaSkill1 = 'Thunderbolt';
   const pikaSkill2 = 'Quick Attack';
   const pikaSkill3 = 'Iron Tail';
@@ -43,4 +41,6 @@ export const Skill: FC<SkillProps> = ({ name }) => {
       skill4: {hitokageSkill4}
     </div>
   );
-};
+}
+
+export default Skill;

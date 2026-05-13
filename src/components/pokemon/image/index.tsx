@@ -1,15 +1,23 @@
 'use client';
 
 import { buttonStyle } from '@molecules/bananaButton/index.css';
-import { type FC, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 
-export const Profile: FC = (isPika) => {
+type ProfileProps = {
+  isPika: boolean;
+};
+
+function Profile({ isPika }: ProfileProps) {
   // const [pikaUrl, setURL] = useState("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png");
 
-  const hitokageUrl =
-    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png';
-
   const [megaSinka, setMega] = useState(false);
+
+  const hitokageUrl = useMemo(() => {
+    if (megaSinka) {
+      return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png';
+    }
+    return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png';
+  }, [megaSinka]);
 
   const pikaUrl = useMemo(() => {
     if (megaSinka) {
@@ -44,4 +52,6 @@ export const Profile: FC = (isPika) => {
       </button>
     </div>
   );
-};
+}
+
+export default Profile;
