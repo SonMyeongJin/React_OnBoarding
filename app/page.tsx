@@ -1,7 +1,7 @@
 import { BananaButton } from '@molecules/bananaButton';
-import Profile from '../src/components/pokemon/image';
-import Skill from '../src/components/pokemon/skill';
-import Status from '../src/components/pokemon/status';
+import Profile from '../src/components/pokemon/atoms/image';
+import Skill from '../src/components/pokemon/atoms/skill';
+import Status from '../src/components/pokemon/atoms/status';
 
 function IndexPage() {
   return (
