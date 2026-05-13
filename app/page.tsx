@@ -1,11 +1,9 @@
 import { BananaButton } from '@molecules/bananaButton';
-import type { FC } from 'react';
-import { memo } from 'react';
 import Profile from '../src/components/pokemon/image';
 import Skill from '../src/components/pokemon/skill';
 import Status from '../src/components/pokemon/status';
 
-const IndexPage: FC = memo(() => {
+function IndexPage() {
   return (
     <div className="App">
       <header className="App-header">
@@ -19,7 +17,7 @@ const IndexPage: FC = memo(() => {
       <Profile isPika={true} />
     </div>
   );
-});
-IndexPage.displayName = 'IndexPage';
+}
 
+IndexPage.displayName = 'IndexPage';
 export default IndexPage;
