@@ -7,10 +7,10 @@ type SkillProps = {
 };
 
 export const Skill: FC<SkillProps> = ({ name }) => {
-  const PikaSkill1 = 'Thunderbolt';
-  const PikaSkill2 = 'Quick Attack';
-  const PikaSkill3 = 'Iron Tail';
-  const PikaSkill4 = 'Electro Ball';
+  const pikaSkill1 = 'Thunderbolt';
+  const pikaSkill2 = 'Quick Attack';
+  const pikaSkill3 = 'Iron Tail';
+  const pikaSkill4 = 'Electro Ball';
 
   const hitokageSkill1 = 'Flamethrower';
   const hitokageSkill2 = 'Scratch';
@@ -21,13 +21,13 @@ export const Skill: FC<SkillProps> = ({ name }) => {
     return (
       <div>
         <h2>Skills</h2>
-        skill1: {PikaSkill1}
+        skill1: {pikaSkill1}
         <br />
-        skill2: {PikaSkill2}
+        skill2: {pikaSkill2}
         <br />
-        skill3: {PikaSkill3}
+        skill3: {pikaSkill3}
         <br />
-        skill4: {PikaSkill4}
+        skill4: {pikaSkill4}
       </div>
     );
   }
