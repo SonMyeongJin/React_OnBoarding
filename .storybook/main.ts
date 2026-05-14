@@ -10,6 +10,10 @@ const mainConfig = defineMain({
     name: '@storybook/nextjs-vite',
     options: {},
   },
+  staticDirs: [
+    // src/morecon_img_file/*  ->  http://localhost:6006/morecon_img_file/*
+    { from: '../src/morecon_img_file', to: '/morecon_img_file' },
+  ],
   stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
 });
 export default mainConfig;
