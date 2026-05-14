@@ -1,10 +1,15 @@
-import BattleFeild from '../src/components/pokemon/organisms/battleFeild';
+import NaviBar from '../src/moreconCopy/Organisms/naviBar';
+import Product_Info from '../src/moreconCopy/Organisms/product_Info';
+import Review from '../src/moreconCopy/Organisms/review';
 
 function IndexPage() {
   return (
     <div className="App">
-      <header className="App-header"></header>
-      <BattleFeild />
+      <div>
+        <NaviBar />
+        <Product_Info />
+        <Review />
+      </div>
     </div>
   );
 }
