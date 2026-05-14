@@ -1,5 +1,5 @@
-import HitoCard from '../../molecules/hitoCard';
-import PikaCard from '../../molecules/pikaCard';
+import HitoCard from '../../molecules/PokeCard';
+import PikaCard from '../pikaCard';
 
 function BattleFeild() {
   return (

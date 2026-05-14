@@ -1,20 +1,10 @@
-import { BananaButton } from '@molecules/bananaButton';
-import Profile from '../src/components/pokemon/atoms/image';
-import Skill from '../src/components/pokemon/atoms/skill';
-import Status from '../src/components/pokemon/atoms/status';
+import BattleFeild from '../src/components/pokemon/organisms/battleFeild';
 
 function IndexPage() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Hello My page</p>
-        <BananaButton />
-      </header>
-      <Status />
-      <Skill name="Pikachu" />
-      <Skill name="Hitokage" />
-      <Profile isPika={false} />
-      <Profile isPika={true} />
+      <header className="App-header"></header>
+      <BattleFeild />
     </div>
   );
 }
