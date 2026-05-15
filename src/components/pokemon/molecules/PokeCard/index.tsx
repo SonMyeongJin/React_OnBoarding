@@ -1,5 +1,6 @@
 import type { ComponentProps } from 'react';
 import Profile from '../../atoms/image';
+import MegaButton from '../../atoms/megaButton';
 import Skill from '../../atoms/skill';
 import Status from '../../atoms/status';
 
@@ -8,12 +9,13 @@ type Props = {
   skill: ComponentProps<typeof Skill>['name'];
 };
 
-function PokeCard({ isPika }: Props, { skill }: Props) {
+function PokeCard({ isPika, skill }: Props) {
   return (
     <div className="hito-card">
       <Profile isPika={isPika} />
       <Status />
       <Skill name={skill} />
+      <MegaButton />
     </div>
   );
 }

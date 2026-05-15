@@ -9,11 +9,11 @@ const meta: Meta<typeof BattleFeild> = {
   parameters: {
     layout: 'centered',
   },
-  title: 'Pokemon/BattleFeild',
+  title: 'Pokemon/organisms/BattleFeild',
 };
 
 export default meta;
 
-export const Default: Story = {
+export const battleFeild: Story = {
   args: {},
 };
