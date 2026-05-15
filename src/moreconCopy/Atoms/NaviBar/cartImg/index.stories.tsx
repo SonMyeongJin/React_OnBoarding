@@ -9,9 +9,9 @@ const meta: Meta<typeof CartImg> = {
   parameters: {
     layout: 'centered',
   },
-  title: 'MoreconCopy/Atoms/NaviBar/CartImg',
+  title: 'MoreconCopy/Atoms/NaviBar',
 };
 
 export default meta;
 
-export const Default: Story = {};
+export const cart: Story = {};

@@ -9,9 +9,9 @@ const meta: Meta<typeof Navi_Icons> = {
   parameters: {
     layout: 'centered',
   },
-  title: 'MoreconCopy/Atoms/NaviBar/Navi_Icons',
+  title: 'MoreconCopy/Molecules/NaviBar',
 };
 
 export default meta;
 
-export const Default: Story = {};
+export const Navi_Icon: Story = {};

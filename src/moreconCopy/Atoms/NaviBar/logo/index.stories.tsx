@@ -9,9 +9,9 @@ const meta: Meta<typeof Logo> = {
   parameters: {
     layout: 'centered',
   },
-  title: 'MoreconCopy/Atoms/NaviBar/Logo',
+  title: 'MoreconCopy/Atoms/NaviBar',
 };
 
 export default meta;
 
-export const Default: Story = {};
+export const logo: Story = {};
