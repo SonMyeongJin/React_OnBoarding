@@ -1,62 +1,66 @@
 'use client';
 
-import { buttonStyle } from '@molecules/bananaButton/index.css';
-import { useMemo, useState } from 'react';
+import {buttonStyle} from '@molecules/bananaButton/index.css';
+import {useMemo, useState} from 'react';
 
 type StatusProps = {
-  pokeIndex: number;
+    pokeIndex: number;
 };
 
-function Status({ pokeIndex }: StatusProps) {
-  function _pikaStatus() {
-    return {
-      attack: 50,
-      defense: 30,
-      hp: 100,
-      speed: 20,
-    };
-  }
+function Status({pokeIndex}: StatusProps) {
 
-  function _hitokageStatus() {
-    return {
-      attack: 60,
-      defense: 40,
-      hp: 120,
-      speed: 25,
-    };
-  }
-  if (pokeIndex === {
+    const [hp, setHp] = useState(0);
+    const [attack, setAttack] = useState(0);
+    const [defense, setDefense] = useState(0);
+    const [speed, setSpeed] = useState(0);
 
-    const [_hp, _setHp] = useState(100);
-}
-const attack = 50;
-const defense = 30;
-const speed = 20;
+    function _pikaStatus() {
+        setHp(100);
+        setAttack(50);
+        setDefense(30);
+        setSpeed(20);
+    }
 
-const isHpZero = useMemo(() => hp <= 0, []);
-if (isHpZero) {
-  alert('HPが0になりました！');
-}
+    function _hitokageStatus() {
+        setHp(100);
+        setAttack(52);
+        setDefense(43);
+        setSpeed(65);
+    }
 
-return (
-    <div>
-      <h2>Status</h2>
-      HP: {hp}
-      <br />
-      Attack: {attack}
-      <br />
-      Defense: {defense}
-      <br />
-      Speed: {speed}
-      <button
-        className={buttonStyle}
-        onClick={() => setHp((hp: number) => hp - 10)}
-        type="button"
-      >
-        Reduce HP
-      </button>
-    </div>
-  );
+    if (pokeIndex === 25) {
+        // pikachu
+        _pikaStatus
+    }
+    if (pokeIndex === 4) {
+        // hitokage
+        _hitokageStatus
+    }
+
+    const isHpZero = useMemo(() => hp <= 0, []);
+    if (isHpZero) {
+        alert('HPが0になりました！');
+    }
+
+    return (
+        <div>
+            <h2>Status</h2>
+            HP: {hp}
+            <br/>
+            Attack: {attack}
+            <br/>
+            Defense: {defense}
+            <br/>
+            Speed: {speed}
+            <button
+                className={buttonStyle}
+                onClick={() => setHp((hp: number) => hp - 10)}
+                type="button"
+            >
+                Reduce HP
+            </button>
+        </div>
+    );
 }
 
 export default Status;
