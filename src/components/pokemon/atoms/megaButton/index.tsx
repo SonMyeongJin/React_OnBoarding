@@ -1,17 +1,17 @@
-import {useState} from "react";
+import { useState } from 'react';
 
 function MegaButton() {
-    const [isMegaSinka, setMegaSinka] = useState(false);
+  const [_isMegaSinka, setMegaSinka] = useState(false);
 
-    function changeMegaSinka() {
-        setMegaSinka((prev) => !prev);
-    }
+  function changeMegaSinka() {
+    setMegaSinka((prev) => !prev);
+  }
 
-    return (
-        <button className="mega-button" type="button" onClick={changeMegaSinka}>
-            メガシンカ
-        </button>
-    );
+  return (
+    <button className="mega-button" onClick={changeMegaSinka} type="button">
+      メガシンカ
+    </button>
+  );
 }
 
 export default MegaButton;
