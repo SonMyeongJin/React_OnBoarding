@@ -1,27 +1,22 @@
-import type { ComponentProps } from 'react';
-import Profile from '../../atoms/image';
+import Profile from '../../atoms/image/index';
 import MegaButton from '../../atoms/megaButton';
 import Skill from '../../atoms/skill';
 import Status from '../../atoms/status';
 
-type Props = {
-  isPika: ComponentProps<typeof Profile>['isPika'];
-  skill: ComponentProps<typeof Skill>['name'];
+type PokeCardProps = {
+    pokeIndex: number;
+    isMega: boolean;
 };
 
-function PokeCard({ isPika, skill }: Props) {
-  return (
-    <div className="hito-card">
-      <Profile isPika={isPika} />
-      <Status />
-      <Skill name={skill} />
-      <MegaButton />
-    </div>
-  );
+function PokeCard({pokeIndex, isMega}: PokeCardProps) {
+    return (
+        <div className="hito-card">
+            <Profile pokeIndex={pokeIndex}/>
+            <Status pokeIndex={pokeIndex}/>
+            <Skill pokeIndex={pokeIndex}/>
+            <MegaButton isMega={isMega}/>
+        </div>
+    );
 }
 
 export default PokeCard;
-
-// <Profile isPika={false}/>
-// <Status/>
-// <Skill name="Hitokage"/>
