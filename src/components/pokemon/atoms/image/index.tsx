@@ -1,16 +1,14 @@
 'use client';
 
 type ProfileProps = {
-  pokeIndex: number;
+  pokeName: string;
+  imageUrl: string;
 };
 
-function Image({ pokeIndex }: ProfileProps) {
+function Image({ pokeName, imageUrl }: ProfileProps) {
   return (
     <div>
-      <img
-        alt="Pokemon"
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeIndex}.png`}
-      />
+      <img alt={pokeName} src={imageUrl} />
     </div>
   );
 }

@@ -1,12 +1,8 @@
-import { useState } from 'react';
+type MegaButtonProps = {
+  changeMegaSinka: () => void;
+};
 
-function MegaButton() {
-  const [_isMegaSinka, setMegaSinka] = useState(false);
-
-  function changeMegaSinka() {
-    setMegaSinka((prev) => !prev);
-  }
-
+function MegaButton({ changeMegaSinka }: MegaButtonProps) {
   return (
     <button className="mega-button" onClick={changeMegaSinka} type="button">
       メガシンカ

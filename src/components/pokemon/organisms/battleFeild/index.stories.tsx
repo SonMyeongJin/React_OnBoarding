@@ -4,12 +4,7 @@ import BattleFeild from './index';
 type Story = StoryObj<typeof BattleFeild>;
 
 const meta: Meta<typeof BattleFeild> = {
-  argTypes: {},
   component: BattleFeild,
-  parameters: {
-    layout: 'centered',
-  },
-  title: 'Pokemon/organisms/BattleFeild',
 };
 
 export default meta;

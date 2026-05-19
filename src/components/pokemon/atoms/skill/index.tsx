@@ -1,44 +1,23 @@
 'use client';
 
-type ImageProps = {
-  name: string;
+type skillProps = {
+  skill1: string;
+  skill2: string;
+  skill3: string;
+  skill4: string;
 };
 
-function Skill({ name }: ImageProps) {
-  const pikaSkill1 = 'Thunderbolt';
-  const pikaSkill2 = 'Quick Attack';
-  const pikaSkill3 = 'Iron Tail';
-  const pikaSkill4 = 'Electro Ball';
-
-  const hitokageSkill1 = 'Flamethrower';
-  const hitokageSkill2 = 'Scratch';
-  const hitokageSkill3 = 'Ember';
-  const hitokageSkill4 = 'Fire Spin';
-
-  if (name === 'Pikachu') {
-    return (
-      <div>
-        <h2>Skills</h2>
-        skill1: {pikaSkill1}
-        <br />
-        skill2: {pikaSkill2}
-        <br />
-        skill3: {pikaSkill3}
-        <br />
-        skill4: {pikaSkill4}
-      </div>
-    );
-  }
+function Skill({ skill1, skill2, skill3, skill4 }: skillProps) {
   return (
     <div>
       <h2>Skills</h2>
-      skill1: {hitokageSkill1}
+      skill1: {skill1}
       <br />
-      skill2: {hitokageSkill2}
+      skill2: {skill2}
       <br />
-      skill3: {hitokageSkill3}
+      skill3: {skill3}
       <br />
-      skill4: {hitokageSkill4}
+      skill4: {skill4}
     </div>
   );
 }
