@@ -12,13 +12,13 @@ const Pikachu = {
   skill2: 'Quick Attack',
   skill3: 'Iron Tail',
   skill4: 'Electro Ball',
-  speed: 20,
+  speed: 40,
 } as const;
 
 const Hitokage = {
   attack: 33,
   defense: 22,
-  hp: 255,
+  hp: 100,
   imageUrl:
     'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png',
   pokeName: 'hitokage',
@@ -26,7 +26,7 @@ const Hitokage = {
   skill2: 'Scratch',
   skill3: 'Ember',
   skill4: 'Fire Spin',
-  speed: 11,
+  speed: 50,
 } as const;
 
 export const usePokemon = (name: string) => {
@@ -34,7 +34,6 @@ export const usePokemon = (name: string) => {
 
   const onEvolution = useCallback(() => {
     setMegaSinka(true);
-    console.log('進化しました！');
   }, []);
 
   const pokemonData = useMemo(() => {
@@ -43,14 +42,28 @@ export const usePokemon = (name: string) => {
         if (isMegaSinka) {
           return {
             ...Pikachu,
+            attack: Pikachu.attack + 25,
+            defense: Pikachu.defense + 25,
             imageUrl:
               'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png',
+            speed: Pikachu.speed - 25,
           };
         }
-
         return Pikachu;
+
       case 'Hitokage':
+        if (isMegaSinka) {
+          return {
+            ...Hitokage,
+            attake: Hitokage.attack + 25,
+            defense: Hitokage.defense + 25,
+            imageUrl:
+              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png',
+            speed: Hitokage.speed - 5,
+          };
+        }
         return Hitokage;
+
       default:
         return null;
     }

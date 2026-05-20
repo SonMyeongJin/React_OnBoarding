@@ -15,8 +15,6 @@ const Status: FC<StatusProps> = ({ hp, attack, defense, speed }) => {
 
   return (
     <div>
-      <h2>Status</h2>
-
       <div className={status}>
         {isHpZero ? 'death' : `HP: ${hp}`}
         <br />

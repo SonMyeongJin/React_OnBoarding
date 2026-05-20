@@ -5,60 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de85bd88-3201-4fc4-a0e9-c0bf4ba0b7ce" name="변경" comment="feat : storybook 추가">
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/app/init/onLoadHandler.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/app/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/app/onPageLoad.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/domain/dto/getReviewRequest.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/domain/dto/getReviewResponse.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/domain/dto/registerReviewRequest.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/domain/dto/registerReviewResponse.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/domain/reivew.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/entities/pokemon/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/entities/pokemon/model/type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/deleteReview.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/footer-submit/model/setupFooterSubmit.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/getReviews.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/guess-favorite/model/setupGuessFavorite.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/guess-random/model/setupGuessRandom.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/pokemon-go/monsterBallDrag.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/postReviewLike.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/postReviewPhoto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/registerReview.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/pages/components/renderReviewForm.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/pages/components/renderReviewItem.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/styles/go-style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/styles/navbar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/styles/reviewList.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/styles/reviewRegister.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/styles/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/widgets/battle/setupBattle.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/image/index.css.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/megaButton/index.css.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/skill/index.css.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/status/index.css.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pokemon/entities/pokemon/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pokemon/entities/pokemon/getPokemon/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pokemon/entities/pokemon/model/type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pokemon/organisms/battleFeild/index.css.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.edit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/template-mecaota-nextjs.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/atoms/image/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/image/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/atoms/megaButton/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/megaButton/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pokemon/atoms/skill/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/skill/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pokemon/atoms/status/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/status/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/organisms/PokeCard/index.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/organisms/PokeCard/index.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/organisms/PokeCard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/organisms/PokeCard/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/organisms/battleFeild/index.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/organisms/battleFeild/index.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/organisms/battleFeild/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/organisms/battleFeild/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/moreconCopy/Organisms/naviBar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/moreconCopy/Organisms/naviBar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/entities/pokemon/getPokemon/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/entities/pokemon/getPokemon/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +29,15 @@
             <option name="modeId" value="Ask" />
             <option name="modelType" value="builtin_family" />
             <option name="modelValue" value="auto" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="e45a5f38-9f39-407f-96a9-7f02c8b58134" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
             <option name="targetType" value="LOCAL" />
           </session>
         </option>
@@ -90,6 +49,9 @@
     <persistenceIdMap>
       <entry key="_/Users/RU1129/IdeaProjects/연수/React_OnBoarding" value="3DZUXNaWzYpUdG7CsPsHRgPQags" />
     </persistenceIdMap>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -110,6 +72,9 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="PerforceDirect.Settings">
     <option name="CHARSET" value="none" />
   </component>
@@ -129,7 +94,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "code.cleanup.on.save": "true",
     "git-widget-placeholder": "main",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
@@ -142,7 +107,8 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "bun",
     "npm.Next.js: 서버 측.executor": "Debug",
-    "settings.editor.selected.configurable": "Settings.Biome",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "actions.on.save",
     "ts.external.directory.path": "/Users/RU1129/Library/Application Support/JetBrains/IntelliJIdea2025.2/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -203,7 +169,8 @@
       <workItem from="1779264473581" duration="145000" />
       <workItem from="1779264697218" duration="55000" />
       <workItem from="1779264772684" duration="381000" />
-      <workItem from="1779265238646" duration="1208000" />
+      <workItem from="1779265238646" duration="3484000" />
+      <workItem from="1779269087746" duration="463000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor : 내가 이해하기 쉽도록 func 수정">
       <option name="closed" value="true" />
