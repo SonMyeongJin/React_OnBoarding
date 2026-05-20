@@ -1,17 +1,20 @@
 'use client';
 
+import type { FC } from 'react';
+import { pokemonImage } from './index.css';
+
 type ProfileProps = {
   pokeName: string;
   imageUrl: string;
 };
 
-function Image({ pokeName, imageUrl }: ProfileProps) {
+const Image: FC<ProfileProps> = ({ pokeName, imageUrl }) => {
   return (
-    <div>
+    <div className={pokemonImage}>
       <img alt={pokeName} src={imageUrl} />
     </div>
   );
-}
+};
 
 export default Image;
 

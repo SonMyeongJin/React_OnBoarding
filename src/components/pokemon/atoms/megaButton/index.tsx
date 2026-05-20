@@ -1,13 +1,16 @@
+import type { FC } from 'react';
+import { sinkaButton } from './index.css';
+
 type MegaButtonProps = {
-  changeMegaSinka: () => void;
+  onClick: () => void;
 };
 
-function MegaButton({ changeMegaSinka }: MegaButtonProps) {
+const MegaButton: FC<MegaButtonProps> = ({ onClick }) => {
   return (
-    <button className="mega-button" onClick={changeMegaSinka} type="button">
+    <button className={sinkaButton} onClick={onClick} type="button">
       メガシンカ
     </button>
   );
-}
+};
 
 export default MegaButton;

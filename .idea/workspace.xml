@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="de85bd88-3201-4fc4-a0e9-c0bf4ba0b7ce" name="변경" comment="feat : storybook 추가">
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/app/init/onLoadHandler.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/app/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/app/onPageLoad.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/domain/dto/getReviewRequest.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/domain/dto/getReviewResponse.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/domain/dto/registerReviewRequest.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/domain/dto/registerReviewResponse.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/domain/reivew.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/entities/pokemon/api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/entities/pokemon/model/type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/deleteReview.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/footer-submit/model/setupFooterSubmit.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/getReviews.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/guess-favorite/model/setupGuessFavorite.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/guess-random/model/setupGuessRandom.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/pokemon-go/monsterBallDrag.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/postReviewLike.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/postReviewPhoto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/features/registerReview.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/pages/components/renderReviewForm.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/pages/components/renderReviewItem.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/styles/go-style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/styles/navbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/styles/reviewList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/styles/reviewRegister.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/styles/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeforeStudy/widgets/battle/setupBattle.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/image/index.css.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/megaButton/index.css.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/skill/index.css.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/status/index.css.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pokemon/entities/pokemon/api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pokemon/entities/pokemon/getPokemon/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pokemon/entities/pokemon/model/type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pokemon/organisms/battleFeild/index.css.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.edit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/template-mecaota-nextjs.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/atoms/image/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/image/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/atoms/megaButton/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/megaButton/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/atoms/skill/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/skill/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/atoms/status/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/status/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/organisms/PokeCard/index.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/organisms/PokeCard/index.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/organisms/PokeCard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/organisms/PokeCard/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/organisms/battleFeild/index.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/organisms/battleFeild/index.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/organisms/battleFeild/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/organisms/battleFeild/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moreconCopy/Organisms/naviBar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/moreconCopy/Organisms/naviBar/index.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="CopilotChats">
+    <option name="panelChat">
+      <chat>
+        <option name="activeSessionId" value="6e9234d5-5838-4a0a-a613-a503183ab888" />
+        <option name="sessions">
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="6e9234d5-5838-4a0a-a613-a503183ab888" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+        </option>
+        <option name="type" value="PANEL" />
+      </chat>
+    </option>
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_/Users/RU1129/IdeaProjects/연수/React_OnBoarding" value="3DZUXNaWzYpUdG7CsPsHRgPQags" />
+    </persistenceIdMap>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SonMyeongJin&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:/SonMyeongJin/React_OnBoarding.git&quot;,
+    &quot;accountId&quot;: &quot;686a0512-be03-4970-8b96-eaa6ba4de1cd&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="PerforceDirect.Settings">
+    <option name="CHARSET" value="none" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.5.1_2/bin/php" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="3DZUXNaWzYpUdG7CsPsHRgPQags" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortKey" value="BY_TIME_ASCENDING" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "last_opened_file_path": "/Users/RU1129/IdeaProjects/연수/React_OnBoarding/src/components/BeforeStudy",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "bun",
+    "npm.Next.js: 서버 측.executor": "Debug",
+    "settings.editor.selected.configurable": "Settings.Biome",
+    "ts.external.directory.path": "/Users/RU1129/Library/Application Support/JetBrains/IntelliJIdea2025.2/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/BeforeStudy" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/components/pokemon/atoms/megaButton" />
+      <recent name="$PROJECT_DIR$/src/components/pokemon/atoms/image" />
+      <recent name="$PROJECT_DIR$/src/components/pokemon/atoms/status" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/pokemon" />
+      <recent name="$PROJECT_DIR$/src/components/pokemon/atoms/skill" />
+      <recent name="$PROJECT_DIR$/src/components/pokemon/organisms" />
+      <recent name="$PROJECT_DIR$/src/moreconCopy/Atoms/NaviBar" />
+      <recent name="$PROJECT_DIR$/src/moreconCopy/atoms/NaviBar" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Next.js: 서버 측">
+    <configuration name="Next.js: 클라이언트 측에서 디버그" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: 서버 측" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28539.54" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28539.54" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="de85bd88-3201-4fc4-a0e9-c0bf4ba0b7ce" name="변경" comment="" />
+      <created>1778489123211</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1778489123211</updated>
+      <workItem from="1778489124344" duration="48000" />
+      <workItem from="1778489181879" duration="9273000" />
+      <workItem from="1778565011262" duration="132000" />
+      <workItem from="1778565212358" duration="136000" />
+      <workItem from="1778565360636" duration="9758000" />
+      <workItem from="1778634706999" duration="38478000" />
+      <workItem from="1778752697688" duration="54379000" />
+      <workItem from="1779264473581" duration="145000" />
+      <workItem from="1779264697218" duration="55000" />
+      <workItem from="1779264772684" duration="381000" />
+      <workItem from="1779265238646" duration="1208000" />
+    </task>
+    <task id="LOCAL-00001" summary="Refactor : 내가 이해하기 쉽도록 func 수정">
+      <option name="closed" value="true" />
+      <created>1778652569480</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1778652569480</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Refactor : 내가 이해하기 쉽도록 func 수정">
+      <option name="closed" value="true" />
+      <created>1778652914389</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1778652914389</updated>
+    </task>
+    <task id="LOCAL-00003" summary="storyBook 라이브러리 추가">
+      <option name="closed" value="true" />
+      <created>1778654911705</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1778654911705</updated>
+    </task>
+    <task id="LOCAL-00004" summary="refactor : 아톰원칙에 따라 파일 이동">
+      <option name="closed" value="true" />
+      <created>1778654974356</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1778654974356</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat : 분자, 유기체 까지 컴포넌트 생성">
+      <option name="closed" value="true" />
+      <created>1778657162315</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1778657162315</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat : battleFeild 컴포넌트의 Storybooks 추가">
+      <option name="closed" value="true" />
+      <created>1778658204791</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1778658204791</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactor : 내가 이해하기 쉽도록 func 수정" />
+    <MESSAGE value="storyBook 라이브러리 추가" />
+    <MESSAGE value="refactor : 아톰원칙에 따라 파일 이동" />
+    <MESSAGE value="feat : 분자, 유기체 까지 컴포넌트 생성" />
+    <MESSAGE value="feat : battleFeild 컴포넌트의 Storybooks 추가" />
+    <MESSAGE value="feat : storybook 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : storybook 추가" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

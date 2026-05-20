@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import BattleFeild from './index';
+
+import BattleFeild from '../../organisms/battleFeild';
 
 type Story = StoryObj<typeof BattleFeild>;
 
@@ -9,6 +10,6 @@ const meta: Meta<typeof BattleFeild> = {
 
 export default meta;
 
-export const battleFeild: Story = {
+export const Default: Story = {
   args: {},
 };

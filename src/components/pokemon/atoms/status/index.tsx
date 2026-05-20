@@ -1,6 +1,7 @@
 'use client';
 
-import { useMemo } from 'react';
+import { type FC, useMemo } from 'react';
+import { status } from './index.css';
 
 type StatusProps = {
   hp: number;
@@ -9,21 +10,24 @@ type StatusProps = {
   speed: number;
 };
 
-function Status({ hp, attack, defense, speed }: StatusProps) {
+const Status: FC<StatusProps> = ({ hp, attack, defense, speed }) => {
   const isHpZero = useMemo(() => hp <= 0, [hp]);
 
   return (
     <div>
       <h2>Status</h2>
-      {isHpZero ? 'death' : `HP: ${hp}`}
-      <br />
-      Attack: {attack}
-      <br />
-      Defense: {defense}
-      <br />
-      Speed: {speed}
+
+      <div className={status}>
+        {isHpZero ? 'death' : `HP: ${hp}`}
+        <br />
+        Attack: {attack}
+        <br />
+        Defense: {defense}
+        <br />
+        Speed: {speed}
+      </div>
     </div>
   );
-}
+};
 
 export default Status;
