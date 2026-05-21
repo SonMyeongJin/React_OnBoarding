@@ -9,7 +9,11 @@ type ProfileProps = {
   isDead: boolean;
 };
 
-const Image: FC<ProfileProps> = ({ pokeName, imageUrl, isDead }) => {
+const Image: FC<ProfileProps> = ({
+  pokeName,
+  imageUrl,
+  isDead,
+}: ProfileProps) => {
   return (
     <div className={isDead ? dead : pokemonImage}>
       <img alt={pokeName} src={imageUrl} />

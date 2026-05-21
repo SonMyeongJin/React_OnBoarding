@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de85bd88-3201-4fc4-a0e9-c0bf4ba0b7ce" name="변경" comment="feat : skill damage Logic">
-      <change afterPath="$PROJECT_DIR$/src/components/pokemon/organisms/PokeCard/index.css.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/atoms/image/index.css.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/image/index.css.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pokemon/atoms/image/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/image/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/atoms/status/index.css.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/status/index.css.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/atoms/status/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/status/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pokemon/organisms/PokeCard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/organisms/PokeCard/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +20,7 @@
   <component name="CopilotChats">
     <option name="panelChat">
       <chat>
-        <option name="activeSessionId" value="ed9c9519-3af1-47ce-815b-59d9f3f5a05d" />
+        <option name="activeSessionId" value="83d5542a-4adb-4d8e-aa78-fc0f9d788d08" />
         <option name="sessions">
           <session>
             <option name="chatType" value="PANEL" />
@@ -108,6 +104,15 @@
             <option name="chatType" value="PANEL" />
             <option name="id" value="ed9c9519-3af1-47ce-815b-59d9f3f5a05d" />
             <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="83d5542a-4adb-4d8e-aa78-fc0f9d788d08" />
+            <option name="modeId" value="Agent" />
             <option name="modelType" value="builtin_family" />
             <option name="modelValue" value="auto" />
             <option name="status" value="Completed" />
@@ -202,7 +207,7 @@
     "nodejs_package_manager_path": "bun",
     "npm.Next.js: 서버 측.executor": "Debug",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "actions.on.save",
+    "settings.editor.selected.configurable": "proofread",
     "ts.external.directory.path": "/Users/RU1129/IdeaProjects/研修/React_OnBoarding/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -266,7 +271,7 @@
       <workItem from="1779265238646" duration="3484000" />
       <workItem from="1779269087746" duration="5756000" />
       <workItem from="1779330133903" duration="8189000" />
-      <workItem from="1779342407579" duration="8509000" />
+      <workItem from="1779342407579" duration="12007000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor : 내가 이해하기 쉽도록 func 수정">
       <option name="closed" value="true" />

@@ -5,7 +5,7 @@ import Skill from '../../atoms/skill';
 import Status from '../../atoms/status';
 import { pokeCardStyle } from './index.css';
 
-type PokeCardProps = ComponentProps<typeof Image> &
+type PokeCardProps = Omit<ComponentProps<typeof Image>, 'isDead'> &
   ComponentProps<typeof Status> &
   Omit<ComponentProps<typeof Skill>, 'onClick'> & {
     onClickMegaSinka: () => void;
@@ -13,7 +13,7 @@ type PokeCardProps = ComponentProps<typeof Image> &
   };
 
 const PokeCard: FC<PokeCardProps> = (props: PokeCardProps) => {
-  const isDead = props.hp <= 0;
+  const isDead: boolean = props.hp <= 0;
 
   return (
     <div className={pokeCardStyle}>
