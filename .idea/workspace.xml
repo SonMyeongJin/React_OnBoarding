@@ -7,8 +7,11 @@
     <list default="true" id="de85bd88-3201-4fc4-a0e9-c0bf4ba0b7ce" name="변경" comment="feat : storybook 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pokemon/atoms/skill/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/skill/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/atoms/status/index.css.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/status/index.css.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pokemon/atoms/status/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/atoms/status/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pokemon/entities/pokemon/getPokemon/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/entities/pokemon/getPokemon/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/organisms/PokeCard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/organisms/PokeCard/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/organisms/battleFeild/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/organisms/battleFeild/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +24,7 @@
   <component name="CopilotChats">
     <option name="panelChat">
       <chat>
-        <option name="activeSessionId" value="6e9234d5-5838-4a0a-a613-a503183ab888" />
+        <option name="activeSessionId" value="9b3ff3ca-55cb-4035-94db-130167ee888c" />
         <option name="sessions">
           <session>
             <option name="chatType" value="PANEL" />
@@ -40,6 +43,67 @@
             <option name="modelValue" value="auto" />
             <option name="targetType" value="LOCAL" />
           </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="4f32dcd2-5bb3-43ea-8827-5b9e08c238c9" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="162cab95-184d-464f-bfa1-c5b3bdf9d386" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="d4be0ea2-1fe2-4fa3-8ec8-e0aa498f54c7" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="5f989b0f-8988-4176-b7c8-07794f00bcfe" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="f4f59b2e-2620-40c9-a7ae-40628de4a98a" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="ec7bf8ba-ea89-40ad-a1b9-a439269628fa" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="9b3ff3ca-55cb-4035-94db-130167ee888c" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
         </option>
         <option name="type" value="PANEL" />
       </chat>
@@ -48,7 +112,14 @@
   <component name="CopilotPersistence">
     <persistenceIdMap>
       <entry key="_/Users/RU1129/IdeaProjects/연수/React_OnBoarding" value="3DZUXNaWzYpUdG7CsPsHRgPQags" />
+      <entry key="_/Users/RU1129/IdeaProjects/研修/React_OnBoarding" value="3E0zAgbBJpNg3BmnI3rfzO6Zgqt" />
     </persistenceIdMap>
+  </component>
+  <component name="CopilotUserSelectedModel">
+    <selectedModels>
+      <entry key="agent-panel" value="Auto" />
+      <entry key="chat-panel" value="Auto" />
+    </selectedModels>
   </component>
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="true" />
@@ -83,36 +154,50 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="3DZUXNaWzYpUdG7CsPsHRgPQags" />
+  <component name="ProjectSessionTemplates">
+    <option name="panelTemplate">
+      <template>
+        <option name="modeId" value="Ask" />
+        <option name="model">
+          <model>
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+          </model>
+        </option>
+        <option name="targetType" value="LOCAL" />
+      </template>
+    </option>
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="sortKey" value="BY_TIME_ASCENDING" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "code.cleanup.on.save": "true",
-    "git-widget-placeholder": "main",
-    "js.debugger.nextJs.config.created.client": "true",
-    "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "/Users/RU1129/IdeaProjects/연수/React_OnBoarding/src/components/BeforeStudy",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "bun",
-    "npm.Next.js: 서버 측.executor": "Debug",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "ts.external.directory.path": "/Users/RU1129/Library/Application Support/JetBrains/IntelliJIdea2025.2/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/RU1129/IdeaProjects/研修/React_OnBoarding&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;bun&quot;,
+    &quot;npm.Next.js: 서버 측.executor&quot;: &quot;Debug&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/RU1129/IdeaProjects/研修/React_OnBoarding/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/BeforeStudy" />
@@ -170,7 +255,9 @@
       <workItem from="1779264697218" duration="55000" />
       <workItem from="1779264772684" duration="381000" />
       <workItem from="1779265238646" duration="3484000" />
-      <workItem from="1779269087746" duration="463000" />
+      <workItem from="1779269087746" duration="5756000" />
+      <workItem from="1779330133903" duration="8189000" />
+      <workItem from="1779342407579" duration="3786000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor : 내가 이해하기 쉽도록 func 수정">
       <option name="closed" value="true" />

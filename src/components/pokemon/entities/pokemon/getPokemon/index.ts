@@ -29,11 +29,16 @@ const Hitokage = {
   speed: 50,
 } as const;
 
-export const usePokemon = (name: string) => {
+export function usePokemon(name: string) {
   const [isMegaSinka, setMegaSinka] = useState(false);
+  const [damagedHp, setHp] = useState(100);
 
   const onEvolution = useCallback(() => {
     setMegaSinka(true);
+  }, []);
+
+  const onDamage = useCallback((damageValue: number) => {
+    setHp((prevHP) => prevHP - damageValue);
   }, []);
 
   const pokemonData = useMemo(() => {
@@ -44,6 +49,7 @@ export const usePokemon = (name: string) => {
             ...Pikachu,
             attack: Pikachu.attack + 25,
             defense: Pikachu.defense + 25,
+            hp: damagedHp,
             imageUrl:
               'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png',
             speed: Pikachu.speed - 25,
@@ -55,8 +61,9 @@ export const usePokemon = (name: string) => {
         if (isMegaSinka) {
           return {
             ...Hitokage,
-            attake: Hitokage.attack + 25,
+            attack: Hitokage.attack + 25,
             defense: Hitokage.defense + 25,
+            hp: damagedHp,
             imageUrl:
               'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png',
             speed: Hitokage.speed - 5,
@@ -67,7 +74,8 @@ export const usePokemon = (name: string) => {
       default:
         return null;
     }
-  }, [name, isMegaSinka]);
-  return [pokemonData, { onEvolution }] as const;
-};
+  }, [name, isMegaSinka, damagedHp]);
+
+  return [pokemonData, { onDamage, onEvolution }] as const;
+}
 // const 변경할때 없을때 만 쓴다.

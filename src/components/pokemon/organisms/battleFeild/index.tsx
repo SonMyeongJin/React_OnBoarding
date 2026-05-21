@@ -4,22 +4,36 @@ import PokeCard from '../PokeCard';
 import { battleField, enemyStyle, playerStyle } from './index.css';
 
 const BattleFeild: FC = () => {
-  const [playerPokemon, { onEvolution: onPlayerEvolution }] =
-    usePokemon('Pikachu');
-  const [enemyPokemon, { onEvolution: onEnemyEvolution }] =
-    usePokemon('Hitokage');
+  // usePokemon return 값이 [pokemonData, { onEvolution, onDamage }]
+  const [
+    playerPokemon,
+    { onDamage: onPlayerDamage, onEvolution: onPlayerEvolution },
+  ] = usePokemon('Pikachu');
+
+  const [
+    enemyPokemon,
+    { onDamage: onEnemyDamage, onEvolution: onEnemyEvolution },
+  ] = usePokemon('Hitokage');
 
   return (
     <div className={battleField}>
       <div className={playerStyle}>
         {playerPokemon && (
-          <PokeCard {...playerPokemon} onClickMegaSinka={onPlayerEvolution} />
+          <PokeCard
+            {...playerPokemon}
+            onClickDamage={() => onEnemyDamage(10)}
+            onClickMegaSinka={onPlayerEvolution}
+          />
         )}
       </div>
 
       <div className={enemyStyle}>
         {enemyPokemon && (
-          <PokeCard {...enemyPokemon} onClickMegaSinka={onEnemyEvolution} />
+          <PokeCard
+            {...enemyPokemon}
+            onClickDamage={() => onPlayerDamage(10)}
+            onClickMegaSinka={onEnemyEvolution}
+          />
         )}
       </div>
     </div>

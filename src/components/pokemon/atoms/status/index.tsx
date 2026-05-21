@@ -1,7 +1,7 @@
 'use client';
 
 import { type FC, useMemo } from 'react';
-import { status } from './index.css';
+import { hpFill, status } from './index.css';
 
 type StatusProps = {
   hp: number;
@@ -11,12 +11,26 @@ type StatusProps = {
 };
 
 const Status: FC<StatusProps> = ({ hp, attack, defense, speed }) => {
-  const isHpZero = useMemo(() => hp <= 0, [hp]);
+  const _isHpZero = useMemo(() => hp <= 0, [hp]);
+
+  const hpColor = useMemo(() => {
+    if (hp > 60) {
+      return '#22c55e';
+    }
+    if (hp > 30) {
+      return '#f59e0b';
+    }
+    return '#ef4444';
+  }, [hp]);
 
   return (
     <div>
       <div className={status}>
-        {isHpZero ? 'death' : `HP: ${hp}`}
+        {/*{isHpZero ? 'death' : `HP: ${hp}`}*/}
+        <div
+          className={hpFill}
+          style={{ backgroundColor: hpColor, width: `${hp}%` }}
+        />
         <br />
         Attack: {attack}
         <br />

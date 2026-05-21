@@ -4,10 +4,11 @@ import MegaButton from '../../atoms/megaButton';
 import Skill from '../../atoms/skill';
 import Status from '../../atoms/status';
 
-type PokeCardProps = ComponentProps<typeof Image> & // sinka前のやつ
+type PokeCardProps = ComponentProps<typeof Image> &
   ComponentProps<typeof Status> &
-  ComponentProps<typeof Skill> & {
+  Omit<ComponentProps<typeof Skill>, 'onClick'> & {
     onClickMegaSinka: () => void;
+    onClickDamage: () => void;
   };
 
 const PokeCard: FC<PokeCardProps> = (props: PokeCardProps) => {
@@ -15,7 +16,7 @@ const PokeCard: FC<PokeCardProps> = (props: PokeCardProps) => {
     <div className="poke-card">
       <Image {...props} />
       <Status {...props} />
-      <Skill {...props} />
+      <Skill {...props} onClick={props.onClickDamage} />
       <MegaButton onClick={props.onClickMegaSinka} />
     </div>
   );

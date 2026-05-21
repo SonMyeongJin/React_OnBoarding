@@ -8,18 +8,27 @@ type skillProps = {
   skill2: string;
   skill3: string;
   skill4: string;
+  onClick: () => void;
 };
 
-const Skill: FC<skillProps> = ({ skill1, skill2, skill3, skill4 }) => {
+const Skill: FC<skillProps> = ({ skill1, skill2, skill3, skill4, onClick }) => {
   return (
     <div>
-      <div className={skill}>skill1: {skill1}</div>
+      <button className={skill} onClick={onClick} type="button">
+        skill1: {skill1}
+      </button>
 
-      <div className={skill}>skill2: {skill2}</div>
+      <button className={skill} onClick={onClick} type="button">
+        skill2: {skill2}
+      </button>
 
-      <div className={skill}>skill3: {skill3}</div>
+      <button className={skill} onClick={onClick} type="button">
+        skill3: {skill3}
+      </button>
 
-      <div className={skill}>skill4: {skill4}</div>
+      <button className={skill} onClick={onClick} type="button">
+        skill4: {skill4}
+      </button>
     </div>
   );
 };
