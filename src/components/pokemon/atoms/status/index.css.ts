@@ -7,3 +7,9 @@ export const status = style({
   margin: '10px',
   padding: '10px',
 });
+
+export const hpBar = style({
+  border: '1px solid #cbd5e1',
+  height: '6px',
+  transition: 'width 0.2s ease',
+});

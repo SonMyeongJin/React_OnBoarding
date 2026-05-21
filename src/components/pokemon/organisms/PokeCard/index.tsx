@@ -3,6 +3,7 @@ import Image from '../../atoms/image';
 import MegaButton from '../../atoms/megaButton';
 import Skill from '../../atoms/skill';
 import Status from '../../atoms/status';
+import { pokeCardStyle } from './index.css';
 
 type PokeCardProps = ComponentProps<typeof Image> &
   ComponentProps<typeof Status> &
@@ -12,9 +13,15 @@ type PokeCardProps = ComponentProps<typeof Image> &
   };
 
 const PokeCard: FC<PokeCardProps> = (props: PokeCardProps) => {
+  const isDead = props.hp <= 0;
+
   return (
-    <div className="poke-card">
-      <Image {...props} />
+    <div className={pokeCardStyle}>
+      <Image
+        imageUrl={props.imageUrl}
+        isDead={isDead}
+        pokeName={props.pokeName}
+      />
       <Status {...props} />
       <Skill {...props} onClick={props.onClickDamage} />
       <MegaButton onClick={props.onClickMegaSinka} />

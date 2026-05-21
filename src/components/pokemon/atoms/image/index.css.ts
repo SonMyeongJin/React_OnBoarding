@@ -9,7 +9,22 @@ const floatUpDown = keyframes({
   },
 });
 
+const fadeOut = keyframes({
+  '0%': {
+    opacity: 1,
+  },
+  '100%': {
+    opacity: 0,
+  },
+});
+
 export const pokemonImage = style({
   animation: `${floatUpDown} 1.6s ease-in-out infinite`,
   display: 'flex',
+});
+
+export const dead = style({
+  animation: `${fadeOut} 2s ease-out forwards`,
+  display: 'flex',
+  rotate: '90deg',
 });

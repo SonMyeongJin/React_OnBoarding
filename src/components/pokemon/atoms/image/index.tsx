@@ -1,16 +1,17 @@
 'use client';
 
 import type { FC } from 'react';
-import { pokemonImage } from './index.css';
+import { dead, pokemonImage } from './index.css';
 
 type ProfileProps = {
   pokeName: string;
   imageUrl: string;
+  isDead: boolean;
 };
 
-const Image: FC<ProfileProps> = ({ pokeName, imageUrl }) => {
+const Image: FC<ProfileProps> = ({ pokeName, imageUrl, isDead }) => {
   return (
-    <div className={pokemonImage}>
+    <div className={isDead ? dead : pokemonImage}>
       <img alt={pokeName} src={imageUrl} />
     </div>
   );
