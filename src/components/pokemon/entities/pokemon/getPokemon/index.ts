@@ -55,7 +55,10 @@ export function usePokemon(name: string) {
             speed: Pikachu.speed - 25,
           };
         }
-        return Pikachu;
+        return {
+          ...Pikachu,
+          hp: damagedHp,
+        };
 
       case 'Hitokage':
         if (isMegaSinka) {
@@ -69,7 +72,10 @@ export function usePokemon(name: string) {
             speed: Hitokage.speed - 5,
           };
         }
-        return Hitokage;
+        return {
+          ...Hitokage,
+          hp: damagedHp,
+        };
 
       default:
         return null;
@@ -78,4 +84,5 @@ export function usePokemon(name: string) {
 
   return [pokemonData, { onDamage, onEvolution }] as const;
 }
+
 // const 변경할때 없을때 만 쓴다.
