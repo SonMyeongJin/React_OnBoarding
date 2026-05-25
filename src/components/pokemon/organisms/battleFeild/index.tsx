@@ -4,7 +4,9 @@ import PokeCard from '../PokeCard';
 import { battleField, enemyStyle, playerStyle } from './index.css';
 
 const BattleFeild: FC = () => {
-  // usePokemon return 값이 [pokemonData, { onEvolution, onDamage }]
+  // turn ロジクは画面変化を探知する必要はないので、UseStateは使わない。
+  const isPlayerTurn = true;
+
   const [
     playerPokemon,
     { onDamage: onPlayerDamage, onEvolution: onPlayerEvolution },
@@ -21,7 +23,8 @@ const BattleFeild: FC = () => {
         {playerPokemon && (
           <PokeCard
             {...playerPokemon}
-            onClickDamage={() => onEnemyDamage(10)}
+            // isPlayerTurn これ　共有できない。。？
+            onClickDamage={() => onEnemyDamage(10, isPlayerTurn)}
             onClickMegaSinka={onPlayerEvolution}
           />
         )}
@@ -32,7 +35,7 @@ const BattleFeild: FC = () => {
           <PokeCard
             {...enemyPokemon}
             // OnClickDamageは　PokeCardで　ただ執行することだけする。だから　onEnemyDamage　が動く。
-            onClickDamage={() => onPlayerDamage(10)}
+            onClickDamage={() => onPlayerDamage(10, isPlayerTurn)}
             onClickMegaSinka={onEnemyEvolution}
           />
         )}

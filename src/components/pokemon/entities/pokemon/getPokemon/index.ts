@@ -39,11 +39,12 @@ type Pokemon = {
   speed: number;
 };
 
-export function usePokemon(
-  name: string,
-): readonly [
+export function usePokemon(name: string): readonly [
   Pokemon | null,
-  { onDamage: (damageValue: number) => void; onEvolution: () => void },
+  {
+    onDamage: (damageValue: number, isTurn: boolean) => void;
+    onEvolution: () => void;
+  },
 ] {
   const [isMegaSinka, setMegaSinka] = useState(false);
   const [hp, setHp] = useState(100);
@@ -55,8 +56,13 @@ export function usePokemon(
     setMegaSinka(true);
   }, []);
 
-  const onDamage = useCallback((damageValue: number) => {
-    setHp((prevHP) => prevHP - damageValue);
+  const onDamage = useCallback((damageValue: number, isTurn: boolean) => {
+    if (isTurn) {
+      console.log(isTurn);
+      setHp((prevHP) => prevHP - damageValue);
+      isTurn = false;
+      console.log(isTurn);
+    }
   }, []);
 
   const pokemonData: Pokemon | null = useMemo(() => {
@@ -93,10 +99,6 @@ export function usePokemon(
           { pp: 25, skillName: Hitokage.skill3, skillType: 'fire' },
           { pp: 15, skillName: Hitokage.skill4, skillType: 'fire' },
         ];
-
-        // function DamageLogic() {
-        //
-        // }
 
         if (isMegaSinka) {
           return {
