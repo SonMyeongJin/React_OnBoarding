@@ -23,27 +23,32 @@ export const Pikachu: Story = {
 
     pokeName: 'pikacnu',
 
-    skill1: 'Thunderbolt',
-    skill2: 'Quick Attack',
-    skill3: 'Iron Tail',
-    skill4: 'Electro Ball',
+    skills: [
+      { pp: 15, skillName: 'thunderbolt', skillType: 'electric' },
+      { pp: 30, skillName: 'tackle', skillType: 'normal' },
+      { pp: 20, skillName: 'iron tail', skillType: 'steel' },
+      { pp: 10, skillName: 'volt tackle', skillType: 'electric' },
+    ],
     speed: 20,
   },
 };
 export const Hitokage: Story = {
   args: {
-    attack: 33,
-    defense: 22,
-    hp: 255,
+    attack: 50,
+    defense: 30,
+    hp: 100,
 
-    imageUrl:
+    imageUrl: // normal
       'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png',
+
     pokeName: 'hitokage',
 
-    skill1: 'Flamethrower',
-    skill2: 'Scratch',
-    skill3: 'Ember',
-    skill4: 'Fire Spin',
-    speed: 11,
+    skills: [
+      { pp: 15, skillName: 'fireball', skillType: 'electric' },
+      { pp: 30, skillName: 'tackle', skillType: 'normal' },
+      { pp: 20, skillName: 'iron tail', skillType: 'steel' },
+      { pp: 10, skillName: 'volt tackle', skillType: 'electric' },
+    ],
+    speed: 20,
   },
 };
