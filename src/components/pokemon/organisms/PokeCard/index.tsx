@@ -1,13 +1,14 @@
 import type { ComponentProps, FC } from 'react';
 import Image from '../../atoms/image';
 import MegaButton from '../../atoms/megaButton';
-import Skill from '../../atoms/skill';
 import Status from '../../atoms/status';
+import Skills from '../../molecules/skills';
 import { pokeCardStyle } from './index.css';
 
 type PokeCardProps = Omit<ComponentProps<typeof Image>, 'isDead'> &
   ComponentProps<typeof Status> &
-  Omit<ComponentProps<typeof Skill>, 'onClick'> & {
+  Omit<ComponentProps<typeof Skills>, 'onClick'> & {
+    // onClick 제외
     onClickMegaSinka: () => void;
     onClickDamage: () => void;
   };
@@ -23,7 +24,7 @@ const PokeCard: FC<PokeCardProps> = (props: PokeCardProps) => {
         pokeName={props.pokeName}
       />
       <Status {...props} />
-      <Skill {...props} onClick={props.onClickDamage} />
+      <Skills {...props} onClick={props.onClickDamage} />
       <MegaButton onClick={props.onClickMegaSinka} />
     </div>
   );
