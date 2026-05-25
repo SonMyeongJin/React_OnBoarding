@@ -31,6 +31,7 @@ const BattleFeild: FC = () => {
         {enemyPokemon && (
           <PokeCard
             {...enemyPokemon}
+            // OnClickDamageは　PokeCardで　ただ執行することだけする。だから　onEnemyDamage　が動く。
             onClickDamage={() => onEnemyDamage(10)}
             onClickMegaSinka={onEnemyEvolution}
           />

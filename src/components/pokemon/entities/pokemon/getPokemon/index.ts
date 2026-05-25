@@ -32,7 +32,7 @@ const Hitokage = {
 type Pokemon = {
   pokeName: string;
   imageUrl: string;
-  skills: { skillName: string }[];
+  skills: { skillName: string; skillType: string; pp: number }[];
   attack: number;
   defense: number;
   hp: number;
@@ -63,10 +63,10 @@ export function usePokemon(
     switch (name) {
       case 'Pikachu': {
         const pikaSkills = [
-          { skillName: Pikachu.skill1 },
-          { skillName: Pikachu.skill2 },
-          { skillName: Pikachu.skill3 },
-          { skillName: Pikachu.skill4 },
+          { pp: 15, skillName: Pikachu.skill1, skillType: 'Electric' },
+          { pp: 30, skillName: Pikachu.skill2, skillType: 'Normal' },
+          { pp: 20, skillName: Pikachu.skill3, skillType: 'Steel' },
+          { pp: 10, skillName: Pikachu.skill4, skillType: 'Electric' },
         ];
 
         if (isMegaSinka) {
@@ -88,10 +88,10 @@ export function usePokemon(
 
       case 'Hitokage': {
         const hitokageSkills = [
-          { skillName: Hitokage.skill1 },
-          { skillName: Hitokage.skill2 },
-          { skillName: Hitokage.skill3 },
-          { skillName: Hitokage.skill4 },
+          { pp: 10, skillName: Hitokage.skill1, skillType: 'fire' },
+          { pp: 35, skillName: Hitokage.skill2, skillType: 'normal' },
+          { pp: 25, skillName: Hitokage.skill3, skillType: 'fire' },
+          { pp: 15, skillName: Hitokage.skill4, skillType: 'fire' },
         ];
 
         // function DamageLogic() {

@@ -4,7 +4,8 @@ import type { ComponentProps, FC } from 'react';
 import Skill from '../../atoms/skill';
 
 type SkillsProps = {
-  skills: Pick<ComponentProps<typeof Skill>, 'skillName'>[];
+  // Omit <Component, "a" >  -> aを　捨てて　残るComponentPropsを取る意味。
+  skills: Omit<ComponentProps<typeof Skill>, 'onClick'>[];
   onClick(): void;
 };
 
@@ -14,9 +15,10 @@ const Skills: FC<SkillsProps> = (props) => {
       <Skill
         {...x}
         key={x.skillName}
+        // ここは　skill　の　onClick　ではなく、上の　SkillsProps　の　onClick　だ。
         onClick={props.onClick}
-        pp={0}
-        skillType=""
+        pp={x.pp}
+        skillType={x.skillType}
       />
     );
   });
