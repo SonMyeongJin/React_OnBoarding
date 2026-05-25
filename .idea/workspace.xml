@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de85bd88-3201-4fc4-a0e9-c0bf4ba0b7ce" name="변경" comment="gitignore 수정">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -351,7 +350,7 @@
       <workItem from="1779330133903" duration="8189000" />
       <workItem from="1779342407579" duration="40102000" />
       <workItem from="1779679450548" duration="5673000" />
-      <workItem from="1779688718306" duration="102000" />
+      <workItem from="1779688718306" duration="164000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor : 내가 이해하기 쉽도록 func 수정">
       <option name="closed" value="true" />
@@ -441,7 +440,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779688641487</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="gitignore 수정">
+      <option name="closed" value="true" />
+      <created>1779688873149</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1779688873149</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
