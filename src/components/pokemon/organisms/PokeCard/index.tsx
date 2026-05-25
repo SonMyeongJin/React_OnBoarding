@@ -3,7 +3,7 @@ import Image from '../../atoms/image';
 import MegaButton from '../../atoms/megaButton';
 import Status from '../../atoms/status';
 import Skills from '../../molecules/skills';
-import { pokeCardStyle } from './index.css';
+import { pokeCardStyle, skillsStyle } from './index.css';
 
 type PokeCardProps =
   // Image compoenet で　”isDead”　を　捨てて　残る　ComponentPropsを取る。
@@ -26,7 +26,10 @@ const PokeCard: FC<PokeCardProps> = (props: PokeCardProps) => {
         pokeName={props.pokeName}
       />
       <Status {...props} />
-      <Skills {...props} onClick={props.onClickDamage} />
+      <div className={skillsStyle}>
+        <Skills {...props} onClick={props.onClickDamage} />
+      </div>
+
       <MegaButton onClick={props.onClickMegaSinka} />
     </div>
   );

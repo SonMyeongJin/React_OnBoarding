@@ -25,6 +25,6 @@ export const pokemonImage = style({
 
 export const dead = style({
   animation: `${fadeOut} 2s ease-out forwards`,
-  display: 'flex',
+  display: 'inline-flex',
   rotate: '90deg',
 });
