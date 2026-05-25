@@ -32,4 +32,6 @@ storybook-static
 next-env.d.ts
 tsconfig.tsbuildinfo
 vitest.shims.d.ts
-.workspace
+
+
+.idea

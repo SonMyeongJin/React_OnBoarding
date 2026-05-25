@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de85bd88-3201-4fc4-a0e9-c0bf4ba0b7ce" name="변경" comment="feat : skill damage Logic">
+    <list default="true" id="de85bd88-3201-4fc4-a0e9-c0bf4ba0b7ce" name="변경" comment="gitignore 수정">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/entities/pokemon/getPokemon/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/entities/pokemon/getPokemon/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +19,7 @@
   <component name="CopilotChats">
     <option name="panelChat">
       <chat>
-        <option name="activeSessionId" value="83d5542a-4adb-4d8e-aa78-fc0f9d788d08" />
+        <option name="activeSessionId" value="55663470-6a9a-4bd2-b86c-615534ff978f" />
         <option name="sessions">
           <session>
             <option name="chatType" value="PANEL" />
@@ -117,6 +117,85 @@
             <option name="status" value="Completed" />
             <option name="targetType" value="LOCAL" />
           </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="5ac8bb9e-b8b4-4727-8f95-048a262c32c0" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="9b782a35-1f3c-465c-8948-3d5d33491b28" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="b8a9a157-e3f9-4244-8e56-03628790b6f6" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="5119ff2a-649b-4738-994f-a0766156a292" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="b3e40764-ec40-4f93-88c6-3c737d29fc5b" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="838d1b71-9435-46d4-8ee0-0cf789c350b7" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="gpt-5.5" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="4c6dcfad-c61c-4ed9-aebe-d54e7f87f72b" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="24ce31d9-8df5-4f9f-bada-bdf8489eba78" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="55663470-6a9a-4bd2-b86c-615534ff978f" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
         </option>
         <option name="type" value="PANEL" />
       </chat>
@@ -170,7 +249,7 @@
   <component name="ProjectSessionTemplates">
     <option name="panelTemplate">
       <template>
-        <option name="modeId" value="Agent" />
+        <option name="modeId" value="Ask" />
         <option name="model">
           <model>
             <option name="modelType" value="builtin_family" />
@@ -186,45 +265,45 @@
     <option name="showLibraryContents" value="true" />
     <option name="sortKey" value="BY_TIME_ASCENDING" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "code.cleanup.on.save": "true",
-    "git-widget-placeholder": "main",
-    "js.debugger.nextJs.config.created.client": "true",
-    "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "/Users/RU1129/IdeaProjects/研修/React_OnBoarding/src/components/pokemon/organisms/PokeCard",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "bun",
-    "npm.Next.js: 서버 측.executor": "Debug",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "proofread",
-    "ts.external.directory.path": "/Users/RU1129/IdeaProjects/研修/React_OnBoarding/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/RU1129/IdeaProjects/研修/React_OnBoarding/src/components/pokemon/atoms&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;bun&quot;,
+    &quot;npm.Next.js: 서버 측.executor&quot;: &quot;Debug&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.AIAssistantPromptsLibrary&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/RU1129/IdeaProjects/研修/React_OnBoarding/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/pokemon/atoms" />
       <recent name="$PROJECT_DIR$/src/components/pokemon/organisms/PokeCard" />
       <recent name="$PROJECT_DIR$/src/components/BeforeStudy" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/components/pokemon/atoms/megaButton" />
-      <recent name="$PROJECT_DIR$/src/components/pokemon/atoms/image" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/pokemon/molecules" />
       <recent name="$PROJECT_DIR$/src/components/pokemon" />
       <recent name="$PROJECT_DIR$/src/components/pokemon/atoms/skill" />
       <recent name="$PROJECT_DIR$/src/components/pokemon/organisms" />
       <recent name="$PROJECT_DIR$/src/moreconCopy/Atoms/NaviBar" />
-      <recent name="$PROJECT_DIR$/src/moreconCopy/atoms/NaviBar" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: 서버 측">
@@ -270,7 +349,9 @@
       <workItem from="1779265238646" duration="3484000" />
       <workItem from="1779269087746" duration="5756000" />
       <workItem from="1779330133903" duration="8189000" />
-      <workItem from="1779342407579" duration="17583000" />
+      <workItem from="1779342407579" duration="40102000" />
+      <workItem from="1779679450548" duration="5673000" />
+      <workItem from="1779688718306" duration="102000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor : 내가 이해하기 쉽도록 func 수정">
       <option name="closed" value="true" />
@@ -328,7 +409,39 @@
       <option name="project" value="LOCAL" />
       <updated>1779346266926</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Refactor : skillをMolesとatomsで分離する">
+      <option name="closed" value="true" />
+      <created>1779680538751</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1779680538751</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Refactor : スキルのpropsの要素を上位のHooks段階から徐々に原子まで渡します。（skillName、skillType、pp）">
+      <option name="closed" value="true" />
+      <created>1779688329242</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1779688329242</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Refactor : 以前の修正による storybook シナリオの再作成と css の整理">
+      <option name="closed" value="true" />
+      <created>1779688556364</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1779688556364</updated>
+    </task>
+    <task id="LOCAL-00011" summary="gitignore 수정">
+      <option name="closed" value="true" />
+      <created>1779688641487</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1779688641487</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,7 +455,11 @@
     <MESSAGE value="feat : battleFeild 컴포넌트의 Storybooks 추가" />
     <MESSAGE value="feat : storybook 추가" />
     <MESSAGE value="feat : skill damage Logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : skill damage Logic" />
+    <MESSAGE value="Refactor : skillをMolesとatomsで分離する" />
+    <MESSAGE value="Refactor : スキルのpropsの要素を上位のHooks段階から徐々に原子まで渡します。（skillName、skillType、pp）" />
+    <MESSAGE value="Refactor : 以前の修正による storybook シナリオの再作成と css の整理" />
+    <MESSAGE value="gitignore 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore 수정" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
