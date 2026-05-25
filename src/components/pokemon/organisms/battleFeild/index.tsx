@@ -21,7 +21,7 @@ const BattleFeild: FC = () => {
         {playerPokemon && (
           <PokeCard
             {...playerPokemon}
-            onClickDamage={() => onPlayerDamage(10)}
+            onClickDamage={() => onEnemyDamage(10)}
             onClickMegaSinka={onPlayerEvolution}
           />
         )}
@@ -32,7 +32,7 @@ const BattleFeild: FC = () => {
           <PokeCard
             {...enemyPokemon}
             // OnClickDamageは　PokeCardで　ただ執行することだけする。だから　onEnemyDamage　が動く。
-            onClickDamage={() => onEnemyDamage(10)}
+            onClickDamage={() => onPlayerDamage(10)}
             onClickMegaSinka={onEnemyEvolution}
           />
         )}
