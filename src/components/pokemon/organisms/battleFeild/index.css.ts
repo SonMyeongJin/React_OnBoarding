@@ -8,6 +8,7 @@ export const battleField = style({
   boxSizing: 'border-box',
   color: '#172033',
   display: 'flex',
+  // アイテムを配置する際は、上下方向に配置するという意味だ
   flexDirection: 'column',
   fontFamily:
     '"Courier New", "MS Gothic", "Hiragino Kaku Gothic ProN", monospace',
@@ -20,15 +21,16 @@ export const battleField = style({
 });
 
 export const playerStyle = style({
-  alignSelf: 'flex-start',
   display: 'flex',
+  // 一番左に位置
   justifyContent: 'flex-start',
+  // 上からflex性で上下に配置されるとき 1番目から上から下へ配置される
   order: 2,
 });
 
 export const enemyStyle = style({
-  alignSelf: 'flex-end',
   display: 'flex',
+  // 一番右に位置
   justifyContent: 'flex-end',
   order: 1,
 });

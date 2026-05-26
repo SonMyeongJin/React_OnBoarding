@@ -1,4 +1,4 @@
-import { keyframes, style } from '@vanilla-extract/css';
+import { globalStyle, keyframes, style } from '@vanilla-extract/css';
 
 const floatUpDown = keyframes({
   '0%, 100%': {
@@ -25,14 +25,14 @@ export const pokemonImage = style({
   display: 'grid',
   minHeight: '112px',
   placeItems: 'center',
-  selectors: {
-    '& img': {
-      filter: 'drop-shadow(3px 3px 0 rgba(15, 23, 42, 0.28))',
-      height: '112px',
-      imageRendering: 'pixelated',
-      width: '112px',
-    },
-  },
+});
+
+globalStyle(`${pokemonImage} img`, {
+  filter: 'drop-shadow(3px 3px 0 rgba(15, 23, 42, 0.28))',
+  height: '112px',
+  // image を大きくにする場合、Imag Rendering を pixelated にすることで、ドット絵のような見た目を維持できる
+  imageRendering: 'pixelated',
+  width: '112px',
 });
 
 export const dead = style({
@@ -41,12 +41,12 @@ export const dead = style({
   minHeight: '112px',
   placeItems: 'center',
   rotate: '90deg',
-  selectors: {
-    '& img': {
-      filter: 'grayscale(1)',
-      height: '112px',
-      imageRendering: 'pixelated',
-      width: '112px',
-    },
-  },
+});
+
+globalStyle(`${dead} img`, {
+  // grayscale => 白黒転換
+  filter: 'grayscale(1)',
+  height: '112px',
+  imageRendering: 'pixelated',
+  width: '112px',
 });
