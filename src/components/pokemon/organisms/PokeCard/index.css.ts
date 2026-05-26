@@ -1,12 +1,26 @@
 import { style } from '@vanilla-extract/css';
 
 export const pokeCardStyle = style({
-  border: '7px double black',
-  borderRadius: '10px',
-  padding: '20px',
+  background: '#f8fafc',
+  border: '4px solid #111827',
+  borderRadius: '2px',
+  boxShadow: '4px 4px 0 #4b5563',
+  boxSizing: 'border-box',
+  display: 'grid',
+  gap: '12px 16px',
+  gridTemplateColumns: '128px 1fr',
+  padding: '12px',
+  width: '320px',
 });
 
 export const skillsStyle = style({
-  border: '7px double black',
-  borderRadius: '10px',
+  background: '#f8fafc',
+  border: '4px double #111827',
+  borderRadius: '2px',
+  boxShadow: '0 0 0 2px #e2e8f0 inset',
+  display: 'grid',
+  gap: '2px 10px',
+  gridColumn: '1 / -1',
+  gridTemplateColumns: '1fr 1fr',
+  padding: '8px 10px',
 });

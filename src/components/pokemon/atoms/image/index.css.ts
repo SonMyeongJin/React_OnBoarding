@@ -5,7 +5,7 @@ const floatUpDown = keyframes({
     transform: 'translateY(0)',
   },
   '50%': {
-    transform: 'translateY(-8px)',
+    transform: 'translateY(-4px)',
   },
 });
 
@@ -19,12 +19,34 @@ const fadeOut = keyframes({
 });
 
 export const pokemonImage = style({
-  animation: `${floatUpDown} 1.6s ease-in-out infinite`,
-  display: 'flex',
+  animation: `${floatUpDown} 1.8s steps(2, end) infinite`,
+  background:
+    'radial-gradient(ellipse at center, rgba(71, 85, 105, 0.25) 0 38%, transparent 39%)',
+  display: 'grid',
+  minHeight: '112px',
+  placeItems: 'center',
+  selectors: {
+    '& img': {
+      filter: 'drop-shadow(3px 3px 0 rgba(15, 23, 42, 0.28))',
+      height: '112px',
+      imageRendering: 'pixelated',
+      width: '112px',
+    },
+  },
 });
 
 export const dead = style({
   animation: `${fadeOut} 2s ease-out forwards`,
-  display: 'inline-flex',
+  display: 'grid',
+  minHeight: '112px',
+  placeItems: 'center',
   rotate: '90deg',
+  selectors: {
+    '& img': {
+      filter: 'grayscale(1)',
+      height: '112px',
+      imageRendering: 'pixelated',
+      width: '112px',
+    },
+  },
 });
