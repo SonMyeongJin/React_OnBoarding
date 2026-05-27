@@ -1,71 +1,71 @@
-import { type FC, useState } from 'react';
-import { useBattle } from '../../entities/pokemon/battlePokemon';
-import { usePokemon } from '../../entities/pokemon/getPokemon';
+import {type FC, useState} from 'react';
+import {useBattle} from '../../entities/pokemon/battlePokemon';
+import {usePokemon} from '../../entities/pokemon/getPokemon';
 import PokeCard from '../PokeCard';
-import { battleField, enemyStyle, playerStyle } from './index.css';
+import {battleField, enemyStyle, playerStyle} from './index.css';
 
 const BattleFeild: FC = () => {
-  // turn ロジクは画面変化を探知する必要はないので、UseStateは使わない。
-  const [isPlayerTurn, setIsPlayerTurn] = useState(true);
-  const [playerPokemon, setPlayerPokemon] = usePokemon('Pikachu');
-  const [enemyPokemon, setEnemyPokemon] = usePokemon('Hitokage');
+    // turn ロジクは画面変化を探知する必要はないので、UseStateは使わない。
+    const [isPlayerTurn, setIsPlayerTurn] = useState(true);
+    const [playerPokemon, setPlayerPokemon] = usePokemon('Pikachu');
+    const [enemyPokemon, setEnemyPokemon] = usePokemon('Hitokage');
 
-  if (playerPokemon === null || enemyPokemon === null) {
-    return <div>playerPokemon or enemyPokemon null</div>;
-  }
+    if (playerPokemon === null || enemyPokemon === null) {
+        return <div>playerPokemon or enemyPokemon null</div>;
+    }
 
-  const [_playerState, _playerActions] = useBattle(
-    playerPokemon,
-    setPlayerPokemon,
-  );
-  const [_enemyState, _enemyAction] = useBattle(enemyPokemon, setEnemyPokemon);
+    const [_playerState, _playerActions] = useBattle(
+        playerPokemon,
+        setPlayerPokemon,
+    );
+    const [_enemyState, _enemyAction] = useBattle(enemyPokemon, setEnemyPokemon);
 
-  // const [
-  //     playerPokemon,
-  //     {onDamage: onPlayerDamage, onEvolution: onPlayerEvolution},
-  // ] = usePokemon('Pikachu');
-  //
-  // const [
-  //     enemyPokemon,
-  // ] = usePokemon('Hitokage');
+    // const [
+    //     playerPokemon,
+    //     {onDamage: onPlayerDamage, onEvolution: onPlayerEvolution},
+    // ] = usePokemon('Pikachu');
+    //
+    // const [
+    //     enemyPokemon,
+    // ] = usePokemon('Hitokage');
 
-  // 배틀
-  // Const pokemon= usePokemon(‘Pikachu’);
-  // Const [{hp }, {onDamage, onMegaShinka}] = useBattle(pokemon);
+    // 배틀
+    // Const pokemon= usePokemon(‘Pikachu’);
+    // Const [{hp }, {onDamage, onMegaShinka}] = useBattle(pokemon);
 
-  return (
-    <div className={battleField}>
-      <div className={playerStyle}>
-        {playerPokemon && (
-          <PokeCard
-            {...playerPokemon}
-            isUIActive={isPlayerTurn}
-            // isPlayerTurn これ　共有できない。。？
-            onClickDamage={() => {
-              onEnemyDamage(10);
-              setIsPlayerTurn(false);
-            }}
-            onClickMegaSinka={onPlayerEvolution}
-          />
-        )}
-      </div>
+    return (
+        <div className={battleField}>
+            <div className={playerStyle}>
+                {playerPokemon && (
+                    <PokeCard
+                        {...playerPokemon}
+                        isSkillsActive={isPlayerTurn}
+                        // isPlayerTurn これ　共有できない。。？
+                        onClickDamage={() => {
+                            onEnemyDamage(10);
+                            setIsPlayerTurn(false);
+                        }}
+                        onClickMegaSinka={onPlayerEvolution}
+                    />
+                )}
+            </div>
 
-      <div className={enemyStyle}>
-        {enemyPokemon && (
-          <PokeCard
-            {...enemyPokemon}
-            isUIActive={!isPlayerTurn}
-            // OnClickDamageは　PokeCardで　ただ執行することだけする。だから　onEnemyDamage　が動く。
-            onClickDamage={() => {
-              onPlayerDamage(10);
-              setIsPlayerTurn(true);
-            }}
-            onClickMegaSinka={onEnemyEvolution}
-          />
-        )}
-      </div>
-    </div>
-  );
+            <div className={enemyStyle}>
+                {enemyPokemon && (
+                    <PokeCard
+                        {...enemyPokemon}
+                        isSkillsActive={!isPlayerTurn}
+                        // OnClickDamageは　PokeCardで　ただ執行することだけする。だから　onEnemyDamage　が動く。
+                        onClickDamage={() => {
+                            onPlayerDamage(10);
+                            setIsPlayerTurn(true);
+                        }}
+                        onClickMegaSinka={onEnemyEvolution}
+                    />
+                )}
+            </div>
+        </div>
+    );
 };
 
 // playerPokemon 가 False 면 뒤에 실행 안함
