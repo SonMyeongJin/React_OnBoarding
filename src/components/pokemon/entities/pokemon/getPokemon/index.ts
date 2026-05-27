@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { type Dispatch, type SetStateAction, useMemo, useState } from 'react';
 
 const Pikachu = {
   attack: 50,
@@ -39,31 +39,14 @@ type Pokemon = {
   speed: number;
 };
 
-export function usePokemon(name: string): readonly [
+// tuple
+type PokemonHooksReturn = readonly [
   Pokemon | null,
-  {
-    onDamage: (damageValue: number, isTurn: boolean) => void;
-    onEvolution: () => void;
-  },
-] {
+  Dispatch<SetStateAction<boolean>>,
+];
+
+export function usePokemon(name: string): PokemonHooksReturn {
   const [isMegaSinka, setMegaSinka] = useState(false);
-  const [hp, setHp] = useState(100);
-  const [attack, setAttack] = useState(0);
-  const [defense, setDefense] = useState(0);
-  const [speed, setSpeed] = useState(0);
-
-  const onEvolution = useCallback(() => {
-    setMegaSinka(true);
-  }, []);
-
-  const onDamage = useCallback((damageValue: number, isTurn: boolean) => {
-    if (isTurn) {
-      console.log(isTurn);
-      setHp((prevHP) => prevHP - damageValue);
-      isTurn = false;
-      console.log(isTurn);
-    }
-  }, []);
 
   const pokemonData: Pokemon | null = useMemo(() => {
     switch (name) {
@@ -122,24 +105,11 @@ export function usePokemon(name: string): readonly [
     }
   }, [name, isMegaSinka]);
 
-  useEffect(() => {
-    if (!pokemonData) {
-      return;
-    }
-    setHp(pokemonData.hp);
-    setAttack(pokemonData.attack);
-    setDefense(pokemonData.defense);
-    setSpeed(pokemonData.speed);
-  }, [pokemonData]);
-
   if (!pokemonData) {
-    return [null, { onDamage, onEvolution }] as const;
+    return [null, setMegaSinka];
   }
 
-  return [
-    { ...pokemonData, attack, defense, hp, speed },
-    { onDamage, onEvolution },
-  ] as const;
+  return [{ ...pokemonData }, setMegaSinka];
 }
 
 // const 변경할때 없을때 만 쓴다.
