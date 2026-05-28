@@ -48,7 +48,7 @@ const BattleFeild: FC = () => {
               ...index,
               onClick: (attackType: AttackType) => {
                 if (attackType === 'reduceHP') {
-                  enemyAction.onDamage(10);
+                  enemyAction.onDamage(25);
                   setEnemyAnimation('fire');
                 }
                 if (attackType === 'reduceSpeed') {
@@ -84,7 +84,7 @@ const BattleFeild: FC = () => {
               ...skill,
               onClick: (attackType: AttackType) => {
                 if (attackType === 'reduceHP') {
-                  playerActions.onDamage(10);
+                  playerActions.onDamage(25);
                   setPlayerAnimation('fire');
                 }
                 if (attackType === 'reduceSpeed') {

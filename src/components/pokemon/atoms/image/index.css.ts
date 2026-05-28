@@ -12,9 +12,11 @@ const floatUpDown = keyframes({
 const fadeOut = keyframes({
   '0%': {
     opacity: 1,
+    transform: 'translateY(0) scale(1)',
   },
   '100%': {
     opacity: 0,
+    transform: 'translateY(42px) scale(0.94)',
   },
 });
 
@@ -40,7 +42,6 @@ export const dead = style({
   display: 'grid',
   minHeight: '112px',
   placeItems: 'center',
-  rotate: '90deg',
 });
 
 globalStyle(`${dead} img`, {
