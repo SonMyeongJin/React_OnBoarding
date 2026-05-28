@@ -1,7 +1,10 @@
 import { type FC, useState } from 'react';
 import { useBattle } from '../../entities/pokemon/battlePokemon';
 import { usePokemon } from '../../entities/pokemon/getPokemon';
-import type { AttackType } from '../../entities/pokemon/model/type';
+import type {
+  AnimationType,
+  AttackType,
+} from '../../entities/pokemon/model/type';
 import PokeCard from '../PokeCard';
 import { battleField, enemyStyle, playerStyle } from './index.css';
 
@@ -10,7 +13,6 @@ const BattleFeild: FC = () => {
   const [isPlayerTurn, setIsPlayerTurn] = useState(true);
   const [playerPokemon, setPlayerPokemon] = usePokemon('Pikachu');
   const [enemyPokemon, setEnemyPokemon] = usePokemon('Hitokage');
-
   if (playerPokemon === null || enemyPokemon === null) {
     return <div>playerPokemon or enemyPokemon null</div>;
   }
@@ -19,21 +21,27 @@ const BattleFeild: FC = () => {
     setPlayerPokemon,
   );
   const [enemyState, enemyAction] = useBattle(enemyPokemon, setEnemyPokemon);
+  const [playerAnimation, setPlayerAnimation] =
+    useState<AnimationType>('noAnimation');
+  const [enemyAnimation, setEnemyAnimation] =
+    useState<AnimationType>('noAnimation');
 
   return (
     <div className={battleField}>
       <div className={playerStyle}>
         {playerPokemon && (
           <PokeCard
+            Animation={playerAnimation}
             attack={playerState.ATTACK}
             defense={playerState.DEFENSE}
-            // status component
             hp={playerState.HP}
+            // image component
             imageUrl={playerPokemon.imageUrl}
             isDead={playerState.HP <= 0}
+            // etc
             isSkillsActive={isPlayerTurn}
             onClickMegaSinka={playerActions.onEvolution}
-            // image component
+            // status component
             pokeName={playerPokemon.pokeName}
             // skills component
             skills={playerPokemon.skills.map((index) => ({
@@ -41,10 +49,17 @@ const BattleFeild: FC = () => {
               onClick: (attackType: AttackType) => {
                 if (attackType === 'reduceHP') {
                   enemyAction.onDamage(10);
+                  setEnemyAnimation('fire');
                 }
                 if (attackType === 'reduceSpeed') {
                   enemyAction.changeSpeed(-10);
+                  setEnemyAnimation('tail');
                 }
+
+                setTimeout(() => {
+                  setEnemyAnimation('noAnimation');
+                }, 600);
+
                 setIsPlayerTurn(false);
               },
             }))}
@@ -56,6 +71,7 @@ const BattleFeild: FC = () => {
       <div className={enemyStyle}>
         {enemyPokemon && (
           <PokeCard
+            Animation={enemyAnimation}
             attack={enemyState.ATTACK}
             defense={enemyState.DEFENSE}
             hp={enemyState.HP}
@@ -69,10 +85,17 @@ const BattleFeild: FC = () => {
               onClick: (attackType: AttackType) => {
                 if (attackType === 'reduceHP') {
                   playerActions.onDamage(10);
+                  setPlayerAnimation('fire');
                 }
                 if (attackType === 'reduceSpeed') {
                   playerActions.changeSpeed(-10);
+                  setPlayerAnimation('tail');
                 }
+
+                setTimeout(() => {
+                  setPlayerAnimation('noAnimation');
+                }, 600);
+
                 setIsPlayerTurn(true);
               },
             }))}

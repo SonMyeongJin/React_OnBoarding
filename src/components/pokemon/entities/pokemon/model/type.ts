@@ -102,8 +102,10 @@ type PokemonType = {
 };
 
 type AttackType = 'reduceHP' | 'reduceSpeed';
+type AnimationType = 'fire' | 'tail' | 'noAnimation';
 
 export type {
+  AnimationType,
   AttackType,
   NamedAPIResource,
   Pokemon,
