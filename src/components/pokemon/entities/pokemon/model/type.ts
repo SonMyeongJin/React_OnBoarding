@@ -101,7 +101,10 @@ type PokemonType = {
   type: NamedAPIResource;
 };
 
+type AttackType = 'reduceHP' | 'reduceSpeed';
+
 export type {
+  AttackType,
   NamedAPIResource,
   Pokemon,
   PokemonAbility,

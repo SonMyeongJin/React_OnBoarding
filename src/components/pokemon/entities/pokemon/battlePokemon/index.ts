@@ -35,5 +35,5 @@ export function useBattle(
   return [
     { ATTACK, DEFENSE, HP, SPEED },
     { changeAttack, changeDefense, changeSpeed, onDamage, onEvolution },
-  ];
+  ] as const;
 }
