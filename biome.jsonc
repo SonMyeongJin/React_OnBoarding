@@ -13,13 +13,23 @@
   "files": {
     "ignoreUnknown": true,
     // gitignoreでファイルを無視させても読み込みされてしまうので明示的にignore https://github.com/biomejs/biome/issues/6797
-    "includes": ["**", "!**/node_modules", "!**/storybook-static", "!**/*.lock"]
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/storybook-static",
+      "!**/*.lock"
+    ]
   },
   "formatter": {
     "formatWithErrors": true,
-    "indentStyle": "space"
+    "indentStyle": "space",
+    "lineWidth": 120
   },
-  "html": { "formatter": { "selfCloseVoidElements": "always" } },
+  "html": {
+    "formatter": {
+      "selfCloseVoidElements": "always"
+    }
+  },
   "javascript": {
     "formatter": {
       "quoteStyle": "single"
@@ -41,8 +51,10 @@
         "noExcessiveCognitiveComplexity": "on",
         "noExcessiveLinesPerFunction": "on",
         "noExcessiveNestedTestSuites": "on",
-        "noForEach": "off", // 理屈はわかるがforEachは楽なので一旦許可
-        "noImplicitCoercions": "off", // キャスト短縮するくらいええやんけ
+        "noForEach": "off",
+        // 理屈はわかるがforEachは楽なので一旦許可
+        "noImplicitCoercions": "off",
+        // キャスト短縮するくらいええやんけ
         "noUselessStringConcat": "on",
         "noVoid": "on",
         "useSimplifiedLogicExpression": "on",
@@ -51,24 +63,29 @@
       "correctness": {
         "noGlobalDirnameFilename": "on",
         "noNestedComponentDefinitions": "on",
-        "noNodejsModules": "off", // Node.jsモジュールは普通に使うのでoff
+        "noNodejsModules": "off",
+        // Node.jsモジュールは普通に使うのでoff
         "noReactPropAssignments": "on",
         "noRenderReturnValue": "on",
-        "noRestrictedElements": "off", // 今のところ使わない
-        "noUndeclaredDependencies": "off", // temp
+        "noRestrictedElements": "off",
+        // 今のところ使わない
+        "noUndeclaredDependencies": "off",
+        // temp
         "noUndeclaredVariables": {
           "level": "error",
           "options": {
             "checkTypes": true
           }
         },
-        "noUnresolvedImports": "off", // temp
+        "noUnresolvedImports": "off",
+        // temp
         "noUnusedImports": {
           "fix": "safe",
           "level": "error",
           "options": {}
         },
-        "useImportExtensions": "off", // import時の拡張子は消したい
+        "useImportExtensions": "off",
+        // import時の拡張子は消したい
         "useSingleJsDocAsterisk": "on"
       },
       "performance": {
@@ -86,45 +103,59 @@
         "noDoneCallback": "on",
         "noEnum": "on",
         "noExportedImports": "on",
-        "noImplicitBoolean": "off", // 使いたいので
-        "noInferrableTypes": "off", // そこまで気にしないのでoff
+        "noImplicitBoolean": "off",
+        // 使いたいので
+        "noInferrableTypes": "off",
+        // そこまで気にしないのでoff
         "noMagicNumbers": "on",
         "noNamespace": "on",
         "noNegationElse": "on",
         "noNestedTernary": "on",
         "noParameterAssign": "on",
         "noParameterProperties": "on",
-        "noProcessEnv": "off", // 使うのでoff
+        "noProcessEnv": "off",
+        // 使うのでoff
         "noSubstr": "on",
         "noUnusedTemplateLiteral": "on",
         "noUselessElse": "on",
         "noValueAtRule": "on",
-        "noYodaExpression": "off", // 比較演算子の順序すら直しちゃうのでNG
+        "noYodaExpression": "off",
+        // 比較演算子の順序すら直しちゃうのでNG
         "useAsConstAssertion": "on",
-        "useAtIndex": "off", // 必要性を感じないのでoff
+        "useAtIndex": "off",
+        // 必要性を感じないのでoff
         "useBlockStatements": "on",
         "useCollapsedElseIf": "on",
         "useCollapsedIf": "on",
-        "useComponentExportOnlyModules": "off", // 必要性を感じないのでoff
+        "useComponentExportOnlyModules": "off",
+        // 必要性を感じないのでoff
         "useConsistentArrayType": "on",
         "useConsistentBuiltinInstantiation": "on",
         "useConsistentCurlyBraces": "on",
-        "useConsistentMemberAccessibility": "off", // 明示すべきなのでoff
+        "useConsistentMemberAccessibility": "off",
+        // 明示すべきなのでoff
         "useConsistentObjectDefinitions": "on",
         "useConst": "on",
         "useDefaultParameterLast": "on",
         "useDefaultSwitchClause": "on",
-        "useEnumInitializers": "on", // enum自体禁止してるので実質offだけど念の為有効化
-        "useExplicitLengthCheck": "off", // 必要性を感じないのでoff(>での記法に書き換えてしまうのも気に入らないので)
-        "useExportsLast": "off", // そこまで気にしないのでoff
-        "useFilenamingConvention": "off", // TODO:ファイル名のルール規則を別途定めて有効化
+        "useEnumInitializers": "on",
+        // enum自体禁止してるので実質offだけど念の為有効化
+        "useExplicitLengthCheck": "off",
+        // 必要性を感じないのでoff(>での記法に書き換えてしまうのも気に入らないので)
+        "useExportsLast": "off",
+        // そこまで気にしないのでoff
+        "useFilenamingConvention": "off",
+        // TODO:ファイル名のルール規則を別途定めて有効化
         "useForOf": "on",
         "useFragmentSyntax": "on",
         "useGroupedAccessorPairs": "on",
-        "useNamingConvention": "off", // TODO:命名規則を別途定めて有効化
+        "useNamingConvention": "off",
+        // TODO:命名規則を別途定めて有効化
         "useNodeAssertStrict": "on",
-        "useNumberNamespace": "off", // 必要性を感じないのでoff
-        "useNumericSeparators": "off", // 必要性を感じないのでoff
+        "useNumberNamespace": "off",
+        // 必要性を感じないのでoff
+        "useNumericSeparators": "off",
+        // 必要性を感じないのでoff
         "useObjectSpread": "on",
         "useReadonlyClassProperties": "on",
         "useSelfClosingElements": "on",
@@ -141,7 +172,8 @@
         "noBitwiseOperators": "on",
         "noConstantBinaryExpressions": "on",
         "noDocumentCookie": "on",
-        "noEmptyBlockStatements": "off", // 意図的に空にすることもあるのでoff
+        "noEmptyBlockStatements": "off",
+        // 意図的に空にすることもあるのでoff
         "noEvolvingTypes": "on",
         "noMisplacedAssertion": "on",
         "noSkippedTests": "on",
@@ -190,10 +222,16 @@
       ],
       "linter": {
         "rules": {
-          "style": { "noMagicNumbers": "off" }
+          "style": {
+            "noMagicNumbers": "off"
+          }
         }
       }
     }
   ],
-  "vcs": { "clientKind": "git", "enabled": true, "useIgnoreFile": true }
+  "vcs": {
+    "clientKind": "git",
+    "enabled": true,
+    "useIgnoreFile": true
+  }
 }
