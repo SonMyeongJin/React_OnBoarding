@@ -29,7 +29,7 @@ const BattleFeild: FC = () => {
           <PokeCard
             Animation={playerAnimation}
             attack={playerState.ATTACK}
-            condition={playerState.CONDITION}
+            condition={playerCondion}
             defense={playerState.DEFENSE}
             hp={playerState.HP}
             imageUrl={playerPokemon.imageUrl}
@@ -52,9 +52,11 @@ const BattleFeild: FC = () => {
                 }
                 if (attackType === 'burn') {
                   setEnemyCondition('Burned');
+                  setEnemyAnimation('burned');
                 }
                 if (attackType === 'paralysis') {
                   setEnemyCondition('Paralysis');
+                  setEnemyAnimation('paralysis');
                 }
 
                 setTimeout(() => {
@@ -74,7 +76,7 @@ const BattleFeild: FC = () => {
           <PokeCard
             Animation={enemyAnimation}
             attack={enemyState.ATTACK}
-            condition={enemyState.CONDITION}
+            condition={enemyCondition}
             defense={enemyState.DEFENSE}
             hp={enemyState.HP}
             imageUrl={enemyPokemon.imageUrl}
@@ -95,9 +97,11 @@ const BattleFeild: FC = () => {
                 }
                 if (attackType === 'burn') {
                   setPlayerCondition('Burned');
+                  setPlayerAnimation('burned');
                 }
                 if (attackType === 'paralysis') {
                   setPlayerCondition('Paralysis');
+                  setPlayerAnimation('paralysis');
                 }
 
                 setTimeout(() => {

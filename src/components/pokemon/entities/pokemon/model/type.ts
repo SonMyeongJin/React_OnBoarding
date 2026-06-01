@@ -102,7 +102,7 @@ type PokemonType = {
 };
 
 type AttackType = 'reduceHP' | 'reduceSpeed' | 'burn' | 'paralysis';
-type AnimationType = 'fire' | 'tail' | 'noAnimation';
+type AnimationType = 'fire' | 'tail' | 'noAnimation' | 'burned' | 'paralysis';
 type ConditionType = null | 'Burned' | 'Paralysis';
 
 export type {

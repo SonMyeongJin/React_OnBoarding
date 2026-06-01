@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { action } from 'storybook/actions';
+import type {Meta, StoryObj} from '@storybook/react';
+import {action} from 'storybook/actions';
 import PokeCard from './index';
 
 type Story = StoryObj<typeof PokeCard>;
@@ -23,10 +23,10 @@ export const Pikachu: Story = {
     pokeName: 'pikacnu',
 
     skills: [
-      { pp: 15, skillName: 'thunderbolt', skillType: 'electric' },
-      { pp: 30, skillName: 'tackle', skillType: 'normal' },
-      { pp: 20, skillName: 'iron tail', skillType: 'steel' },
-      { pp: 10, skillName: 'volt tackle', skillType: 'electric' },
+      { attackType: 'paralysis', pp: 15, skillName: 'thunderbolt', skillType: 'electric' },
+      { attackType: 'reduceHP', pp: 30, skillName: 'tackle', skillType: 'normal' },
+      { attackType: 'burn', pp: 20, skillName: 'iron tail', skillType: 'steel' },
+      { attackType: 'burn', pp: 10, skillName: 'volt tackle', skillType: 'electric' },
     ],
     speed: 20,
   },

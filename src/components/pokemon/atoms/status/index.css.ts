@@ -1,4 +1,26 @@
-import {style} from '@vanilla-extract/css';
+import {keyframes, style} from '@vanilla-extract/css';
+
+const burnBlink = keyframes({
+  '0%, 100%': {
+    background: '#ffedd5',
+    color: '#9a3412',
+  },
+  '50%': {
+    background: '#ef4444',
+    color: '#fff7ed',
+  },
+});
+
+const paralysisBlink = keyframes({
+  '0%, 100%': {
+    background: '#fef3c7',
+    color: '#854d0e',
+  },
+  '50%': {
+    background: '#facc15',
+    color: '#3f2f00',
+  },
+});
 
 export const status = style({
   alignSelf: 'center',
@@ -46,17 +68,15 @@ export const conditionStyle = style({
 export const burnedStyle = style([
   conditionStyle,
   {
-    background: '#ffedd5',
+    animation: `${burnBlink} 0.9s ease-in-out infinite`,
     borderColor: '#9a3412',
-    color: '#9a3412',
   },
 ]);
 
 export const paralysisStyle = style([
   conditionStyle,
   {
-    background: '#fef3c7',
+    animation: `${paralysisBlink} 0.9s ease-in-out infinite`,
     borderColor: '#a16207',
-    color: '#854d0e',
   },
 ]);
