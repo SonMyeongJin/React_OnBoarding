@@ -1,5 +1,5 @@
-import { type Dispatch, type SetStateAction, useMemo, useState } from 'react';
-import type { AttackType } from '../model/type';
+import {type Dispatch, type SetStateAction, useMemo, useState} from 'react';
+import type {AttackType} from '../model/type';
 
 const Pikachu = {
   attack: 50,
@@ -66,13 +66,13 @@ export function usePokemon(name: string): PokemonHooksReturn {
             skillType: 'Normal',
           },
           {
-            attackType: 'reduceHP' as AttackType,
+            attackType: 'burn' as AttackType,
             pp: 20,
             skillName: Pikachu.skillName3,
             skillType: 'Steel',
           },
           {
-            attackType: 'reduceHP' as AttackType,
+            attackType: 'paralysis' as AttackType,
             pp: 10,
             skillName: Pikachu.skillName4,
             skillType: 'Electric',
@@ -110,13 +110,13 @@ export function usePokemon(name: string): PokemonHooksReturn {
             skillType: 'normal',
           },
           {
-            attackType: 'reduceHP' as AttackType,
+            attackType: 'burn' as AttackType,
             pp: 25,
             skillName: Hitokage.skillName3,
             skillType: 'fire',
           },
           {
-            attackType: 'reduceHP' as AttackType,
+            attackType: 'paralysis' as AttackType,
             pp: 15,
             skillName: Hitokage.skillName4,
             skillType: 'fire',

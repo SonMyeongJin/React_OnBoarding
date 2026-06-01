@@ -101,12 +101,14 @@ type PokemonType = {
   type: NamedAPIResource;
 };
 
-type AttackType = 'reduceHP' | 'reduceSpeed';
+type AttackType = 'reduceHP' | 'reduceSpeed' | 'burn' | 'paralysis';
 type AnimationType = 'fire' | 'tail' | 'noAnimation';
+type ConditionType = null | 'Burned' | 'Paralysis';
 
 export type {
   AnimationType,
   AttackType,
+  ConditionType,
   NamedAPIResource,
   Pokemon,
   PokemonAbility,

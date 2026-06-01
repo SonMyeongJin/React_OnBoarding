@@ -1,7 +1,7 @@
 import {type FC, useState} from 'react';
 import {useBattle} from '../../entities/pokemon/battlePokemon';
 import {usePokemon} from '../../entities/pokemon/getPokemon';
-import type {AnimationType, AttackType} from '../../entities/pokemon/model/type';
+import type {AnimationType, AttackType, ConditionType} from '../../entities/pokemon/model/type';
 import PokeCard from '../PokeCard';
 import {battleField, enemyStyle, playerStyle} from './index.css';
 
@@ -10,13 +10,15 @@ const BattleFeild: FC = () => {
   const [isPlayerTurn, setIsPlayerTurn] = useState(true);
   const [playerPokemon, setPlayerPokemon] = usePokemon('Pikachu');
   const [enemyPokemon, setEnemyPokemon] = usePokemon('Hitokage');
+  const [playerCondion, setPlayerCondition] = useState<ConditionType>(null);
+  const [enemyCondition, setEnemyCondition] = useState<ConditionType>(null);
 
   if (playerPokemon === null || enemyPokemon === null) {
     return <div>playerPokemon or enemyPokemon null</div>;
   }
 
-  const [playerState, playerActions] = useBattle(playerPokemon, setPlayerPokemon);
-  const [enemyState, enemyAction] = useBattle(enemyPokemon, setEnemyPokemon);
+  const [playerState, playerActions] = useBattle(playerPokemon, playerCondion, setPlayerPokemon);
+  const [enemyState, enemyAction] = useBattle(enemyPokemon, enemyCondition, setEnemyPokemon);
   const [playerAnimation, setPlayerAnimation] = useState<AnimationType>('noAnimation');
   const [enemyAnimation, setEnemyAnimation] = useState<AnimationType>('noAnimation');
 
@@ -27,18 +29,14 @@ const BattleFeild: FC = () => {
           <PokeCard
             Animation={playerAnimation}
             attack={playerState.ATTACK}
+            condition={playerState.CONDITION}
             defense={playerState.DEFENSE}
             hp={playerState.HP}
-            // image component
             imageUrl={playerPokemon.imageUrl}
             isDead={playerState.HP <= 0}
-            // etc
             isSkillsActive={isPlayerTurn}
             onClickMegaSinka={playerActions.onEvolution}
-            // status component
             pokeName={playerPokemon.pokeName}
-            // skills component
-
             // Todo : onClick 別の関数で抽出してCallbackする。
             skills={playerPokemon.skills.map((index) => ({
               ...index,
@@ -51,6 +49,12 @@ const BattleFeild: FC = () => {
                 if (attackType === 'reduceSpeed') {
                   enemyAction.changeSpeed(-10);
                   setEnemyAnimation('tail');
+                }
+                if (attackType === 'burn') {
+                  setEnemyCondition('Burned');
+                }
+                if (attackType === 'paralysis') {
+                  setEnemyCondition('Paralysis');
                 }
 
                 setTimeout(() => {
@@ -70,6 +74,7 @@ const BattleFeild: FC = () => {
           <PokeCard
             Animation={enemyAnimation}
             attack={enemyState.ATTACK}
+            condition={enemyState.CONDITION}
             defense={enemyState.DEFENSE}
             hp={enemyState.HP}
             imageUrl={enemyPokemon.imageUrl}
@@ -87,6 +92,12 @@ const BattleFeild: FC = () => {
                 if (attackType === 'reduceSpeed') {
                   playerActions.changeSpeed(-10);
                   setPlayerAnimation('tail');
+                }
+                if (attackType === 'burn') {
+                  setPlayerCondition('Burned');
+                }
+                if (attackType === 'paralysis') {
+                  setPlayerCondition('Paralysis');
                 }
 
                 setTimeout(() => {
