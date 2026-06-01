@@ -1,6 +1,14 @@
 import {keyframes, style} from '@vanilla-extract/css';
 
-export const pokeCardStyle = style({
+const borderTwinkleStrong = keyframes({
+  '0%, 100%': {
+    boxShadow: '4px 4px 0 #4b5563, 0 0 0 0 rgba(59, 130, 246, 0)',
+  },
+  '50%': {
+    boxShadow: '4px 4px 0 #4b5563, 0 0 0 4px rgba(59, 130, 246, 0.95), 0 0 16px 6px rgba(59, 130, 246, 0.75)',
+  },
+});
+export const noPokeCardStyle = style({
   background: '#f8fafc', // grayぽっい
   border: '4px solid #111827',
   borderRadius: '2px',
@@ -14,7 +22,35 @@ export const pokeCardStyle = style({
   position: 'relative',
   width: '320px',
 });
+export const pokeCardStyle = style({
+  animation: `${borderTwinkleStrong} 0.9s linear infinite`,
+  background: '#f8fafc',
+  border: '4px solid #111827',
+  borderRadius: '2px',
+  boxShadow: '4px 4px 0 #4b5563',
+  boxSizing: 'border-box',
+  display: 'grid',
+  gridTemplateColumns: '128px 1fr',
+  overflow: 'hidden',
+  padding: '12px',
+  position: 'relative',
+  width: '320px',
+  willChange: 'box-shadow, filter',
+});
 
+export const noSkillsStyle = style({
+  background: '#f8fafc',
+  border: '4px double #111827',
+  borderRadius: '2px',
+  boxShadow: '0 0 0 2px #e2e8f0 inset',
+  cursor: 'not-allowed',
+  display: 'grid',
+  gridColumn: '1 / -1',
+  gridTemplateColumns: '1fr 1fr',
+  margin: '10px',
+  opacity: 0.5,
+  pointerEvents: 'none',
+});
 export const skillsStyle = style({
   background: '#f8fafc',
   border: '4px double #111827',
@@ -25,7 +61,7 @@ export const skillsStyle = style({
   gap: '2px 10px',
   gridColumn: '1 / -1',
   gridTemplateColumns: '1fr 1fr',
-  padding: '8px 10px',
+  margin: '10px',
 });
 
 const fireFly = keyframes({
@@ -42,7 +78,6 @@ const fireFly = keyframes({
     transform: 'translateX(-6px) rotate(-6deg)',
   },
 });
-
 const tailShake = keyframes({
   '0%': {
     opacity: 0,
@@ -56,7 +91,6 @@ const tailShake = keyframes({
     transform: 'translateY(42px) scale(1.08)',
   },
 });
-
 const burnedPulse = keyframes({
   '0%': {
     opacity: 0,
@@ -75,7 +109,6 @@ const burnedPulse = keyframes({
     transform: 'translateY(-22px) scale(1.2) rotate(8deg)',
   },
 });
-
 const paralysisShock = keyframes({
   '0%': {
     opacity: 0,
@@ -116,7 +149,6 @@ export const fireAnimation = style({
   top: '72px',
   zIndex: 10,
 });
-
 export const tailAnimation = style({
   animation: `${tailShake} 0.6s ease-in-out forwards`,
   color: '#2563eb',
@@ -135,7 +167,6 @@ export const tailAnimation = style({
   top: '24px',
   zIndex: 10,
 });
-
 export const burnedAnimation = style({
   animation: `${burnedPulse} 0.6s ease-out forwards`,
   color: '#ea580c',
@@ -152,7 +183,6 @@ export const burnedAnimation = style({
   top: '52px',
   zIndex: 10,
 });
-
 export const paralysisAnimation = style({
   animation: `${paralysisShock} 0.6s ease-in-out forwards`,
   color: '#ca8a04',

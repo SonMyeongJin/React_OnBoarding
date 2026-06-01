@@ -7,6 +7,8 @@ import Skills from '../../molecules/skills';
 import {
     burnedAnimation,
     fireAnimation,
+    noPokeCardStyle,
+    noSkillsStyle,
     paralysisAnimation,
     pokeCardStyle,
     skillsStyle,
@@ -23,7 +25,7 @@ type PokeCardProps = ComponentProps<typeof Image> &
 
 const PokeCard: FC<PokeCardProps> = (props: PokeCardProps) => {
   return (
-    <div className={pokeCardStyle}>
+    <div className={props.isSkillsActive ? pokeCardStyle : noPokeCardStyle}>
       {props.Animation === 'fire' && <div className={fireAnimation} />}
       {props.Animation === 'tail' && <div className={tailAnimation} />}
       {props.Animation === 'burned' && <div className={burnedAnimation} />}
@@ -33,7 +35,11 @@ const PokeCard: FC<PokeCardProps> = (props: PokeCardProps) => {
 
       <Status {...props} />
 
-      <div className={skillsStyle}>{props.isSkillsActive && <Skills {...props} />}</div>
+      <div className={props.isSkillsActive ? skillsStyle : noSkillsStyle}>
+        <Skills {...props} />
+      </div>
+      {/*<div className={noSkillsStyle}>{!props.isSkillsActive && <Skills {...props} />}</div>*/}
+      {/*<div className={skillsStyle}>{props.isSkillsActive && <Skills {...props} />}</div>*/}
 
       <MegaButton onClick={props.onClickMegaSinka} />
     </div>
