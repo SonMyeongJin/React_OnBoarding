@@ -7,10 +7,7 @@ type BattleProps = {
   speed: number;
 };
 
-export function useBattle(
-  pokemon: BattleProps,
-  setMegaSinka: Dispatch<SetStateAction<boolean>>,
-) {
+export function useBattle(pokemon: BattleProps, setMegaSinka: Dispatch<SetStateAction<boolean>>) {
   const [HP, setHp] = useState(pokemon.hp);
   const [ATTACK, setAttack] = useState(pokemon.attack);
   const [DEFENSE, setDefense] = useState(pokemon.defense);

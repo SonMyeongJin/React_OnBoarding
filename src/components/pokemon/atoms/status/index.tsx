@@ -1,7 +1,7 @@
 'use client';
 
-import { type FC, useMemo } from 'react';
-import { hpBar, status } from './index.css';
+import {type FC, useMemo} from 'react';
+import {hpBar, status} from './index.css';
 
 type StatusProps = {
   hp: number;
@@ -9,7 +9,7 @@ type StatusProps = {
   defense: number;
   speed: number;
 };
-
+// Todo : 麻痺、火傷
 const Status: FC<StatusProps> = ({ hp, attack, defense, speed }) => {
   const hpColor = useMemo(() => {
     if (hp > 80) {

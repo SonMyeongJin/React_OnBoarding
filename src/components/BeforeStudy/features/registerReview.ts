@@ -9,9 +9,7 @@ const HTTP_STATUS = {
   unauthorized: 401,
 } as const;
 
-async function registerReview(
-  registerReviewRequest: registerReviewRequest,
-): Promise<registerReviewResponse> {
+async function registerReview(registerReviewRequest: registerReviewRequest): Promise<registerReviewResponse> {
   const url = new URL('http://localhost:5001/review/register');
 
   const response = await fetch(url, {

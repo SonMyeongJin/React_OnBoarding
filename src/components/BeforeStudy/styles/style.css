@@ -426,13 +426,7 @@ img {
   overflow: hidden;
   font-family: "DotGothic16", "Press Start 2P", monospace;
   image-rendering: pixelated;
-  background: linear-gradient(
-    180deg,
-    #88c870 0%,
-    #b8d8a0 40%,
-    #f8f8d8 60%,
-    #d0e898 100%
-  );
+  background: linear-gradient(180deg, #88c870 0%, #b8d8a0 40%, #f8f8d8 60%, #d0e898 100%);
   border: 6px solid #303030;
   border-radius: 0;
   box-shadow:

@@ -26,9 +26,7 @@ async function setupGuessRandom() {
     return;
   }
   if (!(guessPokemonElement instanceof HTMLElement)) {
-    console.error(
-      'Guess Pokemon table body element not found or not an HTMLElement',
-    );
+    console.error('Guess Pokemon table body element not found or not an HTMLElement');
     return;
   }
 
@@ -45,19 +43,13 @@ async function setupGuessRandom() {
   }
 
   // buttonを押したイベントが起きたら、onGuessRandomSubmitHandlerを実行する。＋ inputには使用者の入力したものが入る。
-  form.addEventListener('submit', (e) =>
-    onGuessRandomSubmitHandler(e, input, correctPokemonName),
-  );
+  form.addEventListener('submit', (e) => onGuessRandomSubmitHandler(e, input, correctPokemonName));
 
   console.log('Correct Pokemon: ', correctPokemonName);
 }
 
 // 答えを入力してsubmitしたときの処理。答えが正しいかどうかを判断する。
-function onGuessRandomSubmitHandler(
-  e: SubmitEvent,
-  input: HTMLInputElement,
-  correctPokemonName: string,
-) {
+function onGuessRandomSubmitHandler(e: SubmitEvent, input: HTMLInputElement, correctPokemonName: string) {
   // submitイベントのデフォルトの動きを止める。例えば、ページのリロードとか。
   e.preventDefault();
   console.log('user input: ', input.value);
@@ -97,9 +89,7 @@ function addGuessRandomTableRow(pokemon: Pokemon, body: HTMLElement) {
   tall.textContent = String(pokemon.height);
   weight.textContent = String(pokemon.weight);
   locationData.textContent = String(pokemon.location_area_encounters);
-  abilityData.textContent = String(
-    pokemon.abilities.map((a) => a.ability.name).join(', '),
-  );
+  abilityData.textContent = String(pokemon.abilities.map((a) => a.ability.name).join(', '));
 
   // rowが一番親の要素で、type, tall, weight, locationData, abilityDataはrowの子要素。最後にrowをbodyの子要素にする。
   row.appendChild(type);

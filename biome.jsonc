@@ -13,12 +13,7 @@
   "files": {
     "ignoreUnknown": true,
     // gitignoreでファイルを無視させても読み込みされてしまうので明示的にignore https://github.com/biomejs/biome/issues/6797
-    "includes": [
-      "**",
-      "!**/node_modules",
-      "!**/storybook-static",
-      "!**/*.lock"
-    ]
+    "includes": ["**", "!**/node_modules", "!**/storybook-static", "!**/*.lock"]
   },
   "formatter": {
     "formatWithErrors": true,
@@ -49,7 +44,12 @@
       },
       "complexity": {
         "noExcessiveCognitiveComplexity": "on",
-        "noExcessiveLinesPerFunction": "on",
+        "noExcessiveLinesPerFunction": {
+          "level": "on",
+          "options": {
+            "max": 100 // 👈 허용할 최대 줄 수를 100줄로 상향 조정!
+          }
+        },
         "noExcessiveNestedTestSuites": "on",
         "noForEach": "off",
         // 理屈はわかるがforEachは楽なので一旦許可
@@ -215,11 +215,7 @@
     },
     {
       // テストコードでは多少ルールを緩和
-      "includes": [
-        "**/*.test.{js,ts,jsx,tsx}",
-        "**/*.e2e.{js,ts,jsx,tsx}",
-        "**/*.stories.{js,ts,jsx,tsx}"
-      ],
+      "includes": ["**/*.test.{js,ts,jsx,tsx}", "**/*.e2e.{js,ts,jsx,tsx}", "**/*.stories.{js,ts,jsx,tsx}"],
       "linter": {
         "rules": {
           "style": {

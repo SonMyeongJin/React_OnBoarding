@@ -1,8 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
 export const battleField = style({
-  background:
-    'linear-gradient(180deg, #dff3b4 0%, #c8e69a 52%, #a8d17b 52%, #91c56d 100%)',
+  background: 'linear-gradient(180deg, #dff3b4 0%, #c8e69a 52%, #a8d17b 52%, #91c56d 100%)',
   border: '6px solid #1f2933',
   boxShadow: '0 0 0 4px #f8fafc inset, 8px 8px 0 #94a3b8',
   boxSizing: 'border-box',
@@ -10,8 +9,7 @@ export const battleField = style({
   display: 'flex',
   // アイテムを配置する際は、上下方向に配置するという意味だ
   flexDirection: 'column',
-  fontFamily:
-    '"Courier New", "MS Gothic", "Hiragino Kaku Gothic ProN", monospace',
+  fontFamily: '"Courier New", "MS Gothic", "Hiragino Kaku Gothic ProN", monospace',
   imageRendering: 'pixelated',
   justifyContent: 'space-between',
   margin: '24px auto',

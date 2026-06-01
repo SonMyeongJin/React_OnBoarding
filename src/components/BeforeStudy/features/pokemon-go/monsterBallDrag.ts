@@ -45,11 +45,7 @@ function onMouseMoveHandler(e: MouseEvent) {
   const gochaTarget = getGochaTargetElement();
   const cursorX = e?.pageX;
   const cursorY = e?.pageY;
-  if (
-    !(pokeballButton && pokeballDragArea && gochaTarget) ||
-    cursorX === undefined ||
-    cursorY === undefined
-  ) {
+  if (!(pokeballButton && pokeballDragArea && gochaTarget) || cursorX === undefined || cursorY === undefined) {
     return;
   }
   // console.log('Dragging pokeball to:', cursorX, cursorY);

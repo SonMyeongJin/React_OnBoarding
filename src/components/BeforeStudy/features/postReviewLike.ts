@@ -11,9 +11,7 @@ function postReviewLike(reviewId: string, custermerId: string) {
     method: 'POST',
   })
     .catch(() => {
-      console.error(
-        `Failed to like review ${reviewId} by customer ${custermerId}`,
-      );
+      console.error(`Failed to like review ${reviewId} by customer ${custermerId}`);
       return false;
     })
     .then(() => {

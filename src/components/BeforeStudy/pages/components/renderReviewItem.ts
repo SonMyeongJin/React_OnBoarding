@@ -35,9 +35,7 @@ function createReviewArticle(item: ReviewItem) {
   const reviewerDiv = createReviewerDiv();
   const reviewDiv = createReviewDiv();
 
-  reviewerDiv.appendChild(
-    createReviewerImg(item.reviewerImagePath, item.reviewerName),
-  );
+  reviewerDiv.appendChild(createReviewerImg(item.reviewerImagePath, item.reviewerName));
   reviewerDiv.appendChild(createReviewerName(item.reviewerName));
 
   reviewDiv.appendChild(createReviewRating(item.rating));
@@ -130,11 +128,7 @@ function completeLoading(likeButton: HTMLButtonElement) {
   likeButton.classList.remove('loading');
 }
 
-function bindLikeButton(
-  likeButton: HTMLButtonElement,
-  countLikeValue: HTMLSpanElement,
-  item: ReviewItem,
-) {
+function bindLikeButton(likeButton: HTMLButtonElement, countLikeValue: HTMLSpanElement, item: ReviewItem) {
   let currentLikeCount = item.likeCount;
 
   likeButton.onclick = async () => {
@@ -160,12 +154,7 @@ function bindLikeButton(
       countLikeValue.textContent = currentLikeCount.toString();
     }, LIKE_ANIMATION_DELAY_MS);
     setTimeout(() => {
-      likeButton.classList.remove(
-        'like-animation,btn',
-        'btn-warning',
-        'btn-sm',
-        'mt-2',
-      );
+      likeButton.classList.remove('like-animation,btn', 'btn-warning', 'btn-sm', 'mt-2');
     }, LIKE_ANIMATION_RESET_MS);
   };
 }

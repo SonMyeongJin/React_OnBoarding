@@ -44,12 +44,9 @@ async function renderReviewForm() {
       })
       .catch((error) => {
         console.error('Error registering review:', error);
-        const submitError = document.getElementById(
-          'submit-error',
-        ) as HTMLParagraphElement | null;
+        const submitError = document.getElementById('submit-error') as HTMLParagraphElement | null;
         if (submitError) {
-          submitError.textContent =
-            'レビュー登録に失敗しました。しばらくしてからもう一度お試しください。';
+          submitError.textContent = 'レビュー登録に失敗しました。しばらくしてからもう一度お試しください。';
         }
       });
   });
@@ -59,9 +56,7 @@ function score() {
   const ratingSelect = document.getElementById('score') as HTMLSelectElement;
   const rating: number = Number(ratingSelect.value);
   // validation
-  const errorSelect = document.getElementById(
-    'score-error',
-  ) as HTMLParagraphElement;
+  const errorSelect = document.getElementById('score-error') as HTMLParagraphElement;
   if (ratingSelect.value === '0') {
     //alert('Please select a rating.');
     errorSelect.textContent = '評価を入れてください';
@@ -76,15 +71,11 @@ function score() {
 }
 
 function comment() {
-  const commentTextarea = document.getElementById(
-    'comment-textarea',
-  ) as HTMLTextAreaElement;
+  const commentTextarea = document.getElementById('comment-textarea') as HTMLTextAreaElement;
   const content: string = commentTextarea.value;
 
   //validation
-  const errorContent = document.getElementById(
-    'comment-error',
-  ) as HTMLParagraphElement;
+  const errorContent = document.getElementById('comment-error') as HTMLParagraphElement;
 
   if (content === '') {
     errorContent.textContent = 'コメントも入れてください';
@@ -100,9 +91,7 @@ async function photo() {
   const files = imageInput.files;
   // validation
   if (!files || files.length === 0) {
-    const photoError = document.getElementById(
-      'photo-error',
-    ) as HTMLParagraphElement | null;
+    const photoError = document.getElementById('photo-error') as HTMLParagraphElement | null;
     if (photoError) {
       photoError.textContent = '写真を選択してください';
     }
@@ -111,22 +100,20 @@ async function photo() {
 
   // FileReader 함수를 사용해서 파일을 읽고 Base64로 변환
   // Promise 생성자에 콜백(executor)을 전달. resolve가 호출되면 Promise가 완료된다.
-  const imageData = await new Promise<string | ArrayBuffer | null>(
-    (resolve, reject) => {
-      // 파일을 읽기 위한 FileReader 인스턴스 생성
-      const reader = new FileReader();
-      // files[0] (첫 번째 파일)을 Base64 형식의 Data URL로 읽기 시작 (비동기)
-      reader.readAsDataURL(files[0]);
-      // 파일 읽기가 완료되면 onload 콜백이 실행된다
-      reader.onload = () => {
-        // reader.result에 Base64 Data URL이 담겨있고, 이걸 resolve로 넘겨서 Promise를 완료시킨다
-        resolve(reader.result);
-      };
-      reader.onerror = () => {
-        reject(new Error('Failed to read file'));
-      };
-    },
-  );
+  const imageData = await new Promise<string | ArrayBuffer | null>((resolve, reject) => {
+    // 파일을 읽기 위한 FileReader 인스턴스 생성
+    const reader = new FileReader();
+    // files[0] (첫 번째 파일)을 Base64 형식의 Data URL로 읽기 시작 (비동기)
+    reader.readAsDataURL(files[0]);
+    // 파일 읽기가 완료되면 onload 콜백이 실행된다
+    reader.onload = () => {
+      // reader.result에 Base64 Data URL이 담겨있고, 이걸 resolve로 넘겨서 Promise를 완료시킨다
+      resolve(reader.result);
+    };
+    reader.onerror = () => {
+      reject(new Error('Failed to read file'));
+    };
+  });
   console.log('Base64 Image Data Object:', imageData);
 
   // Base64로 변환된 이미지 데이터를 img 요소에 설정하여 페이지에 표시

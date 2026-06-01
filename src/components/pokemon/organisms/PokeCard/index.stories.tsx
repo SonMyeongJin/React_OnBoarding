@@ -18,8 +18,7 @@ export const Pikachu: Story = {
     defense: 30,
     hp: 100,
 
-    imageUrl: // normal
-      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
+    imageUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png', // normal
 
     pokeName: 'pikacnu',
 
@@ -38,8 +37,7 @@ export const Hitokage: Story = {
     defense: 30,
     hp: 100,
 
-    imageUrl: // normal
-      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png',
+    imageUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png', // normal
 
     pokeName: 'hitokage',
 

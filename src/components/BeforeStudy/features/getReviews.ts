@@ -1,21 +1,15 @@
 import type { getReviewRequest } from 'src/domain/dto/getReviewRequest';
 import type { getReviewResponse } from 'src/domain/dto/getReviewResponse';
 
-async function getReviews(
-  getReviewRequest: getReviewRequest,
-): Promise<getReviewResponse> {
-  const url = new URL(
-    `http://localhost:5001/review/search/product/${getReviewRequest.productId}/reviews`,
-  );
+async function getReviews(getReviewRequest: getReviewRequest): Promise<getReviewResponse> {
+  const url = new URL(`http://localhost:5001/review/search/product/${getReviewRequest.productId}/reviews`);
   url.searchParams.set('perPage', String(getReviewRequest.perPage));
   url.searchParams.set('pageNumber', String(getReviewRequest.pageNumber));
 
   const response = await fetch(url);
 
   if (!response.ok) {
-    throw new Error(
-      `Failed to fetch reviews: ${response.status} ${response.statusText}`,
-    );
+    throw new Error(`Failed to fetch reviews: ${response.status} ${response.statusText}`);
   }
 
   const responseData: getReviewResponse = await response.json();

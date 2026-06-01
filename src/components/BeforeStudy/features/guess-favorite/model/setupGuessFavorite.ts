@@ -71,10 +71,7 @@ async function onGuessSubmitHandler(e: SubmitEvent) {
   }
 }
 
-function addGuessTableRow(
-  pokemon: Pokemon,
-  inputPokemonInfoLocation: HTMLElement,
-) {
+function addGuessTableRow(pokemon: Pokemon, inputPokemonInfoLocation: HTMLElement) {
   // <tr>
   //  <td>number</td>
   //   <td>name</td>
@@ -90,9 +87,7 @@ function addGuessTableRow(
   // type = pokemon.abilities
   numberData.textContent = String(pokemon.id);
   nameData.textContent = String(pokemon.name);
-  typeData.textContent = String(
-    pokemon.abilities.map((a) => a.ability.name).join(', '),
-  );
+  typeData.textContent = String(pokemon.abilities.map((a) => a.ability.name).join(', '));
 
   // appendChild : rowの子要素としてnumberData, nameData, typeDataを追加する。
   // <tr>

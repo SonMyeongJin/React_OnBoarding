@@ -22,8 +22,7 @@ const fadeOut = keyframes({
 
 export const pokemonImage = style({
   animation: `${floatUpDown} 1.8s steps(2, end) infinite`,
-  background:
-    'radial-gradient(ellipse at center, rgba(71, 85, 105, 0.25) 0 38%, transparent 39%)',
+  background: 'radial-gradient(ellipse at center, rgba(71, 85, 105, 0.25) 0 38%, transparent 39%)',
   display: 'grid',
   minHeight: '112px',
   placeItems: 'center',

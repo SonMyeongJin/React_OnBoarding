@@ -50,11 +50,7 @@ function clampHp(hp: number) {
   return Math.max(0, hp);
 }
 
-function renderHp(
-  hpElement: HTMLElement | null,
-  hpListElement: HTMLElement | null | undefined,
-  hp: number,
-) {
+function renderHp(hpElement: HTMLElement | null, hpListElement: HTMLElement | null | undefined, hp: number) {
   if (!hpElement) {
     return;
   }
@@ -74,12 +70,7 @@ function showBattleMessage(message: string) {
   }
 }
 
-function applyDamage(
-  attackerAttack: number,
-  defenderDefense: number,
-  skillPower: number,
-  target: 'blue' | 'red',
-) {
+function applyDamage(attackerAttack: number, defenderDefense: number, skillPower: number, target: 'blue' | 'red') {
   const damage = HpCalculator(attackerAttack, defenderDefense, skillPower);
   if (target === 'blue') {
     blueHP = clampHp(blueHP - damage);
@@ -119,11 +110,7 @@ function onSkillClickHandler(index: number) {
   }
 }
 
-function HpCalculator(
-  attackerAttack: number,
-  defenderDefense: number,
-  skillPower: number,
-) {
+function HpCalculator(attackerAttack: number, defenderDefense: number, skillPower: number) {
   const damage = (skillPower * attackerAttack) / defenderDefense;
   return damage * DAMAGE_MULTIPLIER; // ダメージを10倍してHPから引く
 }

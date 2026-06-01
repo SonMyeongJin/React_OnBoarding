@@ -16,11 +16,7 @@ export const BananaButton: FC = () => {
 
   return (
     <div>
-      <button
-        className={buttonStyle}
-        onClick={() => setCount((count) => count + 1)}
-        type="button"
-      >
+      <button className={buttonStyle} onClick={() => setCount((count) => count + 1)} type="button">
         count is: {dispBanana}
       </button>
     </div>
