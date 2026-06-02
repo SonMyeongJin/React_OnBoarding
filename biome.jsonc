@@ -45,10 +45,7 @@
       "complexity": {
         "noExcessiveCognitiveComplexity": "on",
         "noExcessiveLinesPerFunction": {
-          "level": "on",
-          "options": {
-            "max": 100 // 👈 허용할 최대 줄 수를 100줄로 상향 조정!
-          }
+          "level": "on"
         },
         "noExcessiveNestedTestSuites": "on",
         "noForEach": "off",

@@ -1,5 +1,5 @@
-import {type Dispatch, type SetStateAction, useMemo, useState} from 'react';
-import type {AttackType} from '../model/type';
+import { type Dispatch, type SetStateAction, useMemo, useState } from 'react';
+import type { AttackType } from '../model/type';
 
 const Pikachu = {
   attack: 50,

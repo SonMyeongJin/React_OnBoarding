@@ -1,18 +1,18 @@
-import type {ComponentProps, FC} from 'react';
+import type { ComponentProps, FC } from 'react';
 import Image from '../../atoms/image';
 import MegaButton from '../../atoms/megaButton';
 import Status from '../../atoms/status';
-import type {AnimationType} from '../../entities/pokemon/model/type';
+import type { AnimationType } from '../../entities/pokemon/model/type';
 import Skills from '../../molecules/skills';
 import {
-    burnedAnimation,
-    fireAnimation,
-    noPokeCardStyle,
-    noSkillsStyle,
-    paralysisAnimation,
-    pokeCardStyle,
-    skillsStyle,
-    tailAnimation,
+  burnedAnimation,
+  fireAnimation,
+  noPokeCardStyle,
+  noSkillsStyle,
+  paralysisAnimation,
+  pokeCardStyle,
+  skillsStyle,
+  tailAnimation,
 } from './index.css';
 
 type PokeCardProps = ComponentProps<typeof Image> &

@@ -1,8 +1,8 @@
 'use client';
 
-import {type FC, useMemo} from 'react';
-import type {ConditionType} from '../../entities/pokemon/model/type';
-import {burnedStyle, conditionStyle, hpBar, paralysisStyle, status} from './index.css';
+import { type FC, useMemo } from 'react';
+import type { ConditionType } from '../../entities/pokemon/model/type';
+import { burnedStyle, conditionStyle, hpBar, paralysisStyle, status } from './index.css';
 
 type StatusProps = {
   hp: number;

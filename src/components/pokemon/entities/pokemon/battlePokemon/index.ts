@@ -1,5 +1,8 @@
-import {type Dispatch, type SetStateAction, useState} from 'react';
-import type {ConditionType} from '../model/type';
+import { type Dispatch, type SetStateAction, useCallback, useEffect, useState } from 'react';
+import type { ConditionType } from '../model/type';
+
+const BURNED_DAMAGE = 20;
+const HEAL_CONDITION_COUNT = 2;
 
 type BattleProps = {
   hp: number;
@@ -8,22 +11,37 @@ type BattleProps = {
   speed: number;
 };
 
-export function useBattle(
-  pokemon: BattleProps,
-  condition: ConditionType,
-  setMegaSinka: Dispatch<SetStateAction<boolean>>,
-) {
-  const [HP, setHp] = useState(pokemon.hp);
-  const [ATTACK, setAttack] = useState(pokemon.attack);
-  const [DEFENSE, setDefense] = useState(pokemon.defense);
-  const [SPEED, setSpeed] = useState(pokemon.speed);
-  const [CONDITION, setCondition] = useState(condition);
+export function useBattle(pokemon: BattleProps, setMegaSinka: Dispatch<SetStateAction<boolean>>) {
+  const [hp, setHp] = useState<number>(pokemon.hp);
+  const [attack, setAttack] = useState<number>(pokemon.attack);
+  const [defense, setDefense] = useState<number>(pokemon.defense);
+  const [speed, setSpeed] = useState<number>(pokemon.speed);
+  const [condition, setCondition] = useState<ConditionType>(null);
+  const [conditionCount, setConditionCount] = useState<number>(0);
+
+  useEffect(() => {
+    setConditionCount(0);
+  }, []);
+
+  const onDamage = useCallback((damageValue: number, newCondition?: ConditionType) => {
+    setHp((prevHP) => prevHP - damageValue);
+    newCondition && setCondition(newCondition);
+  }, []);
+
+  // turn が　終わる時の処理の集合
+  const onTurnEnd = () => {
+    if (condition === 'Burned') {
+      setHp((prevHP) => prevHP - BURNED_DAMAGE);
+    }
+
+    setConditionCount((prevCount) => prevCount + 1);
+    if (conditionCount >= HEAL_CONDITION_COUNT) {
+      setCondition(null);
+    }
+  };
 
   const onEvolution = () => {
     setMegaSinka(true);
-  };
-  const onDamage = (damageValue: number) => {
-    setHp((prevHP) => prevHP - damageValue);
   };
   const changeAttack = (Value: number) => {
     setAttack((prevAttack) => prevAttack + Value);
@@ -34,12 +52,9 @@ export function useBattle(
   const changeSpeed = (Value: number) => {
     setSpeed((prevSpeed) => prevSpeed + Value);
   };
-  const changeCondition = (Value: ConditionType) => {
-    setCondition(Value);
-  };
 
   return [
-    { ATTACK, CONDITION, DEFENSE, HP, SPEED },
-    { changeAttack, changeCondition, changeDefense, changeSpeed, onDamage, onEvolution },
+    { attack, condition, defense, hp, speed },
+    { changeAttack, changeDefense, changeSpeed, onDamage, onEvolution, onTurnEnd },
   ] as const;
 }

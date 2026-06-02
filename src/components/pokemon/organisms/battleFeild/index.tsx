@@ -1,24 +1,21 @@
-import {type FC, useState} from 'react';
-import {useBattle} from '../../entities/pokemon/battlePokemon';
-import {usePokemon} from '../../entities/pokemon/getPokemon';
-import type {AnimationType, AttackType, ConditionType} from '../../entities/pokemon/model/type';
+import { type FC, useState } from 'react';
+import { useBattle } from '../../entities/pokemon/battlePokemon';
+import { usePokemon } from '../../entities/pokemon/getPokemon';
+import type { AnimationType, AttackType } from '../../entities/pokemon/model/type';
 import PokeCard from '../PokeCard';
-import {battleField, enemyStyle, playerStyle} from './index.css';
+import { battleField, enemyStyle, playerStyle } from './index.css';
 
 const BattleFeild: FC = () => {
   // turn ロジクは画面変化を探知する必要はないので、UseStateは使わない。
-  const [isPlayerTurn, setIsPlayerTurn] = useState(true);
+  const [isPlayerTurn, setIsPlayerTurn] = useState<boolean>(true);
   const [playerPokemon, setPlayerPokemon] = usePokemon('Pikachu');
   const [enemyPokemon, setEnemyPokemon] = usePokemon('Hitokage');
-  const [playerCondion, setPlayerCondition] = useState<ConditionType>(null);
-  const [enemyCondition, setEnemyCondition] = useState<ConditionType>(null);
-
   if (playerPokemon === null || enemyPokemon === null) {
     return <div>playerPokemon or enemyPokemon null</div>;
   }
 
-  const [playerState, playerActions] = useBattle(playerPokemon, playerCondion, setPlayerPokemon);
-  const [enemyState, enemyAction] = useBattle(enemyPokemon, enemyCondition, setEnemyPokemon);
+  const [playerPokemonStatus, playerPokemonActions] = useBattle(playerPokemon, setPlayerPokemon);
+  const [enemyPokemonStatus, enemyPokemonActions] = useBattle(enemyPokemon, setEnemyPokemon);
   const [playerAnimation, setPlayerAnimation] = useState<AnimationType>('noAnimation');
   const [enemyAnimation, setEnemyAnimation] = useState<AnimationType>('noAnimation');
 
@@ -28,45 +25,44 @@ const BattleFeild: FC = () => {
         {playerPokemon && (
           <PokeCard
             Animation={playerAnimation}
-            attack={playerState.ATTACK}
-            condition={playerCondion}
-            defense={playerState.DEFENSE}
-            hp={playerState.HP}
+            attack={playerPokemonStatus.attack}
+            condition={playerPokemonStatus.condition}
+            defense={playerPokemonStatus.defense}
+            hp={playerPokemonStatus.hp}
             imageUrl={playerPokemon.imageUrl}
-            isDead={playerState.HP <= 0}
+            isDead={playerPokemonStatus.hp <= 0}
             isSkillsActive={isPlayerTurn}
-            onClickMegaSinka={playerActions.onEvolution}
+            onClickMegaSinka={playerPokemonActions.onEvolution}
             pokeName={playerPokemon.pokeName}
             // Todo : onClick 別の関数で抽出してCallbackする。
             skills={playerPokemon.skills.map((index) => ({
               ...index,
               // onClick : => useCallback()
               onClick: (attackType: AttackType) => {
-                if (attackType === 'reduceHP') {
-                  enemyAction.onDamage(25);
-                  setEnemyAnimation('fire');
-                }
-                if (attackType === 'reduceSpeed') {
-                  enemyAction.changeSpeed(-10);
-                  setEnemyAnimation('tail');
-                }
-                if (attackType === 'burn') {
-                  setEnemyCondition('Burned');
-                  setEnemyAnimation('burned');
-                }
-                if (attackType === 'paralysis') {
-                  setEnemyCondition('Paralysis');
-                  setEnemyAnimation('paralysis');
+                switch (attackType) {
+                  case 'reduceHP':
+                    enemyPokemonActions.onDamage(25);
+                    setEnemyAnimation('fire');
+                    break;
+                  case 'reduceSpeed':
+                    enemyPokemonActions.changeSpeed(-10);
+                    setEnemyAnimation('tail');
+                    break;
+                  case 'burn':
+                    enemyPokemonActions.onDamage(10, 'Burned');
+                    setEnemyAnimation('burned');
+                    break;
+                  case 'paralysis':
+                    enemyPokemonActions.onDamage(10, 'Paralysis');
+                    setEnemyAnimation('paralysis');
+                    break;
                 }
 
-                setTimeout(() => {
-                  setEnemyAnimation('noAnimation');
-                }, 600);
-
+                playerPokemonActions.onTurnEnd();
                 setIsPlayerTurn(false);
               },
             }))}
-            speed={playerState.SPEED}
+            speed={playerPokemonStatus.speed}
           />
         )}
       </div>
@@ -75,43 +71,42 @@ const BattleFeild: FC = () => {
         {enemyPokemon && (
           <PokeCard
             Animation={enemyAnimation}
-            attack={enemyState.ATTACK}
-            condition={enemyCondition}
-            defense={enemyState.DEFENSE}
-            hp={enemyState.HP}
+            attack={enemyPokemonStatus.attack}
+            condition={enemyPokemonStatus.condition}
+            defense={enemyPokemonStatus.defense}
+            hp={enemyPokemonStatus.hp}
             imageUrl={enemyPokemon.imageUrl}
-            isDead={enemyState.HP <= 0}
+            isDead={enemyPokemonStatus.hp <= 0}
             isSkillsActive={!isPlayerTurn}
-            onClickMegaSinka={enemyAction.onEvolution}
+            onClickMegaSinka={enemyPokemonActions.onEvolution}
             pokeName={enemyPokemon.pokeName}
             skills={enemyPokemon.skills.map((skill) => ({
               ...skill,
               onClick: (attackType: AttackType) => {
-                if (attackType === 'reduceHP') {
-                  playerActions.onDamage(25);
-                  setPlayerAnimation('fire');
+                switch (attackType) {
+                  case 'reduceHP':
+                    playerPokemonActions.onDamage(25);
+                    setPlayerAnimation('fire');
+                    break;
+                  case 'reduceSpeed':
+                    playerPokemonActions.changeSpeed(-10);
+                    setPlayerAnimation('tail');
+                    break;
+                  case 'burn':
+                    playerPokemonActions.onDamage(10, 'Burned');
+                    setPlayerAnimation('burned');
+                    break;
+                  case 'paralysis':
+                    playerPokemonActions.onDamage(0, 'Paralysis');
+                    setPlayerAnimation('paralysis');
+                    break;
                 }
-                if (attackType === 'reduceSpeed') {
-                  playerActions.changeSpeed(-10);
-                  setPlayerAnimation('tail');
-                }
-                if (attackType === 'burn') {
-                  setPlayerCondition('Burned');
-                  setPlayerAnimation('burned');
-                }
-                if (attackType === 'paralysis') {
-                  setPlayerCondition('Paralysis');
-                  setPlayerAnimation('paralysis');
-                }
-
-                setTimeout(() => {
-                  setPlayerAnimation('noAnimation');
-                }, 600);
+                enemyPokemonActions.onTurnEnd();
 
                 setIsPlayerTurn(true);
               },
             }))}
-            speed={enemyState.SPEED}
+            speed={enemyPokemonStatus.speed}
           />
         )}
       </div>

@@ -1,4 +1,4 @@
-import {keyframes, style} from '@vanilla-extract/css';
+import { keyframes, style } from '@vanilla-extract/css';
 
 const burnBlink = keyframes({
   '0%, 100%': {
