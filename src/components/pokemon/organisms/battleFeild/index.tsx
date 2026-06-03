@@ -1,9 +1,9 @@
-import { type FC, useState } from 'react';
-import { useBattle } from '../../entities/pokemon/battlePokemon';
-import { usePokemon } from '../../entities/pokemon/getPokemon';
-import type { AnimationType, AttackType } from '../../entities/pokemon/model/type';
+import {type FC, useState} from 'react';
+import {useBattle} from '../../entities/pokemon/battlePokemon';
+import {usePokemon} from '../../entities/pokemon/getPokemon';
+import type {AnimationType, AttackType} from '../../entities/pokemon/model/type';
 import PokeCard from '../PokeCard';
-import { battleField, enemyStyle, playerStyle } from './index.css';
+import {battleField, enemyStyle, playerStyle} from './index.css';
 
 const BattleFeild: FC = () => {
   // turn ロジクは画面変化を探知する必要はないので、UseStateは使わない。
@@ -39,6 +39,14 @@ const BattleFeild: FC = () => {
               ...index,
               // onClick : => useCallback()
               onClick: (attackType: AttackType) => {
+
+                  if(playerPokemonStatus.condition === "Paralysis"){
+                      alert('麻痺状態のため、攻撃が失敗しました。');
+                      playerPokemonActions.onTurnEnd();
+                      setIsPlayerTurn(false);
+                      return
+                  }
+
                 switch (attackType) {
                   case 'reduceHP':
                     enemyPokemonActions.onDamage(25);
@@ -87,6 +95,12 @@ const BattleFeild: FC = () => {
             skills={enemyPokemon.skills.map((skill) => ({
               ...skill,
               onClick: (attackType: AttackType) => {
+                  if(enemyPokemonStatus.condition === "Paralysis"){
+                      alert('麻痺状態のため、攻撃が失敗しました。');
+                      enemyPokemonActions.onTurnEnd();
+                      setIsPlayerTurn(false);
+                      return;
+                  }
                 switch (attackType) {
                   case 'reduceHP':
                     playerPokemonActions.onDamage(25);
