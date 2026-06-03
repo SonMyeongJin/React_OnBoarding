@@ -98,7 +98,7 @@ const BattleFeild: FC = () => {
                   if(enemyPokemonStatus.condition === "Paralysis"){
                       alert('麻痺状態のため、攻撃が失敗しました。');
                       enemyPokemonActions.onTurnEnd();
-                      setIsPlayerTurn(false);
+                      setIsPlayerTurn(true);
                       return;
                   }
                 switch (attackType) {
