@@ -59,6 +59,10 @@ const BattleFeild: FC = () => {
                 }
 
                 playerPokemonActions.onTurnEnd();
+
+                setTimeout(() => {
+                  setEnemyAnimation('noAnimation');
+                }, 600);
                 setIsPlayerTurn(false);
               },
             }))}
@@ -102,6 +106,10 @@ const BattleFeild: FC = () => {
                     break;
                 }
                 enemyPokemonActions.onTurnEnd();
+
+                setTimeout(() => {
+                  setPlayerAnimation('noAnimation');
+                }, 600);
 
                 setIsPlayerTurn(true);
               },

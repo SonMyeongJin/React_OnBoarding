@@ -65,19 +65,19 @@ export const skillsStyle = style({
 });
 
 const fireFly = keyframes({
-  '0%, 100%': {
+  '0%': {
+    opacity: 1,
     transform: 'translateX(0) rotate(0deg)',
   },
-  '25%': {
-    transform: 'translateX(-8px) rotate(-8deg)',
-  },
-  '50%': {
-    transform: 'translateX(8px) rotate(8deg)',
-  },
-  '75%': {
-    transform: 'translateX(-6px) rotate(-6deg)',
+  '25%': { transform: 'translateX(-8px) rotate(-8deg)' },
+  '50%': { transform: 'translateX(8px) rotate(8deg)' },
+  '75%': { transform: 'translateX(-6px) rotate(-6deg)' },
+  '100%': {
+    opacity: 0,
+    transform: 'translateX(0) rotate(0deg)',
   },
 });
+
 const tailShake = keyframes({
   '0%': {
     opacity: 0,
@@ -135,7 +135,7 @@ const paralysisShock = keyframes({
 });
 
 export const fireAnimation = style({
-  animation: `${fireFly} 0.6s ease-out forwards`,
+  animation: `${fireFly} 1s ease-out forwards`,
   fontSize: '32px',
   left: '50px',
   pointerEvents: 'none',
