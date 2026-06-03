@@ -5,6 +5,8 @@ import type {AnimationType, AttackType} from '../../entities/pokemon/model/type'
 import PokeCard from '../PokeCard';
 import {battleField, enemyStyle, playerStyle} from './index.css';
 
+const DAMAGE_VALUE = 25;
+
 const BattleFeild: FC = () => {
     // turn ロジクは画面変化を探知する必要はないので、UseStateは使わない。
     const [isPlayerTurn, setIsPlayerTurn] = useState<boolean>(true);
@@ -49,7 +51,7 @@ const BattleFeild: FC = () => {
 
                                 switch (attackType) {
                                     case 'reduceHP':
-                                        enemyPokemonActions.onDamage(25);
+                                        enemyPokemonActions.onDamage(DAMAGE_VALUE * (1 + (playerPokemonStatus.attack / 100)));
                                         setEnemyAnimation('fire');
                                         break;
                                     case 'reduceSpeed':
@@ -111,7 +113,7 @@ const BattleFeild: FC = () => {
                                 }
                                 switch (attackType) {
                                     case 'reduceHP':
-                                        playerPokemonActions.onDamage(25);
+                                        playerPokemonActions.onDamage(DAMAGE_VALUE * (1 + (enemyPokemonStatus.attack / 100)));
                                         setPlayerAnimation('fire');
                                         break;
                                     case 'reduceSpeed':

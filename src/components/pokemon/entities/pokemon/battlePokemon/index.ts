@@ -24,7 +24,7 @@ export function useBattle(pokemon: BattleProps, setMegaSinka: Dispatch<SetStateA
     }, []);
 
     const onDamage = useCallback((damageValue: number, newCondition?: ConditionType) => {
-        setHp((prevHP) => prevHP - damageValue);
+        setHp((prevHP) => prevHP - damageValue * (defense / 100));
         newCondition && setCondition(newCondition);
     }, []);
 
