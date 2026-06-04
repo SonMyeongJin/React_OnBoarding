@@ -1,3 +1,4 @@
+'use client';
 import {type FC, useState} from 'react';
 import {useBattleController} from '../../entities/pokemon/battleController';
 import {usePokemon} from '../../entities/pokemon/getPokemon';
