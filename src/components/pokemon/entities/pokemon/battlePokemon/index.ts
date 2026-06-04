@@ -32,7 +32,7 @@ export function useBattle(pokemon: BattleProps, setMegaSinka: Dispatch<SetStateA
   );
 
   // turn が　終わる時の処理の集合
-  const onTurnEnd = () => {
+  const onTurnEnd = useCallback(() => {
     if (condition === 'Burned') {
       setHp((prevHP) => prevHP - BURNED_DAMAGE);
     }
@@ -45,17 +45,21 @@ export function useBattle(pokemon: BattleProps, setMegaSinka: Dispatch<SetStateA
     // 0 ~ 5
     setConditionCount((prevCount) => prevCount + 1);
 
-    const healConditionCount = getRandomArbitrary(2, HEAL_CONDITION_COUNT);
-
     // min =< return < max
     function getRandomArbitrary(min: number, max: number) {
       return Math.random() * (max - min) + min;
     }
+    const healConditionCount = getRandomArbitrary(2, HEAL_CONDITION_COUNT);
+
+    console.log('👍' + conditionCount + ' 👹' + healConditionCount, conditionCount >= healConditionCount);
+    console.log(speed, condition);
 
     if (conditionCount >= healConditionCount) {
+      console.log('heal');
       setCondition(null);
+      console.log(condition); // -> no null
     }
-  };
+  }, [condition, conditionCount, speed]);
 
   const onEvolution = () => {
     setMegaSinka(true);

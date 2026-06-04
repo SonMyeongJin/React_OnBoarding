@@ -1,5 +1,5 @@
-import { type Dispatch, type SetStateAction, useMemo, useState } from 'react';
-import type { AttackType } from '../model/type';
+import {type Dispatch, type SetStateAction, useMemo, useState} from 'react';
+import type {AttackType} from '../model/type';
 
 const DefaultPokemon = {
   attack: 0,
@@ -64,6 +64,59 @@ type Pokemon = {
   speed: number;
 };
 
+const pikaSkills = [
+  {
+    attackType: 'reduceSpeed' as AttackType,
+    pp: 15,
+    skillName: Pikachu.skillName1,
+    skillType: 'Electric',
+  },
+  {
+    attackType: 'reduceHP' as AttackType,
+    pp: 30,
+    skillName: Pikachu.skillName2,
+    skillType: 'Normal',
+  },
+  {
+    attackType: 'burn' as AttackType,
+    pp: 20,
+    skillName: Pikachu.skillName3,
+    skillType: 'Steel',
+  },
+  {
+    attackType: 'paralysis' as AttackType,
+    pp: 10,
+    skillName: Pikachu.skillName4,
+    skillType: 'Electric',
+  },
+];
+const hitokageSkills = [
+  {
+    attackType: 'reduceSpeed' as AttackType,
+    pp: 10,
+    skillName: Hitokage.skillName1,
+    skillType: 'fire',
+  },
+  {
+    attackType: 'reduceHP' as AttackType,
+    pp: 35,
+    skillName: Hitokage.skillName2,
+    skillType: 'normal',
+  },
+  {
+    attackType: 'burn' as AttackType,
+    pp: 25,
+    skillName: Hitokage.skillName3,
+    skillType: 'fire',
+  },
+  {
+    attackType: 'paralysis' as AttackType,
+    pp: 15,
+    skillName: Hitokage.skillName4,
+    skillType: 'fire',
+  },
+];
+
 // tuple
 type PokemonHooksReturn = readonly [Pokemon, Dispatch<SetStateAction<boolean>>];
 
@@ -73,33 +126,6 @@ export function usePokemon(name: string): PokemonHooksReturn {
   const pokemonData: Pokemon = useMemo(() => {
     switch (name) {
       case 'Pikachu': {
-        const pikaSkills = [
-          {
-            attackType: 'reduceSpeed' as AttackType,
-            pp: 15,
-            skillName: Pikachu.skillName1,
-            skillType: 'Electric',
-          },
-          {
-            attackType: 'reduceHP' as AttackType,
-            pp: 30,
-            skillName: Pikachu.skillName2,
-            skillType: 'Normal',
-          },
-          {
-            attackType: 'burn' as AttackType,
-            pp: 20,
-            skillName: Pikachu.skillName3,
-            skillType: 'Steel',
-          },
-          {
-            attackType: 'paralysis' as AttackType,
-            pp: 10,
-            skillName: Pikachu.skillName4,
-            skillType: 'Electric',
-          },
-        ];
-
         if (isMegaSinka) {
           return {
             ...Pikachu,
@@ -115,35 +141,7 @@ export function usePokemon(name: string): PokemonHooksReturn {
           skills: pikaSkills,
         };
       }
-
       case 'Hitokage': {
-        const hitokageSkills = [
-          {
-            attackType: 'reduceSpeed' as AttackType,
-            pp: 10,
-            skillName: Hitokage.skillName1,
-            skillType: 'fire',
-          },
-          {
-            attackType: 'reduceHP' as AttackType,
-            pp: 35,
-            skillName: Hitokage.skillName2,
-            skillType: 'normal',
-          },
-          {
-            attackType: 'burn' as AttackType,
-            pp: 25,
-            skillName: Hitokage.skillName3,
-            skillType: 'fire',
-          },
-          {
-            attackType: 'paralysis' as AttackType,
-            pp: 15,
-            skillName: Hitokage.skillName4,
-            skillType: 'fire',
-          },
-        ];
-
         if (isMegaSinka) {
           return {
             ...Hitokage,
@@ -159,7 +157,6 @@ export function usePokemon(name: string): PokemonHooksReturn {
           skills: hitokageSkills,
         };
       }
-
       default:
         return {
           ...DefaultPokemon,
@@ -167,7 +164,6 @@ export function usePokemon(name: string): PokemonHooksReturn {
         };
     }
   }, [name, isMegaSinka]);
+
   return [{ ...pokemonData }, setMegaSinka] as const;
 }
-
-// const 변경할때 없을때 만 쓴다.

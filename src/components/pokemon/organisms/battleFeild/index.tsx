@@ -8,7 +8,6 @@ import {battleField, battleSkillsStyle, enemyStyle, playerStyle} from './index.c
 
 const DAMAGE_VALUE = 25;
 
-// biome-ignore lint/complexity/noExcessiveLinesPerFunction: <explanation>
 const BattleFeild: FC = () => {
   // turn ロジクは画面変化を探知する必要はないので、UseStateは使わない。
   const [isPlayerTurn, setIsPlayerTurn] = useState<boolean>(true);
@@ -45,7 +44,6 @@ const BattleFeild: FC = () => {
         return;
       }
 
-      // biome-ignore lint/style/useDefaultSwitchClause: <explanation>
       switch (attackType) {
         case 'reduceHP':
           enemyPokemonActions.onDamage(DAMAGE_VALUE * (1 + playerPokemonStatus.attack / 100));
@@ -71,6 +69,9 @@ const BattleFeild: FC = () => {
             alert('攻撃は失敗しました。');
           }
           break;
+
+        default:
+          break;
       }
 
       playerPokemonActions.onTurnEnd();
@@ -91,7 +92,6 @@ const BattleFeild: FC = () => {
         setIsPlayerTurn(true);
         return;
       }
-      // biome-ignore lint/style/useDefaultSwitchClause: <explanation>
       switch (attackType) {
         case 'reduceHP':
           playerPokemonActions.onDamage(DAMAGE_VALUE * (1 + enemyPokemonStatus.attack / 100));
@@ -116,6 +116,8 @@ const BattleFeild: FC = () => {
           } else {
             alert('攻撃は失敗しました。');
           }
+          break;
+        default:
           break;
       }
       enemyPokemonActions.onTurnEnd();
