@@ -167,7 +167,9 @@ const BattleFeild: FC = () => {
       </div>
 
       <div className={battleSkillsStyle}>
-        <Skills skills={isPlayerTurn ? playerSkills : enemySkills} />
+        {enemyPokemonStatus.hp > 0 && playerPokemonStatus.hp > 0 && (
+          <Skills skills={isPlayerTurn ? playerSkills : enemySkills} />
+        )}
       </div>
     </div>
   );
