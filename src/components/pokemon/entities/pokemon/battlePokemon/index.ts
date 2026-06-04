@@ -23,10 +23,13 @@ export function useBattle(pokemon: BattleProps, setMegaSinka: Dispatch<SetStateA
         setConditionCount(0);
     }, []);
 
-    const onDamage = useCallback((damageValue: number, newCondition?: ConditionType) => {
-        setHp((prevHP) => prevHP - damageValue * (defense / 100));
-        newCondition && setCondition(newCondition);
-    }, []);
+    const onDamage = useCallback(
+        (damageValue: number, newCondition?: ConditionType) => {
+            setHp((prevHP) => prevHP - damageValue * (defense / 100));
+            newCondition && setCondition(newCondition);
+        },
+        [defense],
+    );
 
     // turn が　終わる時の処理の集合
     const onTurnEnd = () => {

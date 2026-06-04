@@ -38,32 +38,6 @@ export const pokeCardStyle = style({
   willChange: 'box-shadow, filter',
 });
 
-export const noSkillsStyle = style({
-  background: '#f8fafc',
-  border: '4px double #111827',
-  borderRadius: '2px',
-  boxShadow: '0 0 0 2px #e2e8f0 inset',
-  cursor: 'not-allowed',
-  display: 'grid',
-  gridColumn: '1 / -1',
-  gridTemplateColumns: '1fr 1fr',
-  margin: '10px',
-  opacity: 0.5,
-  pointerEvents: 'none',
-});
-export const skillsStyle = style({
-  background: '#f8fafc',
-  border: '4px double #111827',
-  borderRadius: '2px',
-  boxShadow: '0 0 0 2px #e2e8f0 inset',
-  display: 'grid',
-  // 前に2pxが行間、後ろに10pxが列間の間隔
-  gap: '2px 10px',
-  gridColumn: '1 / -1',
-  gridTemplateColumns: '1fr 1fr',
-  margin: '10px',
-});
-
 const fireFly = keyframes({
   '0%': {
     opacity: 1,

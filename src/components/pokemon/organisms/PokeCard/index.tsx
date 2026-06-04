@@ -3,21 +3,17 @@ import Image from '../../atoms/image';
 import MegaButton from '../../atoms/megaButton';
 import Status from '../../atoms/status';
 import type { AnimationType } from '../../entities/pokemon/model/type';
-import Skills from '../../molecules/skills';
 import {
   burnedAnimation,
   fireAnimation,
   noPokeCardStyle,
-  noSkillsStyle,
   paralysisAnimation,
   pokeCardStyle,
-  skillsStyle,
   tailAnimation,
 } from './index.css';
 
 type PokeCardProps = ComponentProps<typeof Image> &
-  ComponentProps<typeof Status> &
-  ComponentProps<typeof Skills> & {
+  ComponentProps<typeof Status> & {
     onClickMegaSinka: () => void;
     isSkillsActive: boolean;
     Animation: AnimationType;
@@ -34,12 +30,6 @@ const PokeCard: FC<PokeCardProps> = (props: PokeCardProps) => {
       <Image imageUrl={props.imageUrl} isDead={props.isDead} pokeName={props.pokeName} />
 
       <Status {...props} />
-
-      <div className={props.isSkillsActive ? skillsStyle : noSkillsStyle}>
-        <Skills {...props} />
-      </div>
-      {/*<div className={noSkillsStyle}>{!props.isSkillsActive && <Skills {...props} />}</div>*/}
-      {/*<div className={skillsStyle}>{props.isSkillsActive && <Skills {...props} />}</div>*/}
 
       <MegaButton onClick={props.onClickMegaSinka} />
     </div>
