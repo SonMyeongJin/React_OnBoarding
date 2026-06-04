@@ -1,6 +1,27 @@
 import { type Dispatch, type SetStateAction, useMemo, useState } from 'react';
 import type { AttackType } from '../model/type';
 
+const DefaultPokemon = {
+  attack: 0,
+  defense: 0,
+  hp: 0,
+  imageUrl: '',
+  pokeName: '',
+  skillName1: '',
+  skillName2: '',
+  skillName3: '',
+  skillName4: '',
+  speed: 0,
+} as const;
+const DefaultSkills = [
+  {
+    attackType: 'reduceSpeed' as AttackType,
+    pp: 0,
+    skillName: '0',
+    skillType: '0',
+  },
+];
+
 const Pikachu = {
   attack: 50,
   defense: 30,
@@ -44,12 +65,12 @@ type Pokemon = {
 };
 
 // tuple
-type PokemonHooksReturn = readonly [Pokemon | null, Dispatch<SetStateAction<boolean>>];
+type PokemonHooksReturn = readonly [Pokemon, Dispatch<SetStateAction<boolean>>];
 
 export function usePokemon(name: string): PokemonHooksReturn {
   const [isMegaSinka, setMegaSinka] = useState(false);
 
-  const pokemonData: Pokemon | null = useMemo(() => {
+  const pokemonData: Pokemon = useMemo(() => {
     switch (name) {
       case 'Pikachu': {
         const pikaSkills = [
@@ -140,14 +161,12 @@ export function usePokemon(name: string): PokemonHooksReturn {
       }
 
       default:
-        return null;
+        return {
+          ...DefaultPokemon,
+          skills: DefaultSkills,
+        };
     }
   }, [name, isMegaSinka]);
-
-  if (!pokemonData) {
-    return [null, setMegaSinka];
-  }
-
   return [{ ...pokemonData }, setMegaSinka] as const;
 }
 
