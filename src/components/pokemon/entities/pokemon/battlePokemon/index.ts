@@ -1,8 +1,8 @@
-import { type Dispatch, type SetStateAction, useCallback, useEffect, useState } from 'react';
-import type { ConditionType } from '../model/type';
+import {type Dispatch, type SetStateAction, useCallback, useEffect, useState} from 'react';
+import type {ConditionType} from '../model/type';
 
 const BURNED_DAMAGE = 20;
-const HEAL_CONDITION_COUNT = 1;
+const HEAL_CONDITION_COUNT = 5;
 
 type BattleProps = {
   hp: number;
@@ -38,11 +38,21 @@ export function useBattle(pokemon: BattleProps, setMegaSinka: Dispatch<SetStateA
     }
 
     // 0 =< Math.random() < 1.0
-    setConditionCount((prevCount) => prevCount + Math.random());
+    // 0 =< 10*Math.random() < 10
+    // Math.floor(10 * Math.random()) = 0 ~ 9 の整数
+    // Math.floor((10 * Math.random()) / 2 ) = 1 ~ 5 の整数
 
-    console.log(conditionCount);
+    // 0 ~ 5
+    setConditionCount((prevCount) => prevCount + 1);
 
-    if (conditionCount >= HEAL_CONDITION_COUNT) {
+    const healConditionCount = getRandomArbitrary(2, HEAL_CONDITION_COUNT);
+
+    // min =< return < max
+    function getRandomArbitrary(min: number, max: number) {
+      return Math.random() * (max - min) + min;
+    }
+
+    if (conditionCount >= healConditionCount) {
       setCondition(null);
     }
   };
