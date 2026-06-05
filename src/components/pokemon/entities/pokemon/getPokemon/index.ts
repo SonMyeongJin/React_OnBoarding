@@ -29,10 +29,6 @@ const Pikachu = {
   imageUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
   pokeName: 'pikacnu',
 
-  skillName1: '尾振り',
-  skillName2: 'Quick Attack',
-  skillName3: 'Iron Tail',
-  skillName4: 'Electro Ball',
   speed: 40,
 } as const;
 
@@ -42,10 +38,6 @@ const Hitokage = {
   hp: 100,
   imageUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png',
   pokeName: 'hitokage',
-  skillName1: 'SpeedDown',
-  skillName2: 'Scratch',
-  skillName3: 'Ember',
-  skillName4: 'Fire Spin',
   speed: 50,
 } as const;
 
@@ -68,52 +60,52 @@ const pikaSkills = [
   {
     attackType: 'reduceSpeed' as AttackType,
     pp: 15,
-    skillName: Pikachu.skillName1,
-    skillType: 'Electric',
+    skillName: '尾振り',
+    skillType: '🩶',
   },
   {
     attackType: 'reduceHP' as AttackType,
     pp: 30,
-    skillName: Pikachu.skillName2,
-    skillType: 'Normal',
+    skillName: '火砲',
+    skillType: '🔥',
   },
   {
     attackType: 'burn' as AttackType,
     pp: 20,
-    skillName: Pikachu.skillName3,
-    skillType: 'Steel',
+    skillName: '焼き尽くす',
+    skillType: '🔥',
   },
   {
     attackType: 'paralysis' as AttackType,
     pp: 10,
-    skillName: Pikachu.skillName4,
-    skillType: 'Electric',
+    skillName: '電磁波',
+    skillType: '⚡',
   },
 ];
 const hitokageSkills = [
   {
     attackType: 'reduceSpeed' as AttackType,
     pp: 10,
-    skillName: Hitokage.skillName1,
-    skillType: 'fire',
+    skillName: '遅くなれよ',
+    skillType: '🩶',
   },
   {
     attackType: 'reduceHP' as AttackType,
     pp: 35,
-    skillName: Hitokage.skillName2,
-    skillType: 'normal',
+    skillName: '火炎放射',
+    skillType: '🔥',
   },
   {
     attackType: 'burn' as AttackType,
     pp: 25,
-    skillName: Hitokage.skillName3,
-    skillType: 'fire',
+    skillName: 'ぽかぽか',
+    skillType: '🔥',
   },
   {
     attackType: 'paralysis' as AttackType,
     pp: 15,
-    skillName: Hitokage.skillName4,
-    skillType: 'fire',
+    skillName: 'ピリピリ',
+    skillType: '⭐',
   },
 ];
 

@@ -1,11 +1,11 @@
 'use client';
-import {type FC, useState} from 'react';
-import {useBattleController} from '../../entities/pokemon/battleController';
-import {usePokemon} from '../../entities/pokemon/getPokemon';
-import type {AttackType} from '../../entities/pokemon/model/type';
+import { type FC, useState } from 'react';
+import { useBattleController } from '../../entities/pokemon/battleController';
+import { usePokemon } from '../../entities/pokemon/getPokemon';
+import type { AttackType } from '../../entities/pokemon/model/type';
 import Skills from '../../molecules/skills';
 import PokeCard from '../PokeCard';
-import {battleField, battleSkillsStyle, enemyStyle, playerStyle} from './index.css';
+import { battleField, battleSkillsStyle, enemyStyle, playerStyle } from './index.css';
 
 const DAMAGE_VALUE = 25;
 

@@ -1,15 +1,15 @@
-import type {ComponentProps, FC} from 'react';
+import type { ComponentProps, FC } from 'react';
 import Image from '../../atoms/image';
 import MegaButton from '../../atoms/megaButton';
 import Status from '../../atoms/status';
-import type {AnimationType} from '../../entities/pokemon/model/type';
+import type { AnimationType } from '../../entities/pokemon/model/type';
 import {
-    burnedAnimation,
-    fireAnimation,
-    noPokeCardStyle,
-    paralysisAnimation,
-    pokeCardStyle,
-    tailAnimation,
+  burnedAnimation,
+  fireAnimation,
+  noPokeCardStyle,
+  paralysisAnimation,
+  pokeCardStyle,
+  tailAnimation,
 } from './index.css';
 
 type PokeCardProps = ComponentProps<typeof Image> &
@@ -28,7 +28,7 @@ const PokeCard: FC<PokeCardProps> = (props: PokeCardProps) => {
       {props.Animation === 'paralysis' && <div className={paralysisAnimation} />}
 
       <Image imageUrl={props.imageUrl} isDead={props.isDead} pokeName={props.pokeName} />
-        { props.isDead && <div> Game Over </div>}
+      {props.isDead && <div> Game Over </div>}
 
       <Status {...props} />
 

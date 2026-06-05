@@ -1,5 +1,5 @@
-import {type Dispatch, type SetStateAction, useCallback, useEffect, useState} from 'react';
-import type {ConditionType} from '../model/type';
+import { type Dispatch, type SetStateAction, useCallback, useEffect, useState } from 'react';
+import type { ConditionType } from '../model/type';
 
 const BURNED_DAMAGE = 20;
 const HEAL_CONDITION_COUNT = 5;
@@ -51,7 +51,7 @@ export function useBattle(pokemon: BattleProps, setMegaSinka: Dispatch<SetStateA
     }
     const healConditionCount = getRandomArbitrary(2, HEAL_CONDITION_COUNT);
 
-    console.log('👍' + conditionCount + ' 👹' + healConditionCount, conditionCount >= healConditionCount);
+    console.log(`👍${conditionCount} 👹${healConditionCount}`, conditionCount >= healConditionCount);
     console.log(speed, condition);
 
     if (conditionCount >= healConditionCount) {
