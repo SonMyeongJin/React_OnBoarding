@@ -1,17 +1,26 @@
 'use client';
-import { type FC, useState } from 'react';
-import { useBattleController } from '../../entities/pokemon/battleController';
-import { usePokemon } from '../../entities/pokemon/getPokemon';
-import type { AttackType } from '../../entities/pokemon/model/type';
+import {type FC, useState} from 'react';
+import {useBattleController} from '../../entities/pokemon/battleController';
+import {usePokemon} from '../../entities/pokemon/getPokemon';
+import type {AttackType} from '../../entities/pokemon/model/type';
 import Skills from '../../molecules/skills';
 import PokeCard from '../PokeCard';
-import { battleField, battleSkillsStyle, enemyStyle, playerStyle } from './index.css';
+import {
+    attackFailedMessageStyle,
+    battleField,
+    battleSkillsStyle,
+    enemyStyle,
+    paralysisMessageStyle,
+    playerStyle,
+} from './index.css';
 
 const DAMAGE_VALUE = 25;
 
 const BattleFeild: FC = () => {
   // turn ロジクは画面変化を探知する必要はないので、UseStateは使わない。
   const [isPlayerTurn, setIsPlayerTurn] = useState<boolean>(true);
+  const [isAttackFailed, setIsAttackFailed] = useState<boolean>(false);
+  const [isParalysis, setIsParalysis] = useState<boolean>(false);
   const [playerPokemon, setPlayerPokemon] = usePokemon('Pikachu');
   const [enemyPokemon, setEnemyPokemon] = usePokemon('Hitokage');
   const {
@@ -30,6 +39,20 @@ const BattleFeild: FC = () => {
     setPlayerPokemon,
   });
 
+  const showAttackFailedMessage = () => {
+    setIsAttackFailed(true);
+    setTimeout(() => {
+      setIsAttackFailed(false);
+    }, 1000);
+  };
+
+  const canNotMoveByParalysis = () => {
+    setIsParalysis(true);
+    setTimeout(() => {
+      setIsParalysis(false);
+    }, 1000);
+  };
+
   // const [playerPokemonStatus, playerPokemonActions] = useBattle(playerPokemon, setPlayerPokemon);
   // const [enemyPokemonStatus, enemyPokemonActions] = useBattle(enemyPokemon, setEnemyPokemon);
   // const [playerAnimation, setPlayerAnimation] = useState<AnimationType>('noAnimation');
@@ -39,7 +62,8 @@ const BattleFeild: FC = () => {
     ...index,
     onClick: (attackType: AttackType) => {
       if (playerPokemonStatus.condition === 'Paralysis') {
-        alert('麻痺状態のため、攻撃が失敗しました。');
+        canNotMoveByParalysis();
+        //alert('麻痺状態のため、攻撃が失敗しました。');
         playerPokemonActions.onTurnEnd();
         setIsPlayerTurn(false);
         return;
@@ -59,7 +83,8 @@ const BattleFeild: FC = () => {
             enemyPokemonActions.onDamage(10, 'Burned');
             setEnemyAnimation('burned');
           } else {
-            alert('攻撃は失敗しました。');
+            showAttackFailedMessage();
+            //alert('攻撃は失敗しました。');
           }
           break;
         case 'paralysis':
@@ -67,7 +92,8 @@ const BattleFeild: FC = () => {
             enemyPokemonActions.onDamage(10, 'Paralysis');
             setEnemyAnimation('paralysis');
           } else {
-            alert('攻撃は失敗しました。');
+            showAttackFailedMessage();
+            //alert('攻撃は失敗しました。');
           }
           break;
 
@@ -88,7 +114,8 @@ const BattleFeild: FC = () => {
     ...skill,
     onClick: (attackType: AttackType) => {
       if (enemyPokemonStatus.condition === 'Paralysis') {
-        alert('麻痺状態のため、攻撃が失敗しました。');
+        canNotMoveByParalysis();
+        //alert('麻痺状態のため、攻撃が失敗しました。');
         enemyPokemonActions.onTurnEnd();
         setIsPlayerTurn(true);
         return;
@@ -107,7 +134,8 @@ const BattleFeild: FC = () => {
             playerPokemonActions.onDamage(10, 'Burned');
             setPlayerAnimation('burned');
           } else {
-            alert('攻撃は失敗しました。');
+            showAttackFailedMessage();
+            //alert('攻撃は失敗しました。');
           }
           break;
         case 'paralysis':
@@ -115,7 +143,8 @@ const BattleFeild: FC = () => {
             playerPokemonActions.onDamage(0, 'Paralysis');
             setPlayerAnimation('paralysis');
           } else {
-            alert('攻撃は失敗しました。');
+            showAttackFailedMessage();
+            //alert('攻撃は失敗しました。');
           }
           break;
         default:
@@ -133,6 +162,8 @@ const BattleFeild: FC = () => {
 
   return (
     <div className={battleField}>
+      {isAttackFailed && <div className={attackFailedMessageStyle}>攻撃失敗!</div>}
+      {isParalysis && <div className={paralysisMessageStyle}>麻痺で動けなかった。。</div>}
       <div className={playerStyle}>
         {playerPokemon && (
           <PokeCard

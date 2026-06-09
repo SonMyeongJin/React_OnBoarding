@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import {keyframes, style} from '@vanilla-extract/css';
 
 export const battleField = style({
   background: 'linear-gradient(180deg, #dff3b4 0%, #c8e69a 52%, #a8d17b 52%, #91c56d 100%)',
@@ -15,6 +15,7 @@ export const battleField = style({
   margin: '24px auto',
   minHeight: '540px',
   padding: '28px 36px',
+  position: 'relative',
   width: '760px',
 });
 
@@ -67,4 +68,92 @@ export const battleSkillsStyle = style({
     },
   },
   width: '100%',
+});
+
+const attackFailedPop = keyframes({
+  '0%': {
+    opacity: 0,
+    transform: 'translate(-50%, -50%) scale(0.8)',
+  },
+  '15%': {
+    opacity: 1,
+    transform: 'translate(-50%, -50%) scale(1.15)',
+  },
+  '25%': {
+    transform: 'translate(-50%, -50%) scale(1)',
+  },
+  '80%': {
+    opacity: 1,
+  },
+  '100%': {
+    opacity: 0,
+    transform: 'translate(-50%, -60%) scale(0.95)',
+  },
+});
+
+export const attackFailedMessageStyle = style({
+  animation: `${attackFailedPop} 3s ease-in-out forwards`,
+
+  background: '#fffef2',
+  border: '4px solid #111827',
+  boxShadow: '4px 4px 0 #ef4444',
+  color: '#dc2626',
+
+  fontSize: '28px',
+  fontWeight: 900,
+  left: '50%',
+  letterSpacing: '2px',
+
+  padding: '14px 28px',
+
+  pointerEvents: 'none',
+  position: 'absolute',
+  top: '45%',
+  zIndex: 20,
+});
+
+const paralysisMessagePop = keyframes({
+  '0%': {
+    opacity: 0,
+    transform: 'translate(-50%, -50%) scale(0.85)',
+  },
+  '12%': {
+    opacity: 1,
+    transform: 'translate(-50%, -50%) scale(1.08)',
+  },
+  '22%': {
+    transform: 'translate(-50%, -50%) scale(1)',
+  },
+  '75%': {
+    opacity: 1,
+    transform: 'translate(-50%, -50%) scale(1)',
+  },
+  '100%': {
+    opacity: 0,
+    transform: 'translate(-50%, -62%) scale(0.95)',
+  },
+});
+
+export const paralysisMessageStyle = style({
+  animation: `${paralysisMessagePop} 3s ease-in-out forwards`,
+
+  background: '#f5f3ff',
+  border: '4px solid #4c1d95',
+  boxShadow: '4px 4px 0 #7c3aed',
+  color: '#5b21b6',
+
+  fontSize: '22px',
+  fontWeight: 900,
+  left: '50%',
+  letterSpacing: '1px',
+  lineHeight: 1.35,
+  minWidth: '360px',
+
+  padding: '14px 24px',
+
+  pointerEvents: 'none',
+  position: 'absolute',
+  textAlign: 'center',
+  top: '45%',
+  zIndex: 25,
 });

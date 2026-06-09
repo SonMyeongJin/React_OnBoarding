@@ -34,7 +34,10 @@ export function useBattle(pokemon: BattleProps, setMegaSinka: Dispatch<SetStateA
   // turn が　終わる時の処理の集合
   const onTurnEnd = useCallback(() => {
     if (condition === 'Burned') {
-      setHp((prevHP) => prevHP - BURNED_DAMAGE);
+      setTimeout(() => {
+        alert('やけどのダメージを受けた！');
+        setHp((prevHP) => prevHP - BURNED_DAMAGE);
+      }, 1000);
     }
 
     // 0 =< Math.random() < 1.0

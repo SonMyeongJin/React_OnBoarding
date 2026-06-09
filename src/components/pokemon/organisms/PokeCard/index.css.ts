@@ -1,11 +1,11 @@
-import { keyframes, style } from '@vanilla-extract/css';
+import {keyframes, style} from '@vanilla-extract/css';
 
 const borderTwinkleStrong = keyframes({
   '0%, 100%': {
     boxShadow: '4px 4px 0 #4b5563, 0 0 0 0 rgba(59, 130, 246, 0)',
   },
   '50%': {
-    boxShadow: '4px 4px 0 #4b5563, 0 0 0 4px rgba(59, 130, 246, 0.95), 0 0 16px 6px rgba(59, 130, 246, 0.75)',
+    boxShadow: '4px 4px 0 #4b5563, 0 0 0 4px rgba(59, 130, 246, 0.95), 0 0 40px 10px rgba(59, 130, 246, 0.75)',
   },
 });
 export const noPokeCardStyle = style({
