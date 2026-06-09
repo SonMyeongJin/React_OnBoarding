@@ -34,7 +34,7 @@
   "scripts": {
     "build": "next build",
     "build-storybook": "storybook build",
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "format": "biome check --write --unsafe",
     "lint": "biome check",
     "serve": "next start",
