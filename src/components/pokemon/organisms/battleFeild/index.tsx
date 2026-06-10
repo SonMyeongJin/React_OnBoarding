@@ -1,17 +1,21 @@
 'use client';
-import {type FC, useEffect, useRef, useState} from 'react';
-import {useBattleController} from '../../entities/pokemon/battleController';
-import {usePokemon} from '../../entities/pokemon/getPokemon';
-import type {AttackType} from '../../entities/pokemon/model/type';
+import { type FC, useEffect, useRef, useState } from 'react';
+import ChangeButton from '../../atoms/changeButton';
+import ChangeForm from '../../atoms/changeForm';
+import { useBattleController } from '../../entities/pokemon/battleController';
+import { usePokemon } from '../../entities/pokemon/getPokemon';
+import type { AttackType } from '../../entities/pokemon/model/type';
 import Skills from '../../molecules/skills';
 import PokeCard from '../PokeCard';
 import {
-    attackFailedMessageStyle,
-    battleField,
-    battleSkillsStyle,
-    enemyStyle,
-    paralysisMessageStyle,
-    playerStyle,
+  attackFailedMessageStyle,
+  battleField,
+  battleSkillsStyle,
+  ChangeButtonStyle,
+  ChangeFormStyle,
+  enemyStyle,
+  paralysisMessageStyle,
+  playerStyle,
 } from './index.css';
 
 const DAMAGE_VALUE = 25;
@@ -39,6 +43,8 @@ const BattleFeild: FC = () => {
     enemyPokemon,
     playerPokemon,
   });
+
+  const [isFormActive, setIsFormActive] = useState(false);
 
   const showAttackFailedMessage = () => {
     setIsAttackFailed(true);
@@ -197,7 +203,7 @@ const BattleFeild: FC = () => {
       window.clearTimeout(timerId);
       isEnemyTurnInProgress.current = false;
     };
-  }, [isPlayerTurn, enemyPokemonStatus.hp, playerPokemonStatus.hp]);
+  }, [isPlayerTurn, enemyPokemonStatus.hp, playerPokemonStatus.hp, enemySkills]);
   //-------------------------------------------------------------------------------------------------
 
   return (
@@ -240,7 +246,16 @@ const BattleFeild: FC = () => {
         )}
       </div>
 
+      <div className={ChangeFormStyle}>{isFormActive && <ChangeForm onClick={() => {}} />}</div>
+
       <div className={battleSkillsStyle}>
+        <div className={ChangeButtonStyle}>
+          <ChangeButton
+            onClick={() => {
+              setIsFormActive((prev) => !prev);
+            }}
+          />
+        </div>
         {enemyPokemonStatus.hp > 0 && playerPokemonStatus.hp > 0 && (
           <Skills disabled={!isPlayerTurn} skills={playerSkills} />
         )}
