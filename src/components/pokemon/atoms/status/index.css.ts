@@ -1,4 +1,4 @@
-import { keyframes, style } from '@vanilla-extract/css';
+import {keyframes, style} from '@vanilla-extract/css';
 
 const burnBlink = keyframes({
   '0%, 100%': {
@@ -45,6 +45,49 @@ export const hpBar = style({
   height: '8px',
   margin: '6px 0 8px',
   transition: 'width 0.2s ease',
+});
+
+export const statusHeader = style({
+  alignItems: 'center',
+  display: 'flex',
+  gap: '6px',
+  justifyContent: 'space-between',
+  marginBottom: '4px',
+  minWidth: 0,
+  width: '100%',
+});
+
+export const pokemonName = style({
+  color: '#111827',
+  flex: '1 1 auto',
+  fontSize: '20px',
+  fontWeight: 900,
+  letterSpacing: '0.04em',
+  minWidth: 0,
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  textTransform: 'capitalize',
+  whiteSpace: 'nowrap',
+});
+
+export const hpText = style({
+  color: '#111827',
+  fontSize: '20px',
+  fontWeight: 900,
+  lineHeight: 1,
+  margin: '-2px 0 8px',
+  textAlign: 'center',
+});
+
+export const pokeLevel = style({
+  color: '#374151',
+  flexShrink: 0,
+  fontSize: '11px',
+  fontWeight: 800,
+  lineHeight: 1,
+  marginLeft: 'auto',
+  textAlign: 'right',
+  whiteSpace: 'nowrap',
 });
 
 export const conditionStyle = style({

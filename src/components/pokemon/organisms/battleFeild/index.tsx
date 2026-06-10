@@ -1,5 +1,5 @@
 'use client';
-import {type FC, useState} from 'react';
+import {type FC, useEffect, useRef, useState} from 'react';
 import {useBattleController} from '../../entities/pokemon/battleController';
 import {usePokemon} from '../../entities/pokemon/getPokemon';
 import type {AttackType} from '../../entities/pokemon/model/type';
@@ -15,14 +15,17 @@ import {
 } from './index.css';
 
 const DAMAGE_VALUE = 25;
+const AUTO_ENEMY_ATTACK_DELAY_MS = 1500;
+const MAX_SKILL_COUNT = 4;
 
 const BattleFeild: FC = () => {
   // turn ロジクは画面変化を探知する必要はないので、UseStateは使わない。
   const [isPlayerTurn, setIsPlayerTurn] = useState<boolean>(true);
   const [isAttackFailed, setIsAttackFailed] = useState<boolean>(false);
   const [isParalysis, setIsParalysis] = useState<boolean>(false);
-  const [playerPokemon, setPlayerPokemon] = usePokemon('Pikachu');
-  const [enemyPokemon, setEnemyPokemon] = usePokemon('Hitokage');
+  const isEnemyTurnInProgress = useRef<boolean>(false);
+  const [playerPokemon] = usePokemon('pikachu');
+  const [enemyPokemon] = usePokemon('Charmander');
   const {
     playerPokemonStatus,
     playerPokemonActions,
@@ -35,8 +38,6 @@ const BattleFeild: FC = () => {
   } = useBattleController({
     enemyPokemon,
     playerPokemon,
-    setEnemyPokemon,
-    setPlayerPokemon,
   });
 
   const showAttackFailedMessage = () => {
@@ -61,6 +62,10 @@ const BattleFeild: FC = () => {
   const playerSkills = playerPokemon.skills.map((index) => ({
     ...index,
     onClick: (attackType: AttackType) => {
+      if (!isPlayerTurn) {
+        return;
+      }
+
       if (playerPokemonStatus.condition === 'Paralysis') {
         canNotMoveByParalysis();
         //alert('麻痺状態のため、攻撃が失敗しました。');
@@ -160,6 +165,41 @@ const BattleFeild: FC = () => {
     },
   }));
 
+  //-------------------------- AI 에게 요청  상대방움직임 랜덤하게 자동으로 움직이도록 -------------------
+  useEffect(() => {
+    if (isPlayerTurn || enemyPokemonStatus.hp <= 0 || playerPokemonStatus.hp <= 0) {
+      isEnemyTurnInProgress.current = false;
+      return;
+    }
+
+    if (isEnemyTurnInProgress.current) {
+      return;
+    }
+
+    isEnemyTurnInProgress.current = true;
+
+    const timerId = window.setTimeout(() => {
+      const selectableEnemySkills = enemySkills.slice(0, MAX_SKILL_COUNT);
+
+      if (selectableEnemySkills.length === 0) {
+        isEnemyTurnInProgress.current = false;
+        setIsPlayerTurn(true);
+        return;
+      }
+
+      const randomSkill = selectableEnemySkills[Math.floor(Math.random() * selectableEnemySkills.length)];
+
+      randomSkill?.onClick(randomSkill.attackType);
+      isEnemyTurnInProgress.current = false;
+    }, AUTO_ENEMY_ATTACK_DELAY_MS);
+
+    return () => {
+      window.clearTimeout(timerId);
+      isEnemyTurnInProgress.current = false;
+    };
+  }, [isPlayerTurn, enemyPokemonStatus.hp, playerPokemonStatus.hp]);
+  //-------------------------------------------------------------------------------------------------
+
   return (
     <div className={battleField}>
       {isAttackFailed && <div className={attackFailedMessageStyle}>攻撃失敗!</div>}
@@ -175,7 +215,7 @@ const BattleFeild: FC = () => {
             imageUrl={playerPokemon.imageUrl}
             isDead={playerPokemonStatus.hp <= 0}
             isSkillsActive={isPlayerTurn}
-            onClickMegaSinka={playerPokemonActions.onEvolution}
+            // onClickMegaSinka={playerPokemonActions.onEvolution}
             pokeName={playerPokemon.pokeName}
             speed={playerPokemonStatus.speed}
           />
@@ -193,7 +233,7 @@ const BattleFeild: FC = () => {
             imageUrl={enemyPokemon.imageUrl}
             isDead={enemyPokemonStatus.hp <= 0}
             isSkillsActive={!isPlayerTurn}
-            onClickMegaSinka={enemyPokemonActions.onEvolution}
+            // onClickMegaSinka={enemyPokemonActions.onEvolution}
             pokeName={enemyPokemon.pokeName}
             speed={enemyPokemonStatus.speed}
           />
@@ -202,7 +242,7 @@ const BattleFeild: FC = () => {
 
       <div className={battleSkillsStyle}>
         {enemyPokemonStatus.hp > 0 && playerPokemonStatus.hp > 0 && (
-          <Skills skills={isPlayerTurn ? playerSkills : enemySkills} />
+          <Skills disabled={!isPlayerTurn} skills={playerSkills} />
         )}
       </div>
     </div>

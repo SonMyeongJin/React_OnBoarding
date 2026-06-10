@@ -1,4 +1,4 @@
-import {keyframes, style} from '@vanilla-extract/css';
+import { keyframes, style } from '@vanilla-extract/css';
 
 export const battleField = style({
   background: 'linear-gradient(180deg, #dff3b4 0%, #c8e69a 52%, #a8d17b 52%, #91c56d 100%)',

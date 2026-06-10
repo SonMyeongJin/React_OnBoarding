@@ -1,4 +1,4 @@
-import {keyframes, style} from '@vanilla-extract/css';
+import { keyframes, style } from '@vanilla-extract/css';
 
 const borderTwinkleStrong = keyframes({
   '0%, 100%': {
@@ -16,7 +16,7 @@ export const noPokeCardStyle = style({
   boxSizing: 'border-box',
   display: 'grid',
   //gridTemplateColumns は各グリッドのサイズを調整できる機能だ
-  gridTemplateColumns: '128px 1fr', //
+  gridTemplateColumns: '128px minmax(0, 1fr)', //
   overflow: 'hidden',
   padding: '12px',
   position: 'relative',
@@ -30,7 +30,7 @@ export const pokeCardStyle = style({
   boxShadow: '4px 4px 0 #4b5563',
   boxSizing: 'border-box',
   display: 'grid',
-  gridTemplateColumns: '128px 1fr',
+  gridTemplateColumns: '128px minmax(0, 1fr)',
   overflow: 'hidden',
   padding: '12px',
   position: 'relative',

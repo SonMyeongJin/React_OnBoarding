@@ -5,21 +5,15 @@ import type { AnimationType } from '../model/type';
 
 type UsePokemonReturn = ReturnType<typeof usePokemon>;
 type BattlePokemon = NonNullable<UsePokemonReturn[0]>;
-type BattlePokemonActions = UsePokemonReturn[1];
 
 type BattleProps = {
   playerPokemon: BattlePokemon;
   enemyPokemon: BattlePokemon;
-  setPlayerPokemon: BattlePokemonActions;
-  setEnemyPokemon: BattlePokemonActions;
 };
 
 export function useBattleController(battleProps: BattleProps) {
-  const [playerPokemonStatus, playerPokemonActions] = useBattle(
-    battleProps.playerPokemon,
-    battleProps.setPlayerPokemon,
-  );
-  const [enemyPokemonStatus, enemyPokemonActions] = useBattle(battleProps.enemyPokemon, battleProps.setEnemyPokemon);
+  const [playerPokemonStatus, playerPokemonActions] = useBattle(battleProps.playerPokemon);
+  const [enemyPokemonStatus, enemyPokemonActions] = useBattle(battleProps.enemyPokemon);
   const [playerAnimation, setPlayerAnimation] = useState<AnimationType>('noAnimation');
   const [enemyAnimation, setEnemyAnimation] = useState<AnimationType>('noAnimation');
 

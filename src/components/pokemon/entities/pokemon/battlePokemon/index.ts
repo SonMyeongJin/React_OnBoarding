@@ -1,4 +1,4 @@
-import {type Dispatch, type SetStateAction, useCallback, useEffect, useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 import type {ConditionType} from '../model/type';
 
 const BURNED_DAMAGE = 20;
@@ -11,7 +11,7 @@ type BattleProps = {
   speed: number;
 };
 
-export function useBattle(pokemon: BattleProps, setMegaSinka: Dispatch<SetStateAction<boolean>>) {
+export function useBattle(pokemon: BattleProps) {
   const [hp, setHp] = useState<number>(pokemon.hp);
   const [attack, setAttack] = useState<number>(pokemon.attack);
   const [defense, setDefense] = useState<number>(pokemon.defense);
@@ -20,8 +20,11 @@ export function useBattle(pokemon: BattleProps, setMegaSinka: Dispatch<SetStateA
   const [conditionCount, setConditionCount] = useState<number>(0);
 
   useEffect(() => {
-    setConditionCount(0);
-  }, []);
+    setHp(pokemon.hp);
+    setAttack(pokemon.attack);
+    setDefense(pokemon.defense);
+    setSpeed(pokemon.speed);
+  }, [pokemon.hp, pokemon.attack, pokemon.defense, pokemon.speed]);
 
   const onDamage = useCallback(
     (damageValue: number, newCondition?: ConditionType) => {
@@ -64,9 +67,9 @@ export function useBattle(pokemon: BattleProps, setMegaSinka: Dispatch<SetStateA
     }
   }, [condition, conditionCount, speed]);
 
-  const onEvolution = () => {
-    setMegaSinka(true);
-  };
+  // const onEvolution = () => {
+  //   setMegaSinka(true);
+  // };
   const changeAttack = (Value: number) => {
     setAttack((prevAttack) => prevAttack + Value);
   };
@@ -79,6 +82,6 @@ export function useBattle(pokemon: BattleProps, setMegaSinka: Dispatch<SetStateA
 
   return [
     { attack, condition, defense, hp, speed },
-    { changeAttack, changeDefense, changeSpeed, onDamage, onEvolution, onTurnEnd },
+    { changeAttack, changeDefense, changeSpeed, onDamage, onTurnEnd },
   ] as const;
 }

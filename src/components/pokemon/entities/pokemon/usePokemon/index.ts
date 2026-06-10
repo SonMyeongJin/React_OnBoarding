@@ -1,6 +1,6 @@
-import {useState} from 'react';
-import {getPokemon} from '../api';
-import type {Pokemon} from '../model/type';
+import { useState } from 'react';
+import { getPokemon } from '../api';
+import type { Pokemon } from '../model/type';
 
 export const useSearchPokemon = () => {
   const [pokemonData, setPokemonData] = useState<Pokemon | null>(null);

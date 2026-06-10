@@ -1,6 +1,5 @@
 import type { ComponentProps, FC } from 'react';
 import Image from '../../atoms/image';
-import MegaButton from '../../atoms/megaButton';
 import Status from '../../atoms/status';
 import type { AnimationType } from '../../entities/pokemon/model/type';
 import {
@@ -14,7 +13,7 @@ import {
 
 type PokeCardProps = ComponentProps<typeof Image> &
   ComponentProps<typeof Status> & {
-    onClickMegaSinka: () => void;
+    // onClickMegaSinka: () => void;
     isSkillsActive: boolean;
     Animation: AnimationType;
   };
@@ -32,7 +31,7 @@ const PokeCard: FC<PokeCardProps> = (props: PokeCardProps) => {
 
       <Status {...props} />
 
-      <MegaButton onClick={props.onClickMegaSinka} />
+      {/*<MegaButton onClick={props.onClickMegaSinka} />*/}
     </div>
   );
 };

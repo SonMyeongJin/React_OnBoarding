@@ -9,12 +9,13 @@ type SkillProps = {
   skillType: string;
   pp: number;
   attackType: AttackType;
+  disabled?: boolean;
   onClick: (attackType: AttackType) => void;
 };
 
 const Skill: FC<SkillProps> = (props: SkillProps) => {
   return (
-    <button className={skillStyle} onClick={() => props.onClick(props.attackType)} type="button">
+    <button className={skillStyle} disabled={props.disabled} onClick={() => props.onClick(props.attackType)} type="button">
       {props.skillType} : {props.skillName} / {props.pp}
     </button>
   );

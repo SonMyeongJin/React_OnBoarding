@@ -1,6 +1,6 @@
 'use client';
 
-import type {FormEvent} from 'react';
+import type { FormEvent } from 'react';
 
 function Product_Info() {
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -29,17 +29,17 @@ function Product_Info() {
       <br />
       <label>
         option1
-        <input name={'skill1'} type="checkbox" />
+        <input name="skill1" type="checkbox" />
       </label>
       <br />
       <label>
         option2
-        <input name={'skill2'} type="checkbox" />
+        <input name="skill2" type="checkbox" />
       </label>
       <br />
       <label>
         option3
-        <input name={'skill3'} type="checkbox" />
+        <input name="skill3" type="checkbox" />
       </label>
     </form>
   );

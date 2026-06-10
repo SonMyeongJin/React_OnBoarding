@@ -1,7 +1,7 @@
 'use client';
 
-import {type SubmitEventHandler, useState} from 'react';
-import {useSearchPokemon} from '../../../components/pokemon/entities/pokemon/usePokemon';
+import { type SubmitEventHandler, useState } from 'react';
+import { useSearchPokemon } from '../../../components/pokemon/entities/pokemon/usePokemon';
 
 function Product_Info() {
   const [productName, setProductName] = useState('');
