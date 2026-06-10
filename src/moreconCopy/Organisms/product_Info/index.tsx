@@ -17,7 +17,7 @@ function Product_Info() {
     <form onSubmit={handleSubmit}>
       <label style={{ display: 'block' }}>
         Product Name
-        <input name="query" />
+        <input name="query123" />
       </label>
       <hr />
       <label style={{ display: 'block' }}>
@@ -29,17 +29,17 @@ function Product_Info() {
       <br />
       <label>
         option1
-        <input type="checkbox" />
+        <input name={'skill1'} type="checkbox" />
       </label>
       <br />
       <label>
         option2
-        <input type="checkbox" />
+        <input name={'skill2'} type="checkbox" />
       </label>
       <br />
       <label>
         option3
-        <input type="checkbox" />
+        <input name={'skill3'} type="checkbox" />
       </label>
     </form>
   );

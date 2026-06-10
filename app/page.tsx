@@ -1,6 +1,7 @@
 import BattleFeild from '../src/components/pokemon/organisms/battleFeild';
 import NaviBar from '../src/moreconCopy/Organisms/naviBar';
 import Product_Info from '../src/moreconCopy/Organisms/product_Info';
+import Product_Info_controlable from '../src/moreconCopy/Organisms/product_Info_controlable';
 import Review from '../src/moreconCopy/Organisms/review';
 
 function IndexPage() {
@@ -10,6 +11,7 @@ function IndexPage() {
         <NaviBar />
         <BattleFeild />
         <Product_Info />
+        <Product_Info_controlable />
         <Review />
       </div>
     </div>
