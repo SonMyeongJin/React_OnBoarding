@@ -1,4 +1,4 @@
-import { keyframes, style } from '@vanilla-extract/css';
+import { globalStyle, keyframes, style } from '@vanilla-extract/css';
 
 export const battleField = style({
   background: 'linear-gradient(180deg, #dff3b4 0%, #c8e69a 52%, #a8d17b 52%, #91c56d 100%)',
@@ -42,7 +42,7 @@ export const battleSkillsStyle = style({
   boxSizing: 'border-box',
   display: 'grid',
   gap: '6px 10px',
-  gridTemplateColumns: '1.45fr 1fr 1fr',
+  gridTemplateColumns: '1.2fr 116px 1fr 1fr',
   gridTemplateRows: '1fr 1fr',
   marginTop: '24px',
   minHeight: '92px',
@@ -156,4 +156,104 @@ export const paralysisMessageStyle = style({
   textAlign: 'center',
   top: '45%',
   zIndex: 25,
+});
+
+export const ChangeFormStyle = style({
+  bottom: '148px',
+  position: 'absolute',
+  right: '36px',
+  width: '300px',
+  zIndex: 15,
+});
+
+globalStyle(`${ChangeFormStyle} form`, {
+  background: '#fffef2',
+  border: '4px solid #111827',
+  borderRadius: '2px',
+  boxShadow: '4px 4px 0 #64748b, 0 0 0 2px #f8fafc inset',
+  boxSizing: 'border-box',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '10px',
+  padding: '14px',
+  width: '100%',
+});
+
+globalStyle(`${ChangeFormStyle} input`, {
+  background: '#f8fafc',
+  border: '2px solid #111827',
+  borderRadius: '2px',
+  boxSizing: 'border-box',
+  color: '#111827',
+  font: 'inherit',
+  fontSize: '14px',
+  fontWeight: 700,
+  padding: '8px 10px',
+  width: '100%',
+});
+
+globalStyle(`${ChangeFormStyle} input:focus-visible`, {
+  outline: '3px solid #facc15',
+  outlineOffset: '2px',
+});
+
+globalStyle(`${ChangeFormStyle} button`, {
+  background: '#dcfce7',
+  border: '2px solid #111827',
+  borderRadius: '2px',
+  boxShadow: '2px 2px 0 #16a34a',
+  color: '#14532d',
+  cursor: 'pointer',
+  font: 'inherit',
+  fontSize: '14px',
+  fontWeight: 900,
+  padding: '8px 10px',
+});
+
+globalStyle(`${ChangeFormStyle} button:hover`, {
+  background: '#bbf7d0',
+  boxShadow: '1px 1px 0 #16a34a',
+  transform: 'translate(1px, 1px)',
+});
+
+globalStyle(`${ChangeFormStyle} button:focus-visible`, {
+  outline: '3px solid #facc15',
+  outlineOffset: '2px',
+});
+
+export const ChangeButtonStyle = style({
+  alignItems: 'center',
+  display: 'flex',
+  gridColumn: '2 / 3',
+  gridRow: '1 / 3',
+  justifyContent: 'center',
+  minWidth: 0,
+});
+
+globalStyle(`${ChangeButtonStyle} button`, {
+  background: '#e0f2fe',
+  border: '2px solid #111827',
+  borderRadius: '2px',
+  boxShadow: '2px 2px 0 #38bdf8',
+  boxSizing: 'border-box',
+  color: '#0f172a',
+  cursor: 'pointer',
+  font: 'inherit',
+  fontSize: '11px',
+  fontWeight: 900,
+  lineHeight: 1.35,
+  minHeight: 'auto',
+  padding: '6px 8px',
+  width: '100%',
+});
+
+globalStyle(`${ChangeButtonStyle} button:hover`, {
+  background: '#bae6fd',
+  boxShadow: '1px 1px 0 #38bdf8',
+  transform: 'translate(1px, 1px)',
+});
+
+globalStyle(`${ChangeButtonStyle} button:focus-visible`, {
+  outline: '3px solid #facc15',
+  outlineOffset: '2px',
 });
