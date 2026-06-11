@@ -10,7 +10,7 @@ const borderTwinkleStrong = keyframes({
 });
 export const noPokeCardStyle = style({
   background: '#f8fafc', // grayぽっい
-  border: '4px solid #111827',
+  border: '7px solid grey',
   borderRadius: '2px',
   boxShadow: '4px 4px 0 #4b5563',
   boxSizing: 'border-box',
@@ -25,7 +25,7 @@ export const noPokeCardStyle = style({
 export const pokeCardStyle = style({
   animation: `${borderTwinkleStrong} 0.9s linear infinite`,
   background: '#f8fafc',
-  border: '4px solid #111827',
+  border: '7px solid #1F86EFFF',
   borderRadius: '2px',
   boxShadow: '4px 4px 0 #4b5563',
   boxSizing: 'border-box',
