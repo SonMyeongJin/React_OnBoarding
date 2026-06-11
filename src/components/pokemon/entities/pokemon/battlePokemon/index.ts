@@ -1,5 +1,5 @@
-import {useCallback, useEffect, useState} from 'react';
-import type {ConditionType} from '../model/type';
+import { useCallback, useEffect, useState } from 'react';
+import type { ConditionType } from '../model/type';
 
 const BURNED_DAMAGE = 20;
 const HEAL_CONDITION_COUNT = 5;

@@ -1,6 +1,6 @@
-import {useEffect, useState} from 'react';
-import {getPokemon} from '../api';
-import type {AttackType} from '../model/type';
+import { useEffect, useState } from 'react';
+import { getPokemon } from '../api';
+import type { AttackType } from '../model/type';
 
 type pokemonBattleInfo = {
   pokeName: string;

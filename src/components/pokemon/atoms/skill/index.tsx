@@ -15,7 +15,12 @@ type SkillProps = {
 
 const Skill: FC<SkillProps> = (props: SkillProps) => {
   return (
-    <button className={skillStyle} disabled={props.disabled} onClick={() => props.onClick(props.attackType)} type="button">
+    <button
+      className={skillStyle}
+      disabled={props.disabled}
+      onClick={() => props.onClick(props.attackType)}
+      type="button"
+    >
       {props.skillType} : {props.skillName} / {props.pp}
     </button>
   );

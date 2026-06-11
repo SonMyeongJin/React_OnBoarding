@@ -28,7 +28,8 @@ const BattleFeild: FC = () => {
   const [isAttackFailed, setIsAttackFailed] = useState<boolean>(false);
   const [isParalysis, setIsParalysis] = useState<boolean>(false);
   const isEnemyTurnInProgress = useRef<boolean>(false);
-  const [playerPokemon] = usePokemon('pikachu');
+  const [playerPokemonName, setPlayerPokemonName] = useState('pikachu');
+  const [playerPokemon] = usePokemon(playerPokemonName);
   const [enemyPokemon] = usePokemon('Charmander');
   const {
     playerPokemonStatus,
@@ -172,6 +173,9 @@ const BattleFeild: FC = () => {
   }));
 
   //-------------------------- AI 에게 요청  상대방움직임 랜덤하게 자동으로 움직이도록 -------------------
+  // Todo： enemy turn auto
+  // Todo : useEffect 使わない　＋　isEnemyTurnInProgress　何かいらないと思う、使う理由をわからん
+  // Todo : useCallback -> どこかに呼び出してみよう
   useEffect(() => {
     if (isPlayerTurn || enemyPokemonStatus.hp <= 0 || playerPokemonStatus.hp <= 0) {
       isEnemyTurnInProgress.current = false;
@@ -200,8 +204,8 @@ const BattleFeild: FC = () => {
     }, AUTO_ENEMY_ATTACK_DELAY_MS);
 
     return () => {
-      window.clearTimeout(timerId);
-      isEnemyTurnInProgress.current = false;
+      window.clearTimeout(timerId); // cancel
+      isEnemyTurnInProgress.current = false; // resset ref
     };
   }, [isPlayerTurn, enemyPokemonStatus.hp, playerPokemonStatus.hp, enemySkills]);
   //-------------------------------------------------------------------------------------------------
@@ -246,7 +250,15 @@ const BattleFeild: FC = () => {
         )}
       </div>
 
-      <div className={ChangeFormStyle}>{isFormActive && <ChangeForm onClick={() => {}} />}</div>
+      <div className={ChangeFormStyle}>
+        {isFormActive && (
+          <ChangeForm
+            onClick={(name: string) => {
+              setPlayerPokemonName(name);
+            }}
+          />
+        )}
+      </div>
 
       <div className={battleSkillsStyle}>
         <div className={ChangeButtonStyle}>
