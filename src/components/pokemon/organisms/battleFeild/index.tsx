@@ -255,6 +255,8 @@ const BattleFeild: FC = () => {
           <ChangeForm
             onClick={(name: string) => {
               setPlayerPokemonName(name);
+              playerPokemonActions.onTurnEnd();
+              setIsPlayerTurn(false);
             }}
           />
         )}
