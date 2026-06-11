@@ -11,6 +11,7 @@ import {
   attackFailedMessageStyle,
   battleField,
   battleSkillsStyle,
+  burnedMessageStyle,
   ChangeButtonStyle,
   ChangeFormStyle,
   enemyStyle,
@@ -217,7 +218,10 @@ const BattleFeild: FC = () => {
   return (
     <div className={battleField}>
       {isAttackFailed && <div className={attackFailedMessageStyle}>攻撃失敗!</div>}
-      {isParalysis && <div className={paralysisMessageStyle}>麻痺で動けなかった。。</div>}
+      {isParalysis && <div className={paralysisMessageStyle}>麻痺で動けなかった。。</div>}{' '}
+      {(playerPokemonStatus.isBurnedMessage || enemyPokemonStatus.isBurnedMessage) && (
+        <div className={burnedMessageStyle}>やけどのために自分もダメージを受けます！</div>
+      )}
       <div className={playerStyle}>
         {playerPokemon && (
           <PokeCard
@@ -235,7 +239,6 @@ const BattleFeild: FC = () => {
           />
         )}
       </div>
-
       <div className={enemyStyle}>
         {enemyPokemon && (
           <PokeCard
@@ -253,7 +256,6 @@ const BattleFeild: FC = () => {
           />
         )}
       </div>
-
       <div className={ChangeFormStyle}>
         {isFormActive && (
           <ChangeForm
@@ -265,7 +267,6 @@ const BattleFeild: FC = () => {
           />
         )}
       </div>
-
       <div className={battleSkillsStyle}>
         <div className={ChangeButtonStyle}>
           <ChangeButton

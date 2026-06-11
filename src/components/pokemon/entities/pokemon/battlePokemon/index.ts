@@ -18,6 +18,7 @@ export function useBattle(pokemon: BattleProps) {
   const [speed, setSpeed] = useState<number>(pokemon.speed);
   const [condition, setCondition] = useState<ConditionType>(null);
   const [conditionCount, setConditionCount] = useState<number>(0);
+  const [isBurnedMessage, setIsBurnedMessage] = useState<boolean>(false);
 
   useEffect(() => {
     setHp(pokemon.hp);
@@ -38,8 +39,12 @@ export function useBattle(pokemon: BattleProps) {
   const onTurnEnd = useCallback(() => {
     if (condition === 'Burned') {
       setTimeout(() => {
-        alert('やけどのダメージを受けた！');
-        setHp((prevHP) => prevHP - BURNED_DAMAGE);
+        setIsBurnedMessage(true);
+
+        setTimeout(() => {
+          setIsBurnedMessage(false);
+          setHp((prevHP) => prevHP - BURNED_DAMAGE);
+        }, 2000);
       }, 1000);
     }
 
@@ -81,7 +86,7 @@ export function useBattle(pokemon: BattleProps) {
   };
 
   return [
-    { attack, condition, defense, hp, speed },
+    { attack, condition, defense, hp, isBurnedMessage, speed },
     { changeAttack, changeDefense, changeSpeed, onDamage, onTurnEnd },
   ] as const;
 }

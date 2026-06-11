@@ -112,6 +112,27 @@ export const attackFailedMessageStyle = style({
   zIndex: 20,
 });
 
+export const burnedMessageStyle = style({
+  animation: `${attackFailedPop} 3s ease-in-out forwards`,
+
+  background: '#fffef2',
+  border: '2px solid #111827',
+  boxShadow: '2px 4px 0 #ef4444',
+  color: 'rgba(251,112,112,0.89)',
+
+  fontSize: '20px',
+  fontWeight: 500,
+  left: '70%',
+  letterSpacing: '2px',
+
+  padding: '14px 28px',
+
+  pointerEvents: 'none',
+  position: 'absolute',
+  top: '60%',
+  zIndex: 20,
+});
+
 const paralysisMessagePop = keyframes({
   '0%': {
     opacity: 0,
