@@ -45,6 +45,10 @@ const BattleFeild: FC = () => {
     playerPokemon,
   });
 
+  if (playerPokemon.defense > 150) {
+    playerPokemon.defense = 150;
+  }
+
   const [isFormActive, setIsFormActive] = useState(false);
 
   const showAttackFailedMessage = () => {
