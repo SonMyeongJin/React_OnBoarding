@@ -8,7 +8,7 @@ const ChangeForm: FC<changeFormProps> = () => {
   return (
     <form>
       <input name="pokeName" />
-      <button type="submit">변경하기</button>
+      <button type="submit">交代する</button>
     </form>
   );
 };

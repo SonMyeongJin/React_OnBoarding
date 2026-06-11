@@ -8,7 +8,9 @@ type changeButtonProps = {
 const ChangeButton: FC<changeButtonProps> = ({ onClick }) => {
   return (
     <button className={buttonStyle} onClick={onClick} type="button">
-      ポケモン　交代する
+      ポケモン　
+      <br />
+      交代する
     </button>
   );
 };
